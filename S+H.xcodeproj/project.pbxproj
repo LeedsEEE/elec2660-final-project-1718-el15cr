@@ -15,6 +15,8 @@
 		063FE0E51FBF2FE700620A64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FE0E31FBF2FE700620A64 /* LaunchScreen.storyboard */; };
 		063FE0F01FBF2FE700620A64 /* S_HTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0EF1FBF2FE700620A64 /* S_HTests.m */; };
 		063FE0FB1FBF2FE700620A64 /* S_HUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0FA1FBF2FE700620A64 /* S_HUITests.m */; };
+		063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE10C1FBF37A900620A64 /* audioEngine.m */; };
+		063FE1101FBF380D00620A64 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063FE10F1FBF380D00620A64 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		063FE0F61FBF2FE700620A64 /* S+HUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "S+HUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FE0FA1FBF2FE700620A64 /* S_HUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S_HUITests.m; sourceTree = "<group>"; };
 		063FE0FC1FBF2FE700620A64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		063FE10B1FBF37A900620A64 /* audioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audioEngine.h; sourceTree = "<group>"; };
+		063FE10C1FBF37A900620A64 /* audioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = audioEngine.m; sourceTree = "<group>"; };
+		063FE10F1FBF380D00620A64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063FE1101FBF380D00620A64 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 				063FE0EE1FBF2FE700620A64 /* S+HTests */,
 				063FE0F91FBF2FE700620A64 /* S+HUITests */,
 				063FE0D31FBF2FE700620A64 /* Products */,
+				063FE10E1FBF380D00620A64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +113,8 @@
 				063FE0DB1FBF2FE700620A64 /* ViewController.h */,
 				063FE0DC1FBF2FE700620A64 /* ViewController.m */,
 				063FE0DE1FBF2FE700620A64 /* Main.storyboard */,
+				063FE10B1FBF37A900620A64 /* audioEngine.h */,
+				063FE10C1FBF37A900620A64 /* audioEngine.m */,
 				063FE0E11FBF2FE700620A64 /* Assets.xcassets */,
 				063FE0E31FBF2FE700620A64 /* LaunchScreen.storyboard */,
 				063FE0E61FBF2FE700620A64 /* Info.plist */,
@@ -138,6 +147,14 @@
 				063FE0FC1FBF2FE700620A64 /* Info.plist */,
 			);
 			path = "S+HUITests";
+			sourceTree = "<group>";
+		};
+		063FE10E1FBF380D00620A64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				063FE10F1FBF380D00620A64 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */,
 				063FE0DD1FBF2FE700620A64 /* ViewController.m in Sources */,
 				063FE0DA1FBF2FE700620A64 /* AppDelegate.m in Sources */,
 				063FE0D71FBF2FE700620A64 /* main.m in Sources */,
