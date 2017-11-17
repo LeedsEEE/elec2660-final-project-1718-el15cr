@@ -23,9 +23,12 @@
 @property AVAudioUnitReverb *audioUnitReverb;
 @property AVAudioUnitDistortion *audioUnitDistortion;
 @property AVAudioUnitSampler *samplerDrums;
-@property AVAudioUnitSampler *samplerInstument1;
-@property AVAudioUnitSampler *samplerInstument2;
+@property AVAudioUnitSampler *samplerInstrument1;
+@property AVAudioUnitSampler *samplerInstrument2;
 @property AVAudioFormat *audioFormat;
+@property NSURL *samplerInstrument1URL;
+@property NSURL *samplerInstrument2URL;
+@property NSURL *samplerIDrumsURL;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
@@ -35,6 +38,9 @@
 -(void) createEngine;
 -(void) attachNodes;
 -(void) createConnections;
+-(void) loadInstrumentDefaults;
+-(void) loadAudioUnitDefaults;
+-(void) perpareAndStartEngine;
 
 
 @end
