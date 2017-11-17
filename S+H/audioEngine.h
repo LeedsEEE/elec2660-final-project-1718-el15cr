@@ -22,9 +22,13 @@
 @property AVAudioUnitDelay *audioUnitDelay;
 @property AVAudioUnitReverb *audioUnitReverb;
 @property AVAudioUnitDistortion *audioUnitDistortion;
+@property AVAudioUnitSampler *samplerDrums;
+@property AVAudioUnitSampler *samplerInstument1;
+@property AVAudioUnitSampler *samplerInstument2;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusReverb;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusDistortion;
 @property NSArray <AVAudioConnectionPoint *>* connectionBusDelay;
+@property NSArray <AVAudioConnectionPoint *>* connectionBusDirectOut;
 
 -(void) createSession;
 -(void) createEngine;
