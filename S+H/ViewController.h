@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "audioEngine.h"
 
 @interface ViewController : UIViewController
 
+@property audioEngine *audioEngine;
 
 @end
 

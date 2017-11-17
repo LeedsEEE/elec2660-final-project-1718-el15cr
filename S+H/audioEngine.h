@@ -25,10 +25,11 @@
 @property AVAudioUnitSampler *samplerDrums;
 @property AVAudioUnitSampler *samplerInstument1;
 @property AVAudioUnitSampler *samplerInstument2;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusReverb;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusDistortion;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusDelay;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusDirectOut;
+@property AVAudioFormat *audioFormat;
+@property NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
+@property NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
+@property NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
+@property NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
 
 -(void) createSession;
 -(void) createEngine;

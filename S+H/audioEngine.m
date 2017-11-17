@@ -10,7 +10,6 @@
 
 @implementation audioEngine
 
-
 - (instancetype)init
 {
     self = [super init];
@@ -38,9 +37,6 @@
     return self;
 }
 
-
-
-
 #pragma setup and initialise methods for init
 
 -(void) createSession {
@@ -57,6 +53,8 @@
     if (error) {
         NSLog(@"Session failed to initialise %@",error);
     }
+    
+    NSLog(@"Session created");
     
 }
 
@@ -78,6 +76,7 @@
     self.samplerInstument2 = [[AVAudioUnitSampler alloc]init];
     self.player = [[AVAudioPlayerNode alloc]init];
     self.mainMixer = [self.engine mainMixerNode] ;
+    self.audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
 
     NSLog(@"Engine created");
     
@@ -105,17 +104,44 @@
 
 - (void) createConnections {
     
-    self.connectionBusDelay = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1], nil ];
+    // Create the essential connections
     
-    [self.engine connect: self.player toConnectionPoints:self.connectionBusDelay fromBus:0 format:nil];
+    // Uses arrays to create connection points. Theses are used to send the instumnet to multiple outputs. They are being sent the the effects busses.
     
-        // Need to sort out audio format
+    self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:0],nil ];
     
-    [self.engine connect:self.audioUnitDelay to:self.mainMixer format:nil];
-    [self.engine connect:self.audioUnitDistortion to:self.mainMixer format:nil];
-    [self.engine connect:self.audioUnitDelay to:self.mainMixer format:nil];
+    self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:1],nil ];
+    [self.engine connect: self.player toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
     
+    self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
+    [self.engine connect: self.player toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
+    
+    self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
+    [self.engine connect: self.player toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
+    
+    // Connect the instumnets to the connecton points that have been created in the array
+    
+    [self.engine connect:self.samplerInstument1 toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.samplerInstument2 toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.samplerDrums toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.player toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
+    
+    // Need to sort out audio format
+    
+    [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
+    [self.engine connect:self.audioUnitDistortion to:self.mainMixer format:self.audioFormat];
+    [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
+    
+    NSLog(@"Connections created");
     
 }
+
+#pragma setup instuments
+
+#pragma methods for playback
+
+#pragma audio units 
+
+
 
 @end
