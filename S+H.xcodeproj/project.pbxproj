@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		063FE0D71FBF2FE700620A64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0D61FBF2FE700620A64 /* main.m */; };
 		063FE0DA1FBF2FE700620A64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0D91FBF2FE700620A64 /* AppDelegate.m */; };
-		063FE0DD1FBF2FE700620A64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0DC1FBF2FE700620A64 /* ViewController.m */; };
+		063FE0DD1FBF2FE700620A64 /* InterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0DC1FBF2FE700620A64 /* InterfaceViewController.m */; };
 		063FE0E01FBF2FE700620A64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FE0DE1FBF2FE700620A64 /* Main.storyboard */; };
 		063FE0E21FBF2FE700620A64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063FE0E11FBF2FE700620A64 /* Assets.xcassets */; };
 		063FE0E51FBF2FE700620A64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FE0E31FBF2FE700620A64 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		063FE0FB1FBF2FE700620A64 /* S_HUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0FA1FBF2FE700620A64 /* S_HUITests.m */; };
 		063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE10C1FBF37A900620A64 /* audioEngine.m */; };
 		063FE1101FBF380D00620A64 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063FE10F1FBF380D00620A64 /* AVFoundation.framework */; };
+		F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2587C061FC2000C0096461C /* Instrument1ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,8 @@
 		063FE0D61FBF2FE700620A64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		063FE0D81FBF2FE700620A64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		063FE0D91FBF2FE700620A64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		063FE0DB1FBF2FE700620A64 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		063FE0DC1FBF2FE700620A64 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		063FE0DB1FBF2FE700620A64 /* InterfaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceViewController.h; sourceTree = "<group>"; };
+		063FE0DC1FBF2FE700620A64 /* InterfaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceViewController.m; sourceTree = "<group>"; };
 		063FE0DF1FBF2FE700620A64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		063FE0E11FBF2FE700620A64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063FE0E41FBF2FE700620A64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +57,8 @@
 		063FE10B1FBF37A900620A64 /* audioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audioEngine.h; sourceTree = "<group>"; };
 		063FE10C1FBF37A900620A64 /* audioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = audioEngine.m; sourceTree = "<group>"; };
 		063FE10F1FBF380D00620A64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F2587C051FC2000C0096461C /* Instrument1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument1ViewController.h; sourceTree = "<group>"; };
+		F2587C061FC2000C0096461C /* Instrument1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +113,12 @@
 			children = (
 				063FE0D81FBF2FE700620A64 /* AppDelegate.h */,
 				063FE0D91FBF2FE700620A64 /* AppDelegate.m */,
-				063FE0DB1FBF2FE700620A64 /* ViewController.h */,
-				063FE0DC1FBF2FE700620A64 /* ViewController.m */,
+				063FE0DB1FBF2FE700620A64 /* InterfaceViewController.h */,
+				063FE0DC1FBF2FE700620A64 /* InterfaceViewController.m */,
 				063FE0DE1FBF2FE700620A64 /* Main.storyboard */,
 				063FE10B1FBF37A900620A64 /* audioEngine.h */,
+				F2587C051FC2000C0096461C /* Instrument1ViewController.h */,
+				F2587C061FC2000C0096461C /* Instrument1ViewController.m */,
 				063FE10C1FBF37A900620A64 /* audioEngine.m */,
 				063FE0E11FBF2FE700620A64 /* Assets.xcassets */,
 				063FE0E31FBF2FE700620A64 /* LaunchScreen.storyboard */,
@@ -291,7 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */,
-				063FE0DD1FBF2FE700620A64 /* ViewController.m in Sources */,
+				063FE0DD1FBF2FE700620A64 /* InterfaceViewController.m in Sources */,
+				F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */,
 				063FE0DA1FBF2FE700620A64 /* AppDelegate.m in Sources */,
 				063FE0D71FBF2FE700620A64 /* main.m in Sources */,
 			);
@@ -525,6 +531,7 @@
 				063FE1011FBF2FE700620A64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		063FE1021FBF2FE700620A64 /* Build configuration list for PBXNativeTarget "S+HTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +540,7 @@
 				063FE1041FBF2FE700620A64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		063FE1051FBF2FE700620A64 /* Build configuration list for PBXNativeTarget "S+HUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +549,7 @@
 				063FE1071FBF2FE700620A64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

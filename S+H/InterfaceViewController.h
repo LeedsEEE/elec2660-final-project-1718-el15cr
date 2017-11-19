@@ -11,7 +11,7 @@
 
 @interface ViewController : UIViewController
 
-@property audioEngine *audioEngine;
+@property (nonatomic, strong) audioEngine *audioEngine;
 
 @end
 

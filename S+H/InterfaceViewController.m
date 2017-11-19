@@ -6,7 +6,7 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "InterfaceViewController.h"
 
 @interface ViewController ()
 

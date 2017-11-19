@@ -26,13 +26,13 @@
 @property AVAudioUnitSampler *samplerInstrument1;
 @property AVAudioUnitSampler *samplerInstrument2;
 @property AVAudioFormat *audioFormat;
-@property NSURL *samplerInstrument1URL;
-@property NSURL *samplerInstrument2URL;
-@property NSURL *samplerIDrumsURL;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
-@property NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
+@property (nonatomic, strong) NSURL *samplerInstrument1URL;
+@property (nonatomic, strong) NSURL *samplerInstrument2URL;
+@property (nonatomic, strong) NSURL *samplerIDrumsURL;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
 
 -(void) createSession;
 -(void) createEngine;
