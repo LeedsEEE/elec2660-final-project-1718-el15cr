@@ -15,6 +15,7 @@
 @property NSArray *pickerInstrument1Data;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument1;
+@property (weak, nonatomic) IBOutlet UISlider *sliderPan;
 
 // If the button is taped down then play the note
 
@@ -50,6 +51,8 @@
 
 - (IBAction)didTapOctaveUp:(UIButton *)sender;
 - (IBAction)didTapOctaveDown:(UIButton *)sender;
+
+- (IBAction)didMoveSliderPan:(UISlider *)sender;
 
 
 @end

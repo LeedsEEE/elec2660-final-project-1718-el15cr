@@ -64,6 +64,7 @@
 
 -(void) playInstrument1: (int) note;
 -(void) stopInstrument1: (int) note;
+-(void) panInstrument1: (float) pan; 
 
 -(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone;
 -(void) audioUnitReverbWetDry: (float) wetDry;

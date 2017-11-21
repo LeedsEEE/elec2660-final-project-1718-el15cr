@@ -156,5 +156,11 @@
     self.audioEngine.octave = self.audioEngine.octave-1;
 }
 
+- (IBAction)didMoveSliderPan:(UISlider *)sender {
+    
+    [self.audioEngine panInstrument1:self.sliderPan.value];
+    
+}
+
 
 @end
