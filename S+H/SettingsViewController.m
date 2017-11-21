@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  SettingsViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "SettingsViewController.h"
 
-@interface DrumsViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

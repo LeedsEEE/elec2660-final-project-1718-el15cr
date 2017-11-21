@@ -17,6 +17,14 @@
 		063FE0FB1FBF2FE700620A64 /* S_HUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0FA1FBF2FE700620A64 /* S_HUITests.m */; };
 		063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE10C1FBF37A900620A64 /* audioEngine.m */; };
 		063FE1101FBF380D00620A64 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063FE10F1FBF380D00620A64 /* AVFoundation.framework */; };
+		068113C51FC438A000E07608 /* DrumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113C41FC438A000E07608 /* DrumsViewController.m */; };
+		068113C81FC438AE00E07608 /* DelayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113C71FC438AE00E07608 /* DelayViewController.m */; };
+		068113CB1FC438C200E07608 /* Instrument2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113CA1FC438C200E07608 /* Instrument2ViewController.m */; };
+		068113CE1FC438D500E07608 /* ReverbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113CD1FC438D500E07608 /* ReverbViewController.m */; };
+		068113D11FC438E100E07608 /* DistortionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D01FC438E100E07608 /* DistortionViewController.m */; };
+		068113D41FC438F900E07608 /* MicrophoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D31FC438F900E07608 /* MicrophoneViewController.m */; };
+		068113D71FC4391700E07608 /* MainMixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D61FC4391700E07608 /* MainMixViewController.m */; };
+		068113DA1FC43D1A00E07608 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D91FC43D1A00E07608 /* SettingsViewController.m */; };
 		F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2587C061FC2000C0096461C /* Instrument1ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +65,22 @@
 		063FE10B1FBF37A900620A64 /* audioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audioEngine.h; sourceTree = "<group>"; };
 		063FE10C1FBF37A900620A64 /* audioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = audioEngine.m; sourceTree = "<group>"; };
 		063FE10F1FBF380D00620A64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		068113C31FC438A000E07608 /* DrumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrumsViewController.h; sourceTree = "<group>"; };
+		068113C41FC438A000E07608 /* DrumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrumsViewController.m; sourceTree = "<group>"; };
+		068113C61FC438AE00E07608 /* DelayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayViewController.h; sourceTree = "<group>"; };
+		068113C71FC438AE00E07608 /* DelayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelayViewController.m; sourceTree = "<group>"; };
+		068113C91FC438C200E07608 /* Instrument2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument2ViewController.h; sourceTree = "<group>"; };
+		068113CA1FC438C200E07608 /* Instrument2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument2ViewController.m; sourceTree = "<group>"; };
+		068113CC1FC438D500E07608 /* ReverbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbViewController.h; sourceTree = "<group>"; };
+		068113CD1FC438D500E07608 /* ReverbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbViewController.m; sourceTree = "<group>"; };
+		068113CF1FC438E100E07608 /* DistortionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistortionViewController.h; sourceTree = "<group>"; };
+		068113D01FC438E100E07608 /* DistortionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistortionViewController.m; sourceTree = "<group>"; };
+		068113D21FC438F900E07608 /* MicrophoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneViewController.h; sourceTree = "<group>"; };
+		068113D31FC438F900E07608 /* MicrophoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneViewController.m; sourceTree = "<group>"; };
+		068113D51FC4391700E07608 /* MainMixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMixViewController.h; sourceTree = "<group>"; };
+		068113D61FC4391700E07608 /* MainMixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMixViewController.m; sourceTree = "<group>"; };
+		068113D81FC43D1A00E07608 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		068113D91FC43D1A00E07608 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F2587C051FC2000C0096461C /* Instrument1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument1ViewController.h; sourceTree = "<group>"; };
 		F2587C061FC2000C0096461C /* Instrument1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,13 +135,12 @@
 		063FE0D41FBF2FE700620A64 /* S+H */ = {
 			isa = PBXGroup;
 			children = (
+				068113C21FC4385700E07608 /* Audio Controllers */,
 				063FE0D81FBF2FE700620A64 /* AppDelegate.h */,
 				063FE0D91FBF2FE700620A64 /* AppDelegate.m */,
 				063FE0DB1FBF2FE700620A64 /* InterfaceViewController.h */,
 				063FE0DC1FBF2FE700620A64 /* InterfaceViewController.m */,
 				063FE0DE1FBF2FE700620A64 /* Main.storyboard */,
-				F2587C051FC2000C0096461C /* Instrument1ViewController.h */,
-				F2587C061FC2000C0096461C /* Instrument1ViewController.m */,
 				063FE10B1FBF37A900620A64 /* audioEngine.h */,
 				063FE10C1FBF37A900620A64 /* audioEngine.m */,
 				063FE0E11FBF2FE700620A64 /* Assets.xcassets */,
@@ -160,6 +183,31 @@
 				063FE10F1FBF380D00620A64 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		068113C21FC4385700E07608 /* Audio Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2587C051FC2000C0096461C /* Instrument1ViewController.h */,
+				F2587C061FC2000C0096461C /* Instrument1ViewController.m */,
+				068113C91FC438C200E07608 /* Instrument2ViewController.h */,
+				068113CA1FC438C200E07608 /* Instrument2ViewController.m */,
+				068113C31FC438A000E07608 /* DrumsViewController.h */,
+				068113C41FC438A000E07608 /* DrumsViewController.m */,
+				068113D21FC438F900E07608 /* MicrophoneViewController.h */,
+				068113D31FC438F900E07608 /* MicrophoneViewController.m */,
+				068113C61FC438AE00E07608 /* DelayViewController.h */,
+				068113C71FC438AE00E07608 /* DelayViewController.m */,
+				068113CC1FC438D500E07608 /* ReverbViewController.h */,
+				068113CD1FC438D500E07608 /* ReverbViewController.m */,
+				068113CF1FC438E100E07608 /* DistortionViewController.h */,
+				068113D01FC438E100E07608 /* DistortionViewController.m */,
+				068113D51FC4391700E07608 /* MainMixViewController.h */,
+				068113D61FC4391700E07608 /* MainMixViewController.m */,
+				068113D81FC43D1A00E07608 /* SettingsViewController.h */,
+				068113D91FC43D1A00E07608 /* SettingsViewController.m */,
+			);
+			name = "Audio Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +343,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068113CB1FC438C200E07608 /* Instrument2ViewController.m in Sources */,
+				068113C81FC438AE00E07608 /* DelayViewController.m in Sources */,
+				068113C51FC438A000E07608 /* DrumsViewController.m in Sources */,
 				063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */,
 				063FE0DD1FBF2FE700620A64 /* InterfaceViewController.m in Sources */,
+				068113CE1FC438D500E07608 /* ReverbViewController.m in Sources */,
 				F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */,
+				068113D11FC438E100E07608 /* DistortionViewController.m in Sources */,
+				068113D71FC4391700E07608 /* MainMixViewController.m in Sources */,
 				063FE0DA1FBF2FE700620A64 /* AppDelegate.m in Sources */,
+				068113D41FC438F900E07608 /* MicrophoneViewController.m in Sources */,
 				063FE0D71FBF2FE700620A64 /* main.m in Sources */,
+				068113DA1FC43D1A00E07608 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

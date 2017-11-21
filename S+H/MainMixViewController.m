@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  MainMixViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "MainMixViewController.h"
 
-@interface DrumsViewController ()
+@interface MainMixViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation MainMixViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

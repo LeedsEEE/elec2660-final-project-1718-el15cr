@@ -138,8 +138,6 @@
     [self.engine connect:self.busDistortion to:self.audioUnitDistortion format:self.audioFormat];
     [self.engine connect:self.busDelay to:self.audioUnitDelay format:self.audioFormat];
     
-    // Need to sort out audio format
-    
     // Connect audio units to main out
     
     [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
@@ -153,6 +151,8 @@
 }
 
 -(void) perpareAndStartEngine {
+    
+    // Starts and prepares the audio engine for playback
     
     NSError *error;
     
@@ -203,11 +203,11 @@
     
 }
 
-#pragma setup instuments
-
-#pragma methods for playback
+#pragma methods for instument playback
 
 -(void) playInstrument1:(int)note {
+    
+    // Plays the note in the correct octave
     
     if (self.octave<=0){
         
@@ -263,6 +263,8 @@
 
 -(void) stopInstrument1:(int)note {
     
+    // Stops the note in the right octave
+    
     if (self.octave<=0){
         
         self.octave=0;
@@ -315,7 +317,20 @@
 
 }
 
-#pragma audio units 
+#pragma methods for audio units
+
+-(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
+    
+    AVAudioMixingDestination *mixDes = [self.samplerInstrument1 destinationForMixer:self.busReverb bus:0];
+    
+    mixDes.volume = busIn1;
+    
+    AVAudioMixingDestination *mixDes2 = [_player2 destinationForMixer:_revBus bus:2];
+    
+    mixDes2.volume = busIn2;
+}
+
+
 
 
 

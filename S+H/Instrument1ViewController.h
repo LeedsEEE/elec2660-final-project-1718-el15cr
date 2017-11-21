@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument1;
 
+// If the button is taped down then play the note
+
 - (IBAction)didTapDownNote1:(UIButton *)sender;
 - (IBAction)didTapDownNote2:(UIButton *)sender;
 - (IBAction)didTapDownNote3:(UIButton *)sender;
@@ -29,6 +31,8 @@
 - (IBAction)didTapDownNote11:(UIButton *)sender;
 - (IBAction)didTapDownNote12:(UIButton *)sender;
 
+// If the button is touched on the inside stop the note
+
 - (IBAction)didTapInsideNote1:(UIButton *)sender;
 - (IBAction)didTapInsideNote2:(UIButton *)sender;
 - (IBAction)didTapInsideNote3:(UIButton *)sender;
@@ -41,6 +45,8 @@
 - (IBAction)didTapInsideNote10:(UIButton *)sender;
 - (IBAction)didTapInsideNote11:(UIButton *)sender;
 - (IBAction)didTapInsideNote12:(UIButton *)sender;
+
+// If tapped octave goes up or down
 
 - (IBAction)didTapOctaveUp:(UIButton *)sender;
 - (IBAction)didTapOctaveDown:(UIButton *)sender;

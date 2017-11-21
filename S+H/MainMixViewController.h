@@ -1,5 +1,5 @@
 //
-//  DrumsViewController.h
+//  MainMixViewController.h
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrumsViewController : UIViewController
+@interface MainMixViewController : UIViewController
 
 @end

@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  DelayViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "DelayViewController.h"
 
-@interface DrumsViewController ()
+@interface DelayViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation DelayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

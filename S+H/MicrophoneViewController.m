@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  MicrophoneViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "MicrophoneViewController.h"
 
-@interface DrumsViewController ()
+@interface MicrophoneViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation MicrophoneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

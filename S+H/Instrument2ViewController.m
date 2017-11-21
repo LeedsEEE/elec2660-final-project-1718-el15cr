@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  Instrument2ViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "Instrument2ViewController.h"
 
-@interface DrumsViewController ()
+@interface Instrument2ViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation Instrument2ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

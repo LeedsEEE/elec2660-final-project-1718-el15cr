@@ -1,18 +1,18 @@
 //
-//  DrumsViewController.m
+//  DistortionViewController.m
 //  S+H
 //
 //  Created by Callum Rosedale [el15cr] on 21/11/2017.
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
-#import "DrumsViewController.h"
+#import "DistortionViewController.h"
 
-@interface DrumsViewController ()
+@interface DistortionViewController ()
 
 @end
 
-@implementation DrumsViewController
+@implementation DistortionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

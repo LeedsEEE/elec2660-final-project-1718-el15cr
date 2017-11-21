@@ -42,12 +42,6 @@
     
 }
 
--(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    //self.resistor.firstSignificantFigure = [self.picker selectedRowInComponent:0];
-    
-
-}
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
@@ -64,6 +58,7 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    
     return self.pickerInstrument1Data[row];
     
 }
