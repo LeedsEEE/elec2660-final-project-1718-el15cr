@@ -35,11 +35,11 @@
         
         [self perpareAndStartEngine];
         
-        // Calls the function oadInstrumentDefaults and loads defaults for Instruments
+        // Calls the function loadInstrumentDefaults and loads defaults for Instruments
         
         [self loadInstrumentDefaults];
         
-        // Calls the function loadAudioUnitDefaults and loads defaults for Instruments
+        // Calls the function loadAudioUnitDefaults and loads defaults for audio units
         
         [self loadAudioUnitDefaults];
         
@@ -121,11 +121,8 @@
     // Uses arrays to create connection points. Theses are used to send the instumnet to multiple outputs. They are being sent the the effects busses.
     
     self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:0],nil ];
-    
     self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:1],nil ];
-
     self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
-
     self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
 
     // Connect the instumnets to the connecton points that have been created in the array
@@ -210,6 +207,113 @@
 
 #pragma methods for playback
 
+-(void) playInstrument1:(int)note {
+    
+    if (self.octave<=0){
+        
+        self.octave=0;
+        
+        [self.samplerInstrument1 startNote:(note-48) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==1){
+        
+         self.octave=1;
+        
+        [self.samplerInstrument1 startNote:(note-36) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==2){
+        
+         self.octave=2;
+        
+        [self.samplerInstrument1 startNote:(note-24) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==3){
+        
+        self.octave=3;
+        
+        [self.samplerInstrument1 startNote:(note-12) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==4){
+        
+        self.octave=4;
+        
+        [self.samplerInstrument1 startNote:(note) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==5){
+        
+        self.octave=5;
+        
+        [self.samplerInstrument1 startNote:(note+12) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave==6){
+        
+        self.octave=6;
+        
+        [self.samplerInstrument1 startNote:(note+24) withVelocity:127 onChannel:0];
+        
+    } else if (self.octave>=7){
+        
+        self.octave=7;
+        
+        [self.samplerInstrument1 startNote:(note+36) withVelocity:127 onChannel:0];
+        
+    }
+    
+}
+
+-(void) stopInstrument1:(int)note {
+    
+    if (self.octave<=0){
+        
+        self.octave=0;
+        
+        [self.samplerInstrument1 stopNote:(note-48) onChannel:0];
+        
+    } else if (self.octave==1){
+        
+        self.octave=1;
+        
+        [self.samplerInstrument1 stopNote:(note-36) onChannel:0];
+        
+    } else if (self.octave==2){
+        
+        self.octave=2;
+        
+        [self.samplerInstrument1 stopNote:(note-24) onChannel:0];
+        
+    } else if (self.octave==3){
+        
+        self.octave=3;
+        
+        [self.samplerInstrument1 stopNote:(note-12) onChannel:0];
+        
+    } else if (self.octave==4){
+        
+        self.octave=4;
+        
+        [self.samplerInstrument1 stopNote:note onChannel:0];
+        
+    } else if (self.octave==5){
+        
+        self.octave=5;
+        
+        [self.samplerInstrument1 stopNote:(note+12) onChannel:0];
+        
+    } else if (self.octave==6){
+        
+        self.octave=6;
+        
+        [self.samplerInstrument1 stopNote:(note+24) onChannel:0];
+        
+    } else if (self.octave>=7){
+        
+        self.octave=7;
+        
+        [self.samplerInstrument1 stopNote:(note+36) onChannel:0];
+        
+    }
+
+}
 
 #pragma audio units 
 

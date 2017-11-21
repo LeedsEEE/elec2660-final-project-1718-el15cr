@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-2Y-erU">
-                                <rect key="frame" x="150" y="115" width="46" height="30"/>
+                                <frame key="frameInset" minX="150" minY="115" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -50,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZZ-Ob-DMn">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="WGQ-Ga-ich">
@@ -62,14 +59,159 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGF-dQ-4rw">
+                                <frame key="frameInset" minX="5" minY="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note1"/>
+                                <connections>
+                                    <action selector="didTapDownNote1:" destination="ixC-8H-8dI" eventType="touchDown" id="0Ni-DD-OWU"/>
+                                    <action selector="didTapInsideNote1:" destination="ixC-8H-8dI" eventType="touchUpInside" id="9jB-qz-i1l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWm-Dh-dh4">
+                                <frame key="frameInset" minX="58" minY="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note3"/>
+                                <connections>
+                                    <action selector="didTapDownNote3:" destination="ixC-8H-8dI" eventType="touchDown" id="1eI-BM-EM0"/>
+                                    <action selector="didTapInsideNote3:" destination="ixC-8H-8dI" eventType="touchUpInside" id="ZAi-cG-FCm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lC-2p-elq">
+                                <frame key="frameInset" minX="112" minY="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note5"/>
+                                <connections>
+                                    <action selector="didTapDownNote5:" destination="ixC-8H-8dI" eventType="touchDown" id="Jfd-U9-tgK"/>
+                                    <action selector="didTapInsideNote5:" destination="ixC-8H-8dI" eventType="touchUpInside" id="Lvi-ud-PQj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrR-gU-QPT">
+                                <frame key="frameInset" minX="165" minY="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note6"/>
+                                <connections>
+                                    <action selector="didTapDownNote6:" destination="ixC-8H-8dI" eventType="touchDown" id="kks-VH-Csc"/>
+                                    <action selector="didTapInsideNote6:" destination="ixC-8H-8dI" eventType="touchUpInside" id="InI-ZP-icu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi1-hf-LKt">
+                                <frame key="frameInset" minX="270" minY="230" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note10"/>
+                                <connections>
+                                    <action selector="didTapDownNote10:" destination="ixC-8H-8dI" eventType="touchDown" id="Nvf-0i-ziC"/>
+                                    <action selector="didTapInsideNote10:" destination="ixC-8H-8dI" eventType="touchUpInside" id="O0y-8Q-1jg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sio-19-O56">
+                                <frame key="frameInset" minX="220" minY="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note8"/>
+                                <connections>
+                                    <action selector="didTapDownNote8:" destination="ixC-8H-8dI" eventType="touchDown" id="bQG-Lw-kQH"/>
+                                    <action selector="didTapInsideNote8:" destination="ixC-8H-8dI" eventType="touchUpInside" id="xbg-4O-5OB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-bD-D5p">
+                                <frame key="frameInset" minX="325" minY="230" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note12"/>
+                                <connections>
+                                    <action selector="didTapDownNote12:" destination="ixC-8H-8dI" eventType="touchDown" id="sUa-TQ-JjH"/>
+                                    <action selector="didTapInsideNote12:" destination="ixC-8H-8dI" eventType="touchUpInside" id="YLJ-Cx-hvq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRz-TR-PJM">
+                                <frame key="frameInset" minX="34" minY="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note2"/>
+                                <connections>
+                                    <action selector="didTapDownNote2:" destination="ixC-8H-8dI" eventType="touchDown" id="iA2-Uc-UCH"/>
+                                    <action selector="didTapInsideNote2:" destination="ixC-8H-8dI" eventType="touchUpInside" id="eQI-L2-kzF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-Cf-SPj">
+                                <frame key="frameInset" minX="103" minY="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note4"/>
+                                <connections>
+                                    <action selector="didTapDownNote4:" destination="ixC-8H-8dI" eventType="touchDown" id="5ox-Op-WKV"/>
+                                    <action selector="didTapInsideNote4:" destination="ixC-8H-8dI" eventType="touchUpInside" id="xTm-pu-Cqg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-IO-H4Z">
+                                <frame key="frameInset" minX="191" minY="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note7"/>
+                                <connections>
+                                    <action selector="didTapDownNote7:" destination="ixC-8H-8dI" eventType="touchDown" id="ylb-FY-1PE"/>
+                                    <action selector="didTapInsideNote7:" destination="ixC-8H-8dI" eventType="touchUpInside" id="mqY-AO-MJF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Ht-NL4">
+                                <frame key="frameInset" minX="248" minY="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note9"/>
+                                <connections>
+                                    <action selector="didTapDownNote9:" destination="ixC-8H-8dI" eventType="touchDown" id="oMF-YW-dgp"/>
+                                    <action selector="didTapInsideNote9:" destination="ixC-8H-8dI" eventType="touchUpInside" id="Swx-Pj-NH6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-0i-L2R">
+                                <frame key="frameInset" minX="305" minY="192" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note11"/>
+                                <connections>
+                                    <action selector="didTapDownNote11:" destination="ixC-8H-8dI" eventType="touchDown" id="l8y-bT-4m7"/>
+                                    <action selector="didTapInsideNote11:" destination="ixC-8H-8dI" eventType="touchUpInside" id="SGR-Lw-n1T"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-I0-oTu">
+                                <frame key="frameInset" minY="66" height="118"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OSP-6l-Dzk">
+                                <frame key="frameInset" minX="128" minY="514" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lj-eR-Yks">
+                                <frame key="frameInset" minX="79" minY="599" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-fp-8XM">
+                                <frame key="frameInset" minX="85" minY="401" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Octave up"/>
+                                <connections>
+                                    <action selector="didTapOctaveUp:" destination="ixC-8H-8dI" eventType="touchUpInside" id="rer-Vr-yqa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er4-n8-La8">
+                                <frame key="frameInset" minX="234" minY="401" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Octave Down"/>
+                                <connections>
+                                    <action selector="didTapOctaveDown:" destination="ixC-8H-8dI" eventType="touchUpInside" id="wwD-7O-oJl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-N1-Qbo">
+                                <frame key="frameInset" minX="248" minY="599" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266839378239" green="0.32877266839378239" blue="0.32877266839378239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerInstrument1" destination="Pev-I0-oTu" id="y7t-A1-Rez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4y-fZ-6TN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZTh-AH-e60" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="207" y="-68"/>
+            <point key="canvasLocation" x="205.59999999999999" y="-68.815592203898049"/>
         </scene>
     </scenes>
 </document>

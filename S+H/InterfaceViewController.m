@@ -27,5 +27,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    // Sends audioEngine object via segue to other view controller
+    
+    ViewController *controller = [segue destinationViewController];
+    controller.audioEngine = self.audioEngine;
+    
+}
+
 
 @end

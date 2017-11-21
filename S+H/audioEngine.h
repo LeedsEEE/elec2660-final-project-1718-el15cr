@@ -33,6 +33,7 @@
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
+@property (nonatomic) NSInteger octave;
 
 -(void) createSession;
 -(void) createEngine;
@@ -41,6 +42,9 @@
 -(void) loadInstrumentDefaults;
 -(void) loadAudioUnitDefaults;
 -(void) perpareAndStartEngine;
+
+-(void) playInstrument1: (int) note;
+-(void) stopInstrument1: (int) note;
 
 
 @end
