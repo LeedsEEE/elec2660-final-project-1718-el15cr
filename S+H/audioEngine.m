@@ -250,11 +250,15 @@
         
         [self.samplerInstrument1 startNote:(note-48) withVelocity:127 onChannel:0];
         
+        NSLog(@"Note = %i",note-48);
+        
     } else if (self.octave==1){
         
          self.octave=1;
         
         [self.samplerInstrument1 startNote:(note-36) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Note = %i",note-36);
         
     } else if (self.octave==2){
         
@@ -262,11 +266,15 @@
         
         [self.samplerInstrument1 startNote:(note-24) withVelocity:127 onChannel:0];
         
+        NSLog(@"Note = %i",note-24);
+        
     } else if (self.octave==3){
         
         self.octave=3;
         
         [self.samplerInstrument1 startNote:(note-12) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Note = %i",note-12);
         
     } else if (self.octave==4){
         
@@ -280,17 +288,15 @@
         
         [self.samplerInstrument1 startNote:(note+12) withVelocity:127 onChannel:0];
         
-    } else if (self.octave==6){
+        NSLog(@"Note = %i",note+12);
+        
+    } else if (self.octave>=6){
         
         self.octave=6;
         
         [self.samplerInstrument1 startNote:(note+24) withVelocity:127 onChannel:0];
         
-    } else if (self.octave>=7){
-        
-        self.octave=7;
-        
-        [self.samplerInstrument1 startNote:(note+36) withVelocity:127 onChannel:0];
+        NSLog(@"Note = %i",note+24);
         
     }
     
@@ -306,7 +312,7 @@
         
         [self.samplerInstrument1 stopNote:(note-48) onChannel:0];
         
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note-48);
         
     } else if (self.octave==1){
         
@@ -314,7 +320,7 @@
         
         [self.samplerInstrument1 stopNote:(note-36) onChannel:0];
         
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note-36);
         
     } else if (self.octave==2){
         
@@ -322,7 +328,7 @@
         
         [self.samplerInstrument1 stopNote:(note-24) onChannel:0];
         
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note-24);
         
     } else if (self.octave==3){
         
@@ -330,7 +336,7 @@
         
         [self.samplerInstrument1 stopNote:(note-12) onChannel:0];
         
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note-12);
         
     } else if (self.octave==4){
         
@@ -346,23 +352,15 @@
         
         [self.samplerInstrument1 stopNote:(note+12) onChannel:0];
         
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note+12);
         
-    } else if (self.octave==6){
+    } else if (self.octave>=6){
         
         self.octave=6;
         
         [self.samplerInstrument1 stopNote:(note+24) onChannel:0];
         
-        NSLog(@"Note = %i",note);
-        
-    } else if (self.octave>=7){
-        
-        self.octave=7;
-        
-        [self.samplerInstrument1 stopNote:(note+36) onChannel:0];
-        
-        NSLog(@"Note = %i",note);
+        NSLog(@"Note = %i",note+24);
         
     }
     
@@ -396,12 +394,48 @@
     
 }
 
+-(void) audioUnitDelayWetDry:(float)wetDry {
+    
+    self.audioUnitDelay.wetDryMix = wetDry;
+    
+}
+
+-(void) audioUnitDelayTime:(float)delayTime {
+    
+    self.audioUnitDelay.delayTime = delayTime;
+    
+}
+
+-(void) audioUnitDelayFeedback:(float)feedback {
+    
+    self.audioUnitDelay.feedback = feedback;
+    
+}
+
+-(void) audioUnitDelayLowPassCutoff:(float)cutoff {
+
+    self.audioUnitDelay.lowPassCutoff = cutoff;
+    
+}
+
 -(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
     
     self.sendDistortionInstrument1.volume = distortionInstrument1;
     self.sendDistortionInstrument2.volume = distortionInstrument2;
     self.sendDistortionDrums.volume = distortionDrums;
     self.sendDistortionMicrophone.volume = distortionMicrohpone;
+    
+}
+
+-(void) audioUnitDistortionWetDry:(float)wetDry {
+    
+    self.audioUnitDistortion.wetDryMix = wetDry;
+    
+}
+
+-(void) audioUnitDistortionPreGain:(float)preGain {
+    
+    self.audioUnitDistortion.preGain = preGain;
     
 }
 

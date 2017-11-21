@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.sliderInstrument1.value = self.audioEngine.sendDirectOutInstrument1.volume;
+    self.sliderInstrument2.value = self.audioEngine.sendDirectOutInstrument2.volume;
+    self.sliderDrums.value = self.audioEngine.sendDirectOutDrums.volume;
+    self.sliderMicrophone.value = self.audioEngine.sendDirectOutMicrophone.volume;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +40,27 @@
 }
 */
 
+- (IBAction)didMoveSliderInstrument1:(UISlider *)sender {
+    
+    [self.audioEngine sendsForDirectOut:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+    
+}
+
+- (IBAction)didMoveSliderInstrument2:(UISlider *)sender {
+    
+    [self.audioEngine sendsForDirectOut:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+    
+}
+
+- (IBAction)didMoveSliderDrums:(UISlider *)sender {
+    
+    [self.audioEngine sendsForDirectOut:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+    
+}
+
+- (IBAction)didMoveSliderMircophone:(UISlider *)sender {
+    
+    [self.audioEngine sendsForDirectOut:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+    
+}
 @end

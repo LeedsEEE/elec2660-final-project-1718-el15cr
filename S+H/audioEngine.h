@@ -66,9 +66,18 @@
 -(void) stopInstrument1: (int) note;
 
 -(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone;
--(void) audioUnitReverbWetDry: (float) wetD;
+-(void) audioUnitReverbWetDry: (float) wetDry;
+
 -(void) sendsForDelay: (float)delayInstrument1 : (float)delayInstrument2 : (float)delayDrums : (float)delayMicrohpone;
+-(void) audioUnitDelayTime: (float) delayTime;
+-(void) audioUnitDelayFeedback: (float) feedback;
+-(void) audioUnitDelayWetDry: (float) wetDry;
+-(void) audioUnitDelayLowPassCutoff: (float) cutoff;
+
 -(void) sendsForDistortion: (float)distortionInstrument1 : (float)distortionInstrument2 : (float)distortionDrums : (float)distortionMicrohpone;
+-(void) audioUnitDistortionPreGain: (float) preGain;
+-(void) audioUnitDistortionWetDry: (float) wetDry;
+
 -(void) sendsForDirectOut: (float)directInstrument1 : (float)directInstrument2 : (float)directDrums : (float)directMicrohpone;
 
 

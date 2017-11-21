@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InterfaceViewController.h"
 
 @interface MicrophoneViewController : UIViewController
+
+@property audioEngine *audioEngine;
 
 @end
