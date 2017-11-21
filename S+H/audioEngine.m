@@ -31,6 +31,10 @@
         
         [self createConnections];
         
+        // Calls the function mixingDestination and creates the mix desternation objects
+        
+        [self mixingDestination];
+        
         // Calls the function perpareAndStartEngine and prepares the engine then starts it
         
         [self perpareAndStartEngine];
@@ -164,6 +168,32 @@
     }
     
     NSLog(@"Engine started");
+}
+
+-(void) mixingDestination {
+    
+    // Allows control of the how much is sent to a bus from the input
+    
+    self.sendReverbInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busReverb bus:0];
+    self.sendDelayInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDelay bus:0];
+    self.sendDistortionInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDistortion bus:0];
+    self.sendDirectOutInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDirectOut bus:0];
+    
+    self.sendReverbInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busReverb bus:1];
+    self.sendDelayInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDelay bus:1];
+    self.sendDistortionInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDistortion bus:1];
+    self.sendDirectOutInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDirectOut bus:1];
+    
+    self.sendReverbDrums = [self.samplerDrums destinationForMixer:self.busReverb bus:2];
+    self.sendDelayDrums = [self.samplerDrums destinationForMixer:self.busDelay bus:2];
+    self.sendDistortionDrums = [self.samplerDrums destinationForMixer:self.busDistortion bus:2];
+    self.sendDirectOutDrums = [self.samplerDrums destinationForMixer:self.busDirectOut bus:2];
+    
+    self.sendReverbMicrophone = [self.player destinationForMixer:self.busReverb bus:3];
+    self.sendDelayMicrophone = [self.player destinationForMixer:self.busDelay bus:3];
+    self.sendDistortionMicrophone = [self.player destinationForMixer:self.busDistortion bus:3];
+    self.sendDirectOutMicrophone = [self.player destinationForMixer:self.busDirectOut bus:3];
+    
 }
 
 -(void) loadInstrumentDefaults {
@@ -321,13 +351,11 @@
 
 -(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
     
-    AVAudioMixingDestination *mixDes = [self.samplerInstrument1 destinationForMixer:self.busReverb bus:0];
+    self.sendReverbInstrument1.volume = reverbInstrument1;
+    self.sendReverbInstrument2.volume = reverbInstrument2;
+    self.sendReverbDrums.volume = reverbDrums;
+    self.sendReverbMicrophone.volume = reverbMicrohpone;
     
-    mixDes.volume = busIn1;
-    
-    AVAudioMixingDestination *mixDes2 = [_player2 destinationForMixer:_revBus bus:2];
-    
-    mixDes2.volume = busIn2;
 }
 
 
