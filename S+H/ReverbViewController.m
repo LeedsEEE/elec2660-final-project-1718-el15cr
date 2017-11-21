@@ -23,6 +23,12 @@
     self.pickerReverb.delegate = self;
     self.pickerReverb.dataSource = self;
     
+    self.sliderWetDryMix.value = self.audioEngine.audioUnitReverb.wetDryMix;
+    self.sliderInstrument1.value = self.audioEngine.sendReverbInstrument1.volume;
+    self.sliderInstrument2.value = self.audioEngine.sendReverbInstrument2.volume;
+    self.sliderDrums.value = self.audioEngine.sendReverbDrums.volume;
+    self.sliderMicrophone.value = self.audioEngine.sendReverbMicrophone.volume;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,4 +74,26 @@
 }
 */
 
+- (IBAction)didMoveSliderWetDryMix:(UISlider *)sender {
+    
+    [self.audioEngine audioUnitReverbWetDry:self.sliderWetDryMix.value];
+    
+}
+
+- (IBAction)didMoveSliderInstrument1:(UISlider *)sender {
+    
+    [self.audioEngine sendsForReverb:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+}
+
+- (IBAction)didMoveSliderInstrument2:(UISlider *)sender {
+    [self.audioEngine sendsForReverb:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+}
+
+- (IBAction)didMoveSliderDrums:(UISlider *)sender {
+    [self.audioEngine sendsForReverb:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+}
+
+- (IBAction)didMoveSliderMicrophone:(UISlider *)sender {
+    [self.audioEngine sendsForReverb:self.sliderInstrument1.value :self.sliderInstrument2.value :self.sliderDrums.value :self.sliderMicrophone.value];
+}
 @end

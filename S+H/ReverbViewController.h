@@ -15,6 +15,18 @@
 @property NSArray *pickerReverbData;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerReverb;
+@property (weak, nonatomic) IBOutlet UISlider *sliderWetDryMix;
+@property (weak, nonatomic) IBOutlet UISlider *sliderInstrument1;
+@property (weak, nonatomic) IBOutlet UISlider *sliderInstrument2;
+@property (weak, nonatomic) IBOutlet UISlider *sliderDrums;
+@property (weak, nonatomic) IBOutlet UISlider *sliderMicrophone;
+
+- (IBAction)didMoveSliderWetDryMix:(UISlider *)sender;
+- (IBAction)didMoveSliderInstrument1:(UISlider *)sender;
+- (IBAction)didMoveSliderInstrument2:(UISlider *)sender;
+- (IBAction)didMoveSliderDrums:(UISlider *)sender;
+- (IBAction)didMoveSliderMicrophone:(UISlider *)sender;
+
 
 
 

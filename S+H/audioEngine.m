@@ -124,10 +124,12 @@
     
     // Uses arrays to create connection points. Theses are used to send the instumnet to multiple outputs. They are being sent the the effects busses.
     
-    self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:0],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:0],nil ];
-    self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:1],nil ];
-    self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
-    self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
+    self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:1],nil ];
+    
+   //self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1], nil ];
+    self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
+    self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
+    self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:4],nil ];
 
     // Connect the instumnets to the connecton points that have been created in the array
     
@@ -144,7 +146,7 @@
     
     // Connect audio units to main out
     
-    [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
+    [self.engine connect:self.audioUnitReverb to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.audioUnitDistortion to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.busDirectOut to:self.mainMixer format:self.audioFormat];
@@ -174,25 +176,25 @@
     
     // Allows control of the how much is sent to a bus from the input
     
-    self.sendReverbInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busReverb bus:0];
-    self.sendDelayInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDelay bus:0];
-    self.sendDistortionInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDistortion bus:0];
-    self.sendDirectOutInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDirectOut bus:0];
+    self.sendReverbInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busReverb bus:1];
+    self.sendDelayInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDelay bus:1];
+    self.sendDistortionInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDistortion bus:1];
+    self.sendDirectOutInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDirectOut bus:1];
     
-    self.sendReverbInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busReverb bus:1];
-    self.sendDelayInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDelay bus:1];
-    self.sendDistortionInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDistortion bus:1];
-    self.sendDirectOutInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDirectOut bus:1];
+    self.sendReverbInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busReverb bus:2];
+    self.sendDelayInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDelay bus:2];
+    self.sendDistortionInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDistortion bus:2];
+    self.sendDirectOutInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDirectOut bus:2];
     
-    self.sendReverbDrums = [self.samplerDrums destinationForMixer:self.busReverb bus:2];
-    self.sendDelayDrums = [self.samplerDrums destinationForMixer:self.busDelay bus:2];
-    self.sendDistortionDrums = [self.samplerDrums destinationForMixer:self.busDistortion bus:2];
-    self.sendDirectOutDrums = [self.samplerDrums destinationForMixer:self.busDirectOut bus:2];
+    self.sendReverbDrums = [self.samplerDrums destinationForMixer:self.busReverb bus:3];
+    self.sendDelayDrums = [self.samplerDrums destinationForMixer:self.busDelay bus:3];
+    self.sendDistortionDrums = [self.samplerDrums destinationForMixer:self.busDistortion bus:3];
+    self.sendDirectOutDrums = [self.samplerDrums destinationForMixer:self.busDirectOut bus:3];
     
-    self.sendReverbMicrophone = [self.player destinationForMixer:self.busReverb bus:3];
-    self.sendDelayMicrophone = [self.player destinationForMixer:self.busDelay bus:3];
-    self.sendDistortionMicrophone = [self.player destinationForMixer:self.busDistortion bus:3];
-    self.sendDirectOutMicrophone = [self.player destinationForMixer:self.busDirectOut bus:3];
+    self.sendReverbMicrophone = [self.player destinationForMixer:self.busReverb bus:4];
+    self.sendDelayMicrophone = [self.player destinationForMixer:self.busDelay bus:4];
+    self.sendDistortionMicrophone = [self.player destinationForMixer:self.busDistortion bus:4];
+    self.sendDirectOutMicrophone = [self.player destinationForMixer:self.busDirectOut bus:4];
     
 }
 
@@ -200,9 +202,9 @@
     
     NSError *error;
     
-    //self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"" ofType:@""]];
+    self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Nice-Keys-Ultimate-V2.3" ofType:@"sf2"]];
     
-    [self.samplerInstrument1 loadInstrumentAtURL:self.samplerInstrument1URL error:&error];
+    [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:1 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Instrument 1 failed to load samples %@",error);
@@ -228,8 +230,11 @@
 
 -(void) loadAudioUnitDefaults {
     
-    [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetCathedral];
-    [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho1];
+    [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
+    self.audioUnitDistortion.wetDryMix = 0;
+    self.audioUnitDelay.delayTime = 0;
+    self.audioUnitDelay.wetDryMix = 0;
+    self.audioUnitReverb.wetDryMix =0;
     
 }
 
@@ -301,11 +306,15 @@
         
         [self.samplerInstrument1 stopNote:(note-48) onChannel:0];
         
+        NSLog(@"Note = %i",note);
+        
     } else if (self.octave==1){
         
         self.octave=1;
         
         [self.samplerInstrument1 stopNote:(note-36) onChannel:0];
+        
+        NSLog(@"Note = %i",note);
         
     } else if (self.octave==2){
         
@@ -313,11 +322,15 @@
         
         [self.samplerInstrument1 stopNote:(note-24) onChannel:0];
         
+        NSLog(@"Note = %i",note);
+        
     } else if (self.octave==3){
         
         self.octave=3;
         
         [self.samplerInstrument1 stopNote:(note-12) onChannel:0];
+        
+        NSLog(@"Note = %i",note);
         
     } else if (self.octave==4){
         
@@ -325,11 +338,15 @@
         
         [self.samplerInstrument1 stopNote:note onChannel:0];
         
+        NSLog(@"Note = %i",note);
+        
     } else if (self.octave==5){
         
         self.octave=5;
         
         [self.samplerInstrument1 stopNote:(note+12) onChannel:0];
+        
+        NSLog(@"Note = %i",note);
         
     } else if (self.octave==6){
         
@@ -337,13 +354,19 @@
         
         [self.samplerInstrument1 stopNote:(note+24) onChannel:0];
         
+        NSLog(@"Note = %i",note);
+        
     } else if (self.octave>=7){
         
         self.octave=7;
         
         [self.samplerInstrument1 stopNote:(note+36) onChannel:0];
         
+        NSLog(@"Note = %i",note);
+        
     }
+    
+    
 
 }
 
@@ -358,6 +381,38 @@
     
 }
 
+-(void) audioUnitReverbWetDry: (float) wetDry{
+    
+    self.audioUnitReverb.wetDryMix = wetDry;
+}
+
+
+-(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
+    
+    self.sendDelayInstrument1.volume = delayInstrument1;
+    self.sendDelayInstrument2.volume = delayInstrument2;
+    self.sendDelayDrums.volume = delayDrums;
+    self.sendDelayMicrophone.volume = delayMicrohpone;
+    
+}
+
+-(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
+    
+    self.sendDistortionInstrument1.volume = distortionInstrument1;
+    self.sendDistortionInstrument2.volume = distortionInstrument2;
+    self.sendDistortionDrums.volume = distortionDrums;
+    self.sendDistortionMicrophone.volume = distortionMicrohpone;
+    
+}
+
+-(void) sendsForDirectOut:(float)directInstrument1 :(float)directInstrument2 :(float)directDrums :(float)directMicrohpone{
+    
+    self.sendDirectOutInstrument1.volume = directInstrument1;
+    self.sendDirectOutInstrument2.volume = directInstrument2;
+    self.sendDirectOutDrums.volume = directDrums;
+    self.sendDirectOutMicrophone.volume = directMicrohpone;
+    
+}
 
 
 

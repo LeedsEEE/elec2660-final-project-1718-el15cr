@@ -37,7 +37,7 @@
                                 <state key="normal" title="Microphone"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZD-zJ-Osp">
-                                <frame key="frameInset" minX="46" minY="114" width="46" height="30"/>
+                                <frame key="frameInset" minX="46" minY="114" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Drums"/>
                             </button>
@@ -102,7 +102,7 @@
                                 <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="WGQ-Ga-ich">
+                                    <navigationItem title="Instrument 1" id="WGQ-Ga-ich">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="yGR-1q-xob">
                                             <connections>
                                                 <segue destination="ZTh-AH-e60" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="W13-v9-Lts"/>
@@ -297,22 +297,37 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oW0-Ro-Fpm">
                                 <frame key="frameInset" minX="128" minY="231" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderWetDryMix:" destination="VmV-lj-Mps" eventType="valueChanged" id="HFC-PA-HD4"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iEG-o5-unv">
                                 <frame key="frameInset" minX="128" minY="355" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderInstrument1:" destination="VmV-lj-Mps" eventType="valueChanged" id="BCE-hx-Egp"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="b1Q-a6-Jot">
                                 <frame key="frameInset" minX="128" minY="438" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderInstrument2:" destination="VmV-lj-Mps" eventType="valueChanged" id="dWK-MB-e3o"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-VJ-Bzb">
                                 <frame key="frameInset" minX="128" minY="505" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderDrums:" destination="VmV-lj-Mps" eventType="valueChanged" id="9vo-na-txt"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="U74-xI-n9W">
                                 <frame key="frameInset" minX="128" minY="579" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderMicrophone:" destination="VmV-lj-Mps" eventType="valueChanged" id="XuS-jm-wwx"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-fa-h0e">
                                 <frame key="frameInset" minX="118" minY="202" width="138" height="21"/>
@@ -354,6 +369,11 @@
                     </view>
                     <connections>
                         <outlet property="pickerReverb" destination="4XN-xD-7gC" id="9uP-V1-LKj"/>
+                        <outlet property="sliderDrums" destination="GTW-VJ-Bzb" id="Bc8-J8-Zlr"/>
+                        <outlet property="sliderInstrument1" destination="iEG-o5-unv" id="Jdb-Ko-u2T"/>
+                        <outlet property="sliderInstrument2" destination="b1Q-a6-Jot" id="QKY-rR-KLF"/>
+                        <outlet property="sliderMicrophone" destination="U74-xI-n9W" id="d93-b3-1EG"/>
+                        <outlet property="sliderWetDryMix" destination="oW0-Ro-Fpm" id="pvd-0b-SNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2g-JJ-p6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
