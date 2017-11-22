@@ -33,6 +33,8 @@
     
     [self.pickerReverb selectRow:self.settings.selectedReverb inComponent:0 animated:YES];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
