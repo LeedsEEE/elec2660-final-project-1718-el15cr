@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060053591FC5792100954AC2 /* settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 060053581FC5792100954AC2 /* settings.m */; };
 		063FE0D71FBF2FE700620A64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0D61FBF2FE700620A64 /* main.m */; };
 		063FE0DA1FBF2FE700620A64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0D91FBF2FE700620A64 /* AppDelegate.m */; };
 		063FE0DD1FBF2FE700620A64 /* InterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0DC1FBF2FE700620A64 /* InterfaceViewController.m */; };
@@ -47,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060053561FC5763400954AC2 /* Nice-Keys-Ultimate-V2.3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nice-Keys-Ultimate-V2.3.sf2"; sourceTree = "<group>"; };
+		060053571FC5792100954AC2 /* settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = settings.h; path = ../settings.h; sourceTree = "<group>"; };
+		060053581FC5792100954AC2 /* settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = settings.m; path = ../settings.m; sourceTree = "<group>"; };
 		063FE0D21FBF2FE700620A64 /* S+H.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "S+H.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		063FE0D61FBF2FE700620A64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		063FE0D81FBF2FE700620A64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				063FE0DE1FBF2FE700620A64 /* Main.storyboard */,
 				063FE10B1FBF37A900620A64 /* audioEngine.h */,
 				063FE10C1FBF37A900620A64 /* audioEngine.m */,
+				060053571FC5792100954AC2 /* settings.h */,
+				060053581FC5792100954AC2 /* settings.m */,
 				063FE0E11FBF2FE700620A64 /* Assets.xcassets */,
 				063FE0E31FBF2FE700620A64 /* LaunchScreen.storyboard */,
 				063FE0E61FBF2FE700620A64 /* Info.plist */,
@@ -156,6 +162,7 @@
 		063FE0D51FBF2FE700620A64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				060053561FC5763400954AC2 /* Nice-Keys-Ultimate-V2.3.sf2 */,
 				F212DCD01FC4CB550099DE7B /* Nice-Keys-Ultimate-V2.3.sf2 */,
 				063FE0D61FBF2FE700620A64 /* main.m */,
 			);
@@ -349,6 +356,7 @@
 			files = (
 				068113CB1FC438C200E07608 /* Instrument2ViewController.m in Sources */,
 				068113C81FC438AE00E07608 /* DelayViewController.m in Sources */,
+				060053591FC5792100954AC2 /* settings.m in Sources */,
 				068113C51FC438A000E07608 /* DrumsViewController.m in Sources */,
 				063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */,
 				063FE0DD1FBF2FE700620A64 /* InterfaceViewController.m in Sources */,

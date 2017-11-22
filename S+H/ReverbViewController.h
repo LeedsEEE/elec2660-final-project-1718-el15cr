@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "InterfaceViewController.h"
+#import "settings.h"
 
 @interface ReverbViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property audioEngine *audioEngine;
+@property settings *settings; 
+
 @property NSArray *pickerReverbData;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerReverb;
