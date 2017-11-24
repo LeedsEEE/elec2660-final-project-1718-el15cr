@@ -18,15 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    
-    self.navigationItem.hidesBackButton = NO;
-    
-    self.pickerInstrument1Data = @[@"Piano", @"Bass",@"Bass 2"];
-    
     self.pickerInstrument1.delegate = self;
     self.pickerInstrument1.dataSource = self;
     
-    self.audioEngine.octave = 4;
+    self.audioEngine.octave = self.audioEngine.octave;
     
 }
 
@@ -52,14 +47,14 @@
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    return self.pickerInstrument1Data.count;
+    return self.settings.pickerInstrument1Data.count;
     
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     
-    return self.pickerInstrument1Data[row];
+    return self.settings.pickerInstrument1Data[row];
     
 }
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+
 @interface audioEngine : NSObject
 
 @property AVAudioSession *audioSession;
@@ -81,7 +82,8 @@
 
 -(void) sendsForDirectOut: (float)directInstrument1 : (float)directInstrument2 : (float)directDrums : (float)directMicrohpone;
 
-
+-(void) changeReverb: (NSInteger) selectedReverb;
+-(void) changeDistortion: (NSInteger) selectedDistortion;
 
 
 @end

@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.audioEngine = [[audioEngine alloc]init];
+    self.settings = [[settings alloc]init];
 }
 
 
@@ -33,6 +34,12 @@
     
     ViewController *controller = [segue destinationViewController];
     controller.audioEngine = self.audioEngine;
+    
+     if ([[segue identifier] isEqualToString:@"settings"]){
+         
+         controller.settings = self.settings; 
+         
+     }
     
 }
 

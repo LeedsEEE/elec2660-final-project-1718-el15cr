@@ -17,11 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.settings = [settings alloc];
-    
-    self.pickerReverbData = @[@"Hall", @"Church",@"Drums Reverb"];
-    
+
     self.pickerReverb.delegate = self;
     self.pickerReverb.dataSource = self;
     
@@ -32,9 +28,7 @@
     self.sliderMicrophone.value = self.audioEngine.sendReverbMicrophone.volume;
     
     [self.pickerReverb selectRow:self.settings.selectedReverb inComponent:0 animated:YES];
-    
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +45,10 @@
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     self.settings.selectedReverb = [self.pickerReverb selectedRowInComponent:0];
+
+    [self.audioEngine changeReverb:self.settings.selectedReverb];
     
+    NSLog(@"Reverb selected: %@",self.settings.pickerReverbData[row]);
     
 }
 
@@ -64,14 +61,14 @@
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    return self.pickerReverbData.count;
+    return self.settings.pickerReverbData.count;
     
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    
-    return self.pickerReverbData[row];
+
+    return self.settings.pickerReverbData[row];
     
 }
 

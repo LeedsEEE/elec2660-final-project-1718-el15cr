@@ -70,6 +70,7 @@
 		063FE10B1FBF37A900620A64 /* audioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audioEngine.h; sourceTree = "<group>"; };
 		063FE10C1FBF37A900620A64 /* audioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = audioEngine.m; sourceTree = "<group>"; };
 		063FE10F1FBF380D00620A64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		064570661FC6FA6E00E53DAC /* Nice-Keys-Ultimate-V2.3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nice-Keys-Ultimate-V2.3.sf2"; sourceTree = "<group>"; };
 		068113C31FC438A000E07608 /* DrumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrumsViewController.h; sourceTree = "<group>"; };
 		068113C41FC438A000E07608 /* DrumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrumsViewController.m; sourceTree = "<group>"; };
 		068113C61FC438AE00E07608 /* DelayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayViewController.h; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		063FE0D51FBF2FE700620A64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				064570661FC6FA6E00E53DAC /* Nice-Keys-Ultimate-V2.3.sf2 */,
 				060053561FC5763400954AC2 /* Nice-Keys-Ultimate-V2.3.sf2 */,
 				F212DCD01FC4CB550099DE7B /* Nice-Keys-Ultimate-V2.3.sf2 */,
 				063FE0D61FBF2FE700620A64 /* main.m */,

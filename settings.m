@@ -1,4 +1,4 @@
-//
+ //
 //  settings.m
 //  S+H
 //
@@ -8,6 +8,7 @@
 
 #import "settings.h"
 
+
 @implementation settings
 
 - (instancetype)init
@@ -15,30 +16,23 @@
     self = [super init];
     if (self) {
         
-
+        self.selectedReverb = 0;
+        self.selectedDistortion =0;
+        self.selectedInstrument1 =0;
+        self.selectedInstrument2 =0;
+        self.selectedDrums =0;
         
+        self.pickerReverbData = @[@"Small Room", @"Medium Room",@"Large Room",@"Large Room 2",@"Meduim Hall",@"Medium Hall 2",@"Meduim Hall 3",@"Large Hall",@"Large Hall 2",@"Medium Chamber",@"Large Chamber",@"Plate",@"Cathedral"];
+        
+        self.pickerDistortionData = @[@"Drums Bit Brush", @"Drums Buffer Beats",@"Drums Lo-Fi",@"Multi Broken Speaker", @"Multi Cellphone Concert",@"Multi Decimated 1", @"Multi Decimated 2",@"Multi Decimated 3",@"Multi Decimated 4", @"Multi Distorted Funk",@"Multi Distorted Cubed",@"Multi Distorted Squared", @"Multi Echo 1",@"Multi Echo 2",@"Multi Echo Tight 1", @"Multi Echo Tight 2",@"Multi Everything Is Broken",@"Speech Alien Chatter",@"Speech Cosmic Interference",@"Speech Golden Pi",@"Speech Radio Tower",@"Speech Waves"];
+        
+        self.pickerInstrument1Data = @[@"Piano", @"Bass",@"Bass 2"];
+        
+
         
     }
     return self;
 }
 
-
--(void) changeReverb {
-    
-    if (self.selectedReverb == 0){
-        
-        [self.audioEngine.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetPlate];
-        
-    } else if (self.selectedReverb == 1) {
-        
-        [self.audioEngine.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeChamber];
-        
-    } else if (self.selectedReverb == 2) {
-        
-        [self.audioEngine.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
-        
-    }
-    
-}
 
 @end

@@ -11,15 +11,20 @@
 
 @interface settings : NSObject
 
-@property audioEngine *audioEngine; 
+@property audioEngine *audioEngine;
 
 @property (nonatomic) NSInteger selectedReverb;
 @property (nonatomic) NSInteger selectedDistortion;
 @property (nonatomic) NSInteger selectedInstrument1;
 @property (nonatomic) NSInteger selectedInstrument2;
-@property (nonatomic) NSInteger selectedDrums;
+@property (nonatomic) NSNumber *selectedDrums;
+
+@property NSArray *pickerReverbData;
+@property NSArray *pickerDistortionData;
+@property NSArray *pickerInstrument1Data;
+@property NSArray *pickerInstrument2Data;
+@property NSArray *pickerDrumsData;
 
 
--(void) changeReverb; 
 
 @end

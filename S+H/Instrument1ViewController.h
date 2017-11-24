@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "InterfaceViewController.h"
+#import "settings.h"
 
 @interface Instrument1ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property audioEngine *audioEngine;
-@property NSArray *pickerInstrument1Data;
+@property settings *settings;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument1;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPan;

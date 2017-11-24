@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "InterfaceViewController.h"
+#import "settings.h"
 
-@interface DistortionViewController : UIViewController
+@interface DistortionViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property audioEngine *audioEngine;
+@property settings *settings;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerDistortion;
 @property (weak, nonatomic) IBOutlet UISlider *sliderDryWetMix;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPreGain;
 @property (weak, nonatomic) IBOutlet UISlider *sliderInstrument1;

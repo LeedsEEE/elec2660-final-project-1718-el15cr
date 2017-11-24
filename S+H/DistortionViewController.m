@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.pickerDistortion.delegate = self;
+    self.pickerDistortion.dataSource = self;
+    
     self.sliderDryWetMix.value = self.audioEngine.audioUnitDistortion.wetDryMix;
     self.sliderPreGain.value = self.audioEngine.audioUnitDistortion.preGain;
     self.sliderInstrument1.value = self.audioEngine.sendDistortionInstrument1.volume;
@@ -25,11 +28,42 @@
     self.sliderDrums.value = self.audioEngine.sendDistortionDrums.volume;
     self.sliderMicrophone.value = self.audioEngine.sendDistortionMicrophone.volume;
     
+    [self.pickerDistortion selectRow:self.settings.selectedDistortion inComponent:0 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    self.settings.selectedDistortion = [self.pickerDistortion selectedRowInComponent:0];
+    
+    [self.audioEngine changeDistortion:self.settings.selectedDistortion];
+    
+    NSLog(@"Distortion selected: %@",self.settings.pickerDistortionData[row]);
+    
+}
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+    
+}
+
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return self.settings.pickerDistortionData.count;
+    
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    return self.settings.pickerDistortionData[row];
+    
 }
 
 /*

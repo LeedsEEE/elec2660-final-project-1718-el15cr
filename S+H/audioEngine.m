@@ -231,12 +231,14 @@
 -(void) loadAudioUnitDefaults {
     
     [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
+    [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechAlienChatter];
     self.audioUnitDistortion.wetDryMix = 0;
     self.audioUnitDelay.delayTime = 0;
     self.audioUnitDelay.wetDryMix = 0;
     self.audioUnitReverb.wetDryMix =0;
     
 }
+
 
 #pragma methods for instument playback
 
@@ -390,6 +392,62 @@
     self.audioUnitReverb.wetDryMix = wetDry;
 }
 
+-(void) changeReverb: (NSInteger) selectedReverb {
+    
+    if (selectedReverb == 0){
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
+        
+    } else if (selectedReverb == 1) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumRoom];
+        
+    } else if (selectedReverb == 2) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom];
+        
+    }  else if (selectedReverb == 3) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom2];
+        
+    } else if (selectedReverb == 4) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall];
+        
+    } else if (selectedReverb == 5) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall2];
+        
+    } else if (selectedReverb == 6) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall3];
+        
+    } else if (selectedReverb == 7) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall];
+        
+    } else if (selectedReverb == 8) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
+        
+    } else if (selectedReverb == 9) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumChamber];
+        
+    } else if (selectedReverb == 10) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeChamber];
+        
+    } else if (selectedReverb == 11) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetPlate];
+        
+    } else if (selectedReverb == 12) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetCathedral];
+    }
+    
+}
 
 -(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
     
@@ -442,6 +500,100 @@
 -(void) audioUnitDistortionPreGain:(float)preGain {
     
     self.audioUnitDistortion.preGain = preGain;
+    
+}
+
+-(void) changeDistortion:(NSInteger)selectedDistortion {
+    
+    if (selectedDistortion == 0){
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBitBrush];
+        
+    } else if (selectedDistortion == 1) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBufferBeats];
+        
+    } else if (selectedDistortion == 2) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsLoFi];
+        
+    } else if (selectedDistortion == 3) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiBrokenSpeaker];
+        
+    } else if (selectedDistortion == 4) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiCellphoneConcert];
+        
+    } else if (selectedDistortion == 5) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated1];
+        
+    } else if (selectedDistortion == 6) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated2];
+        
+    } else if (selectedDistortion == 7) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated3];
+        
+    } else if (selectedDistortion == 8) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated4];
+        
+    } else if (selectedDistortion == 9) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedFunk];
+        
+    } else if (selectedDistortion == 10) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedCubed];
+        
+    } else if (selectedDistortion == 11) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedSquared];
+        
+    } else if (selectedDistortion == 12) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho1];
+        
+    } else if (selectedDistortion == 13) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho2];
+        
+    } else if (selectedDistortion == 14) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight1];
+        
+    } else if (selectedDistortion == 15) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight2];
+        
+    } else if (selectedDistortion == 16) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEverythingIsBroken];
+        
+    } else if (selectedDistortion == 17) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechAlienChatter];
+        
+    } else if (selectedDistortion == 18) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechCosmicInterference];
+        
+    } else if (selectedDistortion == 19) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechGoldenPi];
+        
+    } else if (selectedDistortion == 20) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechRadioTower];
+        
+    } else if (selectedDistortion == 21) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechWaves];
+        
+    }
     
 }
 
