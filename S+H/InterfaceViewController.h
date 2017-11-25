@@ -15,5 +15,9 @@
 @property (nonatomic, strong) audioEngine *audioEngine;
 @property (nonatomic, strong) settings *settings;
 
+
+- (IBAction)didTapPlay:(UIButton *)sender;
+- (IBAction)didTapRecord:(UIButton *)sender;
+
 @end
 

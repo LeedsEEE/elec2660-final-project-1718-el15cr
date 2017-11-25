@@ -14,7 +14,16 @@
 
 @property AVAudioSession *audioSession;
 @property AVAudioEngine *engine;
-@property AVAudioPlayerNode *player;
+@property AVAudioPlayerNode *playerInstument1;
+@property AVAudioPlayerNode *playerInstument2;
+@property AVAudioPlayerNode *playerDrums;
+@property AVAudioPlayerNode *playerMicrophone;
+@property AVAudioPlayerNode *playerMainOut;
+@property AVAudioFile *outputFileInstument1;
+@property AVAudioFile *outputFileInstument2;
+@property AVAudioFile *outputFileDrums;
+@property AVAudioFile *outputFileMicrophone;
+@property AVAudioFile *outputFileMainOut;
 @property AVAudioMixerNode *mainMixer;
 @property AVAudioMixerNode *busReverb;
 @property AVAudioMixerNode *busDistortion;
@@ -46,11 +55,22 @@
 @property (nonatomic, strong) NSURL *samplerInstrument1URL;
 @property (nonatomic, strong) NSURL *samplerInstrument2URL;
 @property (nonatomic, strong) NSURL *samplerIDrumsURL;
+@property (nonatomic, strong) NSURL *outputFileInstument1URL;
+@property (nonatomic, strong) NSURL *outputFileInstument2URL;
+@property (nonatomic, strong) NSURL *outputFileDrumsURL;
+@property (nonatomic, strong) NSURL *outputFileMicrophoneURL;
+@property (nonatomic, strong) NSURL *outputFileMainOutURL;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
 @property (nonatomic) NSInteger octave;
+@property bool isRecordingInstument1;
+@property bool isRecordingInstument2;
+@property bool isRecordingDrums;
+@property bool isRecordingMicrophone;
+@property bool isRecordingMainOut;
+
 
 
 
@@ -84,6 +104,11 @@
 
 -(void) changeReverb: (NSInteger) selectedReverb;
 -(void) changeDistortion: (NSInteger) selectedDistortion;
-
+-(void) startRecordingInstument1;
+-(void) stopRecordingInstument1;
+-(void) startPlayingInstument1;
+-(void) startRecordingMainOut;
+-(void) stopRecordingMainOut;
+-(void) startPlayingMainOut;
 
 @end

@@ -44,4 +44,23 @@
 }
 
 
+- (IBAction)didTapPlay:(UIButton *)sender {
+    
+    [self.audioEngine startPlayingMainOut];
+    
+}
+
+- (IBAction)didTapRecord:(UIButton *)sender {
+    
+    if (self.audioEngine.isRecordingMainOut == false){
+        
+        [self.audioEngine startRecordingMainOut];
+        
+    } else {
+        
+        [self.audioEngine stopRecordingMainOut];
+        
+    }
+    
+}
 @end

@@ -54,6 +54,9 @@
 - (IBAction)didTapOctaveDown:(UIButton *)sender;
 
 - (IBAction)didMoveSliderPan:(UISlider *)sender;
+- (IBAction)didTapPlay:(UIButton *)sender;
+- (IBAction)didTapRecord:(UIButton *)sender;
+
 
 
 @end

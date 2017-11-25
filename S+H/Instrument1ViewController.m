@@ -157,5 +157,25 @@
     
 }
 
+- (IBAction)didTapPlay:(UIButton *)sender {
+    
+    [self.audioEngine startPlayingInstument1];
+    
+}
+
+- (IBAction)didTapRecord:(UIButton *)sender {
+    
+    if (self.audioEngine.isRecordingInstument1 == false) {
+        
+        [self.audioEngine startRecordingInstument1];
+        
+    } else {
+        
+        [self.audioEngine stopRecordingInstument1]; 
+        
+    }
+    
+}
+
 
 @end

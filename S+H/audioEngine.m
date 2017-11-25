@@ -90,7 +90,8 @@
     self.samplerDrums = [[AVAudioUnitSampler alloc]init];
     self.samplerInstrument1 = [[AVAudioUnitSampler alloc]init];
     self.samplerInstrument2 = [[AVAudioUnitSampler alloc]init];
-    self.player = [[AVAudioPlayerNode alloc]init];
+    self.playerMicrophone = [[AVAudioPlayerNode alloc]init];
+    self.playerMainOut = [[AVAudioPlayerNode alloc]init];
     self.mainMixer = [self.engine mainMixerNode] ;
     self.audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
 
@@ -112,7 +113,8 @@
     [self.engine attachNode:self.samplerInstrument1];
     [self.engine attachNode:self.samplerInstrument2];
     [self.engine attachNode:self.samplerDrums];
-    [self.engine attachNode:self.player];
+    [self.engine attachNode:self.playerMicrophone];
+    [self.engine attachNode:self.playerMainOut];
     
     NSLog(@"Nodes attached");
     
@@ -136,7 +138,7 @@
     [self.engine connect:self.samplerInstrument1 toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.samplerInstrument2 toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.samplerDrums toConnectionPoints:self.connectionBusSend3 fromBus:0 format:self.audioFormat];
-    [self.engine connect:self.player toConnectionPoints:self.connectionBusSend4 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.playerMicrophone toConnectionPoints:self.connectionBusSend4 fromBus:0 format:self.audioFormat];
     
     // Connect busses to audio units
     
@@ -150,6 +152,7 @@
     [self.engine connect:self.audioUnitDistortion to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.busDirectOut to:self.mainMixer format:self.audioFormat];
+    [self.engine connect:self.playerMainOut to:self.mainMixer format:self.audioFormat];
 
     
     NSLog(@"Connections created");
@@ -191,10 +194,10 @@
     self.sendDistortionDrums = [self.samplerDrums destinationForMixer:self.busDistortion bus:3];
     self.sendDirectOutDrums = [self.samplerDrums destinationForMixer:self.busDirectOut bus:3];
     
-    self.sendReverbMicrophone = [self.player destinationForMixer:self.busReverb bus:4];
-    self.sendDelayMicrophone = [self.player destinationForMixer:self.busDelay bus:4];
-    self.sendDistortionMicrophone = [self.player destinationForMixer:self.busDistortion bus:4];
-    self.sendDirectOutMicrophone = [self.player destinationForMixer:self.busDirectOut bus:4];
+    self.sendReverbMicrophone = [self.playerMicrophone destinationForMixer:self.busReverb bus:4];
+    self.sendDelayMicrophone = [self.playerMicrophone destinationForMixer:self.busDelay bus:4];
+    self.sendDistortionMicrophone = [self.playerMicrophone destinationForMixer:self.busDistortion bus:4];
+    self.sendDirectOutMicrophone = [self.playerMicrophone destinationForMixer:self.busDirectOut bus:4];
     
 }
 
@@ -606,7 +609,136 @@
     
 }
 
+-(void) startPlayingInstument1 {
+    
+    NSError *error;
+    
+    self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
+    
+    self.outputFileInstument1 = [[AVAudioFile alloc] initForReading:self.outputFileInstument1URL error:&error];
+    
+    if (error){
+        NSLog(@"outputFileInstument1 error %@",error);
+    }
+    
+    AVAudioPCMBuffer *bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
+    
+    if (error){
+        NSLog(@"outputFileInstument1 error %@",error);
+    }
+    
+    [self.outputFileInstument1 readIntoBuffer:bufferInstument1 error:&error];
+    
+    [self.playerInstument1 scheduleBuffer:bufferInstument1 completionHandler:nil];
+    [self.playerInstument1 play];
+    
+}
 
+
+-(void) startRecordingInstument1
+{
+    NSError *error;
+    self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
+    
+    self.outputFileInstument1 = [[AVAudioFile alloc] initForWriting:self.outputFileInstument1URL settings:[[self.samplerInstrument1 outputFormatForBus:0] settings] error:&error];
+    
+    if (error){
+        NSLog(@"outputFileInstument1 error %@",error);
+    }
+    
+    [self.samplerInstrument1 installTapOnBus:0 bufferSize:4096 format:[self.samplerInstrument1 outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
+        
+        NSError *error;
+        
+        [self.outputFileInstument1 writeFromBuffer:buffer error:&error];
+        
+        if (error){
+            NSLog(@"outputFileInstument1 buffer error %@",error);
+        }
+        
+    }];
+    self.isRecordingInstument1 = YES;
+}
+
+-(void) stopRecordingInstument1
+{
+    if (self.isRecordingInstument1) {
+        [self.samplerInstrument1 removeTapOnBus:0];
+        self.isRecordingInstument1 = NO;
+        
+    }
+}
+
+-(void) startPlayingMainOut {
+    
+    NSError *error;
+    
+    self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
+    
+    self.outputFileMainOut = [[AVAudioFile alloc] initForReading:self.outputFileMainOutURL error:&error];
+    
+    if (error){
+        NSLog(@"outputFileMainOut error %@",error);
+    }
+    
+    AVAudioPCMBuffer *bufferMainOut= [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileMainOut.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileMainOut.length];
+    
+    if (error){
+        NSLog(@"outputFileMainOut error %@",error);
+    }
+    
+    [self.outputFileMainOut readIntoBuffer:bufferMainOut error:&error];
+    
+    [self.playerMainOut scheduleBuffer:bufferMainOut completionHandler:nil];
+    
+    if (self.playerMainOut.isPlaying == false) {
+        
+        [self.playerMainOut play];
+        
+    } else {
+        
+        [self.playerMainOut stop];
+        
+    }
+    
+    
+    
+}
+
+
+-(void) startRecordingMainOut
+{
+    NSError *error;
+    self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
+    
+    self.outputFileMainOut = [[AVAudioFile alloc] initForWriting:self.outputFileMainOutURL settings:[[self.mainMixer outputFormatForBus:0] settings] error:&error];
+    
+    if (error){
+        NSLog(@"outputFileMainOut error %@",error);
+    }
+    
+    [self.mainMixer installTapOnBus:0 bufferSize:4096 format:[self.mainMixer outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
+        
+        NSError *error;
+        
+        [self.outputFileMainOut writeFromBuffer:buffer error:&error];
+        
+        if (error){
+            NSLog(@"outputFileMainOut buffer error %@",error);
+        }
+        
+    }];
+    self.isRecordingMainOut = YES;
+}
+
+-(void) stopRecordingMainOut
+{
+    if (self.isRecordingInstument1) {
+        [self.mainMixer removeTapOnBus:0];
+        self.isRecordingMainOut = NO;
+        
+    }
+}
 
 
 @end
