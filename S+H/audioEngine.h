@@ -52,6 +52,18 @@
 @property AVAudioMixingDestination *sendDirectOutInstrument2;
 @property AVAudioMixingDestination *sendDirectOutDrums;
 @property AVAudioMixingDestination *sendDirectOutMicrophone;
+@property AVAudioMixingDestination *sendReverbPlayerInstrument1;
+@property AVAudioMixingDestination *sendDelayPlayerInstrument1;
+@property AVAudioMixingDestination *sendDistortionPlayerInstrument1;
+@property AVAudioMixingDestination *sendDirectOutPlayerInstrument1;
+@property AVAudioMixingDestination *sendReverbPlayerInstrument2;
+@property AVAudioMixingDestination *sendDelayPlayerInstrument2;
+@property AVAudioMixingDestination *sendDistortionPlayerInstrument2;
+@property AVAudioMixingDestination *sendDirectOutPlayerInstrument2;
+@property AVAudioMixingDestination *sendReverbPlayerDrums;
+@property AVAudioMixingDestination *sendDelayPlayerDrums;
+@property AVAudioMixingDestination *sendDistortionPlayerDrums;
+@property AVAudioMixingDestination *sendDirectOutPlayerDrums;
 @property (nonatomic, strong) NSURL *samplerInstrument1URL;
 @property (nonatomic, strong) NSURL *samplerInstrument2URL;
 @property (nonatomic, strong) NSURL *samplerIDrumsURL;
@@ -64,12 +76,16 @@
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend4;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend5;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend6;
+@property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend7;
 @property (nonatomic) NSInteger octave;
 @property bool isRecordingInstument1;
 @property bool isRecordingInstument2;
 @property bool isRecordingDrums;
 @property bool isRecordingMicrophone;
 @property bool isRecordingMainOut;
+@property BOOL isLoop; 
 
 
 
@@ -104,9 +120,14 @@
 
 -(void) changeReverb: (NSInteger) selectedReverb;
 -(void) changeDistortion: (NSInteger) selectedDistortion;
+-(void) changeInstrument1: (NSInteger) selectedInstument1;
+-(void) changeInstrument2: (NSInteger) selectedInstument2;
+-(void) changeDrums: (NSInteger) selectedDrums;
+
 -(void) startRecordingInstument1;
 -(void) stopRecordingInstument1;
 -(void) startPlayingInstument1;
+-(void) loopInstrument1: (BOOL) isLoop;
 -(void) startRecordingMainOut;
 -(void) stopRecordingMainOut;
 -(void) startPlayingMainOut;

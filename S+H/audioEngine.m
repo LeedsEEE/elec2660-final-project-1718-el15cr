@@ -92,6 +92,9 @@
     self.samplerInstrument2 = [[AVAudioUnitSampler alloc]init];
     self.playerMicrophone = [[AVAudioPlayerNode alloc]init];
     self.playerMainOut = [[AVAudioPlayerNode alloc]init];
+    self.playerInstument1 = [[AVAudioPlayerNode alloc]init];
+    self.playerInstument2 = [[AVAudioPlayerNode alloc]init];
+    self.playerDrums = [[AVAudioPlayerNode alloc]init];
     self.mainMixer = [self.engine mainMixerNode] ;
     self.audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
 
@@ -115,6 +118,9 @@
     [self.engine attachNode:self.samplerDrums];
     [self.engine attachNode:self.playerMicrophone];
     [self.engine attachNode:self.playerMainOut];
+    [self.engine attachNode:self.playerInstument1];
+    [self.engine attachNode:self.playerInstument2];
+    [self.engine attachNode:self.playerDrums];
     
     NSLog(@"Nodes attached");
     
@@ -132,6 +138,9 @@
     self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
     self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
     self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:4],nil ];
+    self.connectionBusSend5 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:5],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:5],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:5],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:5],nil ];
+    self.connectionBusSend6 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:6],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:6],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:6],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:6],nil ];
+    self.connectionBusSend7 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:7],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:7],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:7],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:7],nil ];
 
     // Connect the instumnets to the connecton points that have been created in the array
     
@@ -139,6 +148,9 @@
     [self.engine connect:self.samplerInstrument2 toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.samplerDrums toConnectionPoints:self.connectionBusSend3 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.playerMicrophone toConnectionPoints:self.connectionBusSend4 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.playerInstument1 toConnectionPoints:self.connectionBusSend5 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.playerInstument2 toConnectionPoints:self.connectionBusSend6 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.playerDrums toConnectionPoints:self.connectionBusSend7 fromBus:0 format:self.audioFormat];
     
     // Connect busses to audio units
     
@@ -184,15 +196,30 @@
     self.sendDistortionInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDistortion bus:1];
     self.sendDirectOutInstrument1 = [self.samplerInstrument1 destinationForMixer:self.busDirectOut bus:1];
     
+    self.sendReverbPlayerInstrument1 = [self.playerInstument1 destinationForMixer:self.busReverb bus:5];
+    self.sendDelayPlayerInstrument1 = [self.playerInstument1 destinationForMixer:self.busDelay bus:5];
+    self.sendDistortionPlayerInstrument1 = [self.playerInstument1 destinationForMixer:self.busDistortion bus:5];
+    self.sendDirectOutPlayerInstrument1 = [self.playerInstument1 destinationForMixer:self.busDirectOut bus:5];
+    
     self.sendReverbInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busReverb bus:2];
     self.sendDelayInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDelay bus:2];
     self.sendDistortionInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDistortion bus:2];
     self.sendDirectOutInstrument2 = [self.samplerInstrument2 destinationForMixer:self.busDirectOut bus:2];
     
+    self.sendReverbPlayerInstrument2 = [self.playerInstument2 destinationForMixer:self.busReverb bus:6];
+    self.sendDelayPlayerInstrument2 = [self.playerInstument2 destinationForMixer:self.busDelay bus:6];
+    self.sendDistortionPlayerInstrument2 = [self.playerInstument2 destinationForMixer:self.busDistortion bus:6];
+    self.sendDirectOutPlayerInstrument2 = [self.playerInstument2 destinationForMixer:self.busDirectOut bus:6];
+    
     self.sendReverbDrums = [self.samplerDrums destinationForMixer:self.busReverb bus:3];
     self.sendDelayDrums = [self.samplerDrums destinationForMixer:self.busDelay bus:3];
     self.sendDistortionDrums = [self.samplerDrums destinationForMixer:self.busDistortion bus:3];
     self.sendDirectOutDrums = [self.samplerDrums destinationForMixer:self.busDirectOut bus:3];
+    
+    self.sendReverbPlayerDrums = [self.playerDrums destinationForMixer:self.busReverb bus:7];
+    self.sendDelayPlayerDrums = [self.playerDrums destinationForMixer:self.busDelay bus:7];
+    self.sendDistortionPlayerDrums = [self.playerDrums destinationForMixer:self.busDistortion bus:7];
+    self.sendDirectOutPlayerDrums = [self.playerDrums destinationForMixer:self.busDirectOut bus:7];
     
     self.sendReverbMicrophone = [self.playerMicrophone destinationForMixer:self.busReverb bus:4];
     self.sendDelayMicrophone = [self.playerMicrophone destinationForMixer:self.busDelay bus:4];
@@ -205,9 +232,9 @@
     
     NSError *error;
     
-    self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Nice-Keys-Ultimate-V2.3" ofType:@"sf2"]];
+    self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
     
-    [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:1 bankMSB:0x79 bankLSB:0 error:&error];
+    [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Instrument 1 failed to load samples %@",error);
@@ -384,6 +411,7 @@
 -(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
     
     self.sendReverbInstrument1.volume = reverbInstrument1;
+    self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
     self.sendReverbInstrument2.volume = reverbInstrument2;
     self.sendReverbDrums.volume = reverbDrums;
     self.sendReverbMicrophone.volume = reverbMicrohpone;
@@ -455,6 +483,7 @@
 -(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
     
     self.sendDelayInstrument1.volume = delayInstrument1;
+    self.sendDelayPlayerInstrument1.volume = delayInstrument1;
     self.sendDelayInstrument2.volume = delayInstrument2;
     self.sendDelayDrums.volume = delayDrums;
     self.sendDelayMicrophone.volume = delayMicrohpone;
@@ -488,6 +517,7 @@
 -(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
     
     self.sendDistortionInstrument1.volume = distortionInstrument1;
+    self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
     self.sendDistortionInstrument2.volume = distortionInstrument2;
     self.sendDistortionDrums.volume = distortionDrums;
     self.sendDistortionMicrophone.volume = distortionMicrohpone;
@@ -603,35 +633,112 @@
 -(void) sendsForDirectOut:(float)directInstrument1 :(float)directInstrument2 :(float)directDrums :(float)directMicrohpone{
     
     self.sendDirectOutInstrument1.volume = directInstrument1;
+    self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
     self.sendDirectOutInstrument2.volume = directInstrument2;
     self.sendDirectOutDrums.volume = directDrums;
     self.sendDirectOutMicrophone.volume = directMicrohpone;
     
 }
 
+
+-(void) changeInstrument1:(NSInteger)selectedInstument1 {
+    
+    NSError *error;
+    
+    if (selectedInstument1 == 0){
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 1) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:1 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 2) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:11 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 3) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:19 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 4) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:40 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 5) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:41 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 6) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:52 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 7) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:79 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 8) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument1 == 9) {
+        
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:86 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    }
+    
+    
+}
+
+
 -(void) startPlayingInstument1 {
     
     NSError *error;
+    
+    if (self.isRecordingInstument1 == YES){
+        
+        [self stopRecordingInstument1];
+        
+    }
     
     self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
     
     self.outputFileInstument1 = [[AVAudioFile alloc] initForReading:self.outputFileInstument1URL error:&error];
     
     if (error){
-        NSLog(@"outputFileInstument1 error %@",error);
+        NSLog(@"outputFileInstument1 file player error %@",error);
     }
     
     AVAudioPCMBuffer *bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
     
     if (error){
-        NSLog(@"outputFileInstument1 error %@",error);
+        NSLog(@"outputFileInstument1 buffer player error %@",error);
+    }
+    
+    if (self.isLoop == true){
+        
+        [self.playerInstument1 scheduleBuffer:bufferInstument1 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
+        
+    } else {
+        
+        [self.playerInstument1 scheduleBuffer:bufferInstument1 completionHandler:nil];
     }
     
     [self.outputFileInstument1 readIntoBuffer:bufferInstument1 error:&error];
     
-    [self.playerInstument1 scheduleBuffer:bufferInstument1 completionHandler:nil];
-    [self.playerInstument1 play];
-    
+    if (self.playerInstument1.isPlaying == false) {
+        
+        [self.playerInstument1 play];
+        
+        NSLog(@"Playing Instrument1 player");
+        
+    } else {
+        
+        [self.playerInstument1 stop];
+        
+        NSLog(@"Stopping Instrument1 player");
+        
+    }
 }
 
 
@@ -643,7 +750,7 @@
     self.outputFileInstument1 = [[AVAudioFile alloc] initForWriting:self.outputFileInstument1URL settings:[[self.samplerInstrument1 outputFormatForBus:0] settings] error:&error];
     
     if (error){
-        NSLog(@"outputFileInstument1 error %@",error);
+        NSLog(@"outputFileInstument1 file recording error %@",error);
     }
     
     [self.samplerInstrument1 installTapOnBus:0 bufferSize:4096 format:[self.samplerInstrument1 outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
@@ -653,11 +760,14 @@
         [self.outputFileInstument1 writeFromBuffer:buffer error:&error];
         
         if (error){
-            NSLog(@"outputFileInstument1 buffer error %@",error);
+            NSLog(@"outputFileInstument1 buffer recording error %@",error);
         }
+
         
     }];
     self.isRecordingInstument1 = YES;
+    
+    NSLog(@"Recording started on Instrument1");
 }
 
 -(void) stopRecordingInstument1
@@ -666,6 +776,7 @@
         [self.samplerInstrument1 removeTapOnBus:0];
         self.isRecordingInstument1 = NO;
         
+        NSLog(@"Recording stopped on Instrument1");
     }
 }
 
@@ -673,18 +784,24 @@
     
     NSError *error;
     
+    if (self.isRecordingMainOut == YES){
+        
+        [self stopRecordingMainOut];
+        
+    }
+    
     self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
     
     self.outputFileMainOut = [[AVAudioFile alloc] initForReading:self.outputFileMainOutURL error:&error];
     
     if (error){
-        NSLog(@"outputFileMainOut error %@",error);
+        NSLog(@"outputFileMainOut file player error %@",error);
     }
     
     AVAudioPCMBuffer *bufferMainOut= [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileMainOut.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileMainOut.length];
     
     if (error){
-        NSLog(@"outputFileMainOut error %@",error);
+        NSLog(@"outputFileMainOut buffer player error %@",error);
     }
     
     [self.outputFileMainOut readIntoBuffer:bufferMainOut error:&error];
@@ -695,9 +812,13 @@
         
         [self.playerMainOut play];
         
+        NSLog(@"Playing main out player");
+        
     } else {
         
         [self.playerMainOut stop];
+        
+        NSLog(@"Stopping main out player");
         
     }
     
@@ -714,7 +835,7 @@
     self.outputFileMainOut = [[AVAudioFile alloc] initForWriting:self.outputFileMainOutURL settings:[[self.mainMixer outputFormatForBus:0] settings] error:&error];
     
     if (error){
-        NSLog(@"outputFileMainOut error %@",error);
+        NSLog(@"outputFileMainOut file recording error %@",error);
     }
     
     [self.mainMixer installTapOnBus:0 bufferSize:4096 format:[self.mainMixer outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
@@ -724,18 +845,25 @@
         [self.outputFileMainOut writeFromBuffer:buffer error:&error];
         
         if (error){
-            NSLog(@"outputFileMainOut buffer error %@",error);
+            NSLog(@"outputFileMainOut buffer recording error %@",error);
+            [self stopRecordingMainOut];
+            self.isRecordingMainOut = NO;
         }
         
     }];
+    
     self.isRecordingMainOut = YES;
+    
+    NSLog(@"Recording started on main out ");
 }
 
 -(void) stopRecordingMainOut
 {
-    if (self.isRecordingInstument1) {
+    if (self.isRecordingMainOut) {
         [self.mainMixer removeTapOnBus:0];
         self.isRecordingMainOut = NO;
+        
+        NSLog(@"Recording stopped on main out");
         
     }
 }

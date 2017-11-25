@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument1;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPan;
+@property (weak, nonatomic) IBOutlet UISwitch *switchLoop;
 
 // If the button is taped down then play the note
 
@@ -56,6 +57,8 @@
 - (IBAction)didMoveSliderPan:(UISlider *)sender;
 - (IBAction)didTapPlay:(UIButton *)sender;
 - (IBAction)didTapRecord:(UIButton *)sender;
+
+- (IBAction)didTapSwitchLoop:(UISwitch *)sender;
 
 
 

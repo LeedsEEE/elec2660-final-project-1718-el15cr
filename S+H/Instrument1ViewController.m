@@ -23,6 +23,8 @@
     
     self.audioEngine.octave = self.audioEngine.octave;
     
+    [self.pickerInstrument1 selectRow:self.settings.selectedInstrument1 inComponent:0 animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +39,15 @@
     
 }
 
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    self.settings.selectedInstrument1 = [self.pickerInstrument1 selectedRowInComponent:0];
+    
+    [self.audioEngine changeInstrument1:self.settings.selectedInstrument1];
+    
+    NSLog(@"Instrument 1 selected: %@",self.settings.pickerInstrument1Data[row]);
+    
+}
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
@@ -145,10 +156,14 @@
 
 - (IBAction)didTapOctaveUp:(UIButton *)sender {
     self.audioEngine.octave = self.audioEngine.octave+1;
+    
+    NSLog(@"Octave: %li",(long)self.audioEngine.octave);
 }
 
 - (IBAction)didTapOctaveDown:(UIButton *)sender {
     self.audioEngine.octave = self.audioEngine.octave-1;
+    
+    NSLog(@"Octave: %li",(long)self.audioEngine.octave);
 }
 
 - (IBAction)didMoveSliderPan:(UISlider *)sender {
@@ -160,6 +175,7 @@
 - (IBAction)didTapPlay:(UIButton *)sender {
     
     [self.audioEngine startPlayingInstument1];
+    self.audioEngine.isLoop = self.switchLoop.isOn;
     
 }
 
@@ -174,6 +190,12 @@
         [self.audioEngine stopRecordingInstument1]; 
         
     }
+    
+}
+
+- (IBAction)didTapSwitchLoop:(UISwitch *)sender {
+    
+    self.audioEngine.isLoop = self.switchLoop.isOn;
     
 }
 

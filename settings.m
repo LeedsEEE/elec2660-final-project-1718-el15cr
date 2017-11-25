@@ -26,7 +26,7 @@
         
         self.pickerDistortionData = @[@"Drums Bit Brush", @"Drums Buffer Beats",@"Drums Lo-Fi",@"Multi Broken Speaker", @"Multi Cellphone Concert",@"Multi Decimated 1", @"Multi Decimated 2",@"Multi Decimated 3",@"Multi Decimated 4", @"Multi Distorted Funk",@"Multi Distorted Cubed",@"Multi Distorted Squared", @"Multi Echo 1",@"Multi Echo 2",@"Multi Echo Tight 1", @"Multi Echo Tight 2",@"Multi Everything Is Broken",@"Speech Alien Chatter",@"Speech Cosmic Interference",@"Speech Golden Pi",@"Speech Radio Tower",@"Speech Waves"];
         
-        self.pickerInstrument1Data = @[@"Piano", @"Bass",@"Bass 2"];
+        self.pickerInstrument1Data = @[@"Piano 1", @"Piano 2",@"Xylophone",@"Church Organ",@"Violin",@"Viola",@"Choir Aahs",@"Ocarina",@"Chiffer Lead",@"5th Saw Wave"];
         
 
         

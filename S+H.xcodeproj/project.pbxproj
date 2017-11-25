@@ -26,7 +26,7 @@
 		068113D41FC438F900E07608 /* MicrophoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D31FC438F900E07608 /* MicrophoneViewController.m */; };
 		068113D71FC4391700E07608 /* MainMixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D61FC4391700E07608 /* MainMixViewController.m */; };
 		068113DA1FC43D1A00E07608 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D91FC43D1A00E07608 /* SettingsViewController.m */; };
-		F207513D1FC99CA400BDC19B /* Nice-Keys-Ultimate-V2.3.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F207513C1FC98E6900BDC19B /* Nice-Keys-Ultimate-V2.3.sf2 */; };
+		F20751411FC9CC9600BDC19B /* Chaos Bank V1.9 (12Mb).sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */; };
 		F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2587C061FC2000C0096461C /* Instrument1ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +85,7 @@
 		068113D61FC4391700E07608 /* MainMixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMixViewController.m; sourceTree = "<group>"; };
 		068113D81FC43D1A00E07608 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		068113D91FC43D1A00E07608 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		F207513C1FC98E6900BDC19B /* Nice-Keys-Ultimate-V2.3.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nice-Keys-Ultimate-V2.3.sf2"; sourceTree = "<group>"; };
+		F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chaos Bank V1.9 (12Mb).sf2"; sourceTree = "<group>"; };
 		F2587C051FC2000C0096461C /* Instrument1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument1ViewController.h; sourceTree = "<group>"; };
 		F2587C061FC2000C0096461C /* Instrument1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,7 +161,7 @@
 		063FE0D51FBF2FE700620A64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F207513C1FC98E6900BDC19B /* Nice-Keys-Ultimate-V2.3.sf2 */,
+				F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */,
 				063FE0D61FBF2FE700620A64 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -324,7 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F207513D1FC99CA400BDC19B /* Nice-Keys-Ultimate-V2.3.sf2 in Resources */,
+				F20751411FC9CC9600BDC19B /* Chaos Bank V1.9 (12Mb).sf2 in Resources */,
 				063FE0E51FBF2FE700620A64 /* LaunchScreen.storyboard in Resources */,
 				063FE0E21FBF2FE700620A64 /* Assets.xcassets in Resources */,
 				063FE0E01FBF2FE700620A64 /* Main.storyboard in Resources */,
