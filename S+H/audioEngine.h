@@ -25,6 +25,7 @@
 @property AVAudioFile *outputFileMicrophone;
 @property AVAudioFile *outputFileMainOut;
 @property AVAudioMixerNode *mainMixer;
+@property AVAudioInputNode *inputMicrophone;
 @property AVAudioMixerNode *busReverb;
 @property AVAudioMixerNode *busDistortion;
 @property AVAudioMixerNode *busDelay;
@@ -32,10 +33,15 @@
 @property AVAudioUnitDelay *audioUnitDelay;
 @property AVAudioUnitReverb *audioUnitReverb;
 @property AVAudioUnitDistortion *audioUnitDistortion;
+@property AVAudioUnitTimePitch *audioUnitTimePitch;
 @property AVAudioUnitSampler *samplerDrums;
 @property AVAudioUnitSampler *samplerInstrument1;
 @property AVAudioUnitSampler *samplerInstrument2;
 @property AVAudioFormat *audioFormat;
+@property AVAudioPCMBuffer *bufferInstument1;
+@property AVAudioPCMBuffer *bufferInstument2;
+@property AVAudioPCMBuffer *bufferDrums;
+@property AVAudioPCMBuffer *bufferMicrophone;
 @property AVAudioMixingDestination *sendReverbInstrument1;
 @property AVAudioMixingDestination *sendReverbInstrument2;
 @property AVAudioMixingDestination *sendReverbDrums;
@@ -85,9 +91,10 @@
 @property bool isRecordingDrums;
 @property bool isRecordingMicrophone;
 @property bool isRecordingMainOut;
-@property BOOL isLoop; 
-
-
+@property BOOL isLoopInstument1;
+@property BOOL isLoopInstument2;
+@property BOOL isLoopDrums;
+@property BOOL isLoopMicrophone;
 
 
 -(void) createSession;
@@ -116,6 +123,10 @@
 -(void) audioUnitDistortionPreGain: (float) preGain;
 -(void) audioUnitDistortionWetDry: (float) wetDry;
 
+-(void) audioUnitTimePitchRate: (float) rate;
+-(void) audioUnitTimePitchOverlap: (float) overlap;
+-(void) audioUnitTimePitch: (float) pitch;
+
 -(void) sendsForDirectOut: (float)directInstrument1 : (float)directInstrument2 : (float)directDrums : (float)directMicrohpone;
 
 -(void) changeReverb: (NSInteger) selectedReverb;
@@ -131,5 +142,9 @@
 -(void) startRecordingMainOut;
 -(void) stopRecordingMainOut;
 -(void) startPlayingMainOut;
+
+-(void) startRecordingMicrophone;
+-(void) stopRecordingMicrophone;
+-(void) startPlayingMicrophone;
 
 @end

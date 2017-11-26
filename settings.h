@@ -17,7 +17,7 @@
 @property (nonatomic) NSInteger selectedDistortion;
 @property (nonatomic) NSInteger selectedInstrument1;
 @property (nonatomic) NSInteger selectedInstrument2;
-@property (nonatomic) NSNumber *selectedDrums;
+@property (nonatomic) NSInteger selectedDrums;
 
 @property NSArray *pickerReverbData;
 @property NSArray *pickerDistortionData;

@@ -12,5 +12,6 @@
 @interface DrumsViewController : UIViewController
 
 @property audioEngine *audioEngine;
+@property settings *settings; 
 
 @end

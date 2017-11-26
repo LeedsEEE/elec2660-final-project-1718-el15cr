@@ -95,7 +95,9 @@
     self.playerInstument1 = [[AVAudioPlayerNode alloc]init];
     self.playerInstument2 = [[AVAudioPlayerNode alloc]init];
     self.playerDrums = [[AVAudioPlayerNode alloc]init];
-    self.mainMixer = [self.engine mainMixerNode] ;
+    self.mainMixer = [self.engine mainMixerNode];
+    self.audioUnitTimePitch = [[AVAudioUnitTimePitch alloc]init];
+    self.inputMicrophone = [self.engine inputNode];
     self.audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
 
     NSLog(@"Engine created");
@@ -121,6 +123,7 @@
     [self.engine attachNode:self.playerInstument1];
     [self.engine attachNode:self.playerInstument2];
     [self.engine attachNode:self.playerDrums];
+    [self.engine attachNode:self.audioUnitTimePitch];
     
     NSLog(@"Nodes attached");
     
@@ -147,7 +150,8 @@
     [self.engine connect:self.samplerInstrument1 toConnectionPoints:self.connectionBusSend1 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.samplerInstrument2 toConnectionPoints:self.connectionBusSend2 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.samplerDrums toConnectionPoints:self.connectionBusSend3 fromBus:0 format:self.audioFormat];
-    [self.engine connect:self.playerMicrophone toConnectionPoints:self.connectionBusSend4 fromBus:0 format:self.audioFormat];
+    [self.engine connect:self.playerMicrophone to:self.audioUnitTimePitch format:self.audioFormat];
+    [self.engine connect:self.audioUnitTimePitch toConnectionPoints:self.connectionBusSend4 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.playerInstument1 toConnectionPoints:self.connectionBusSend5 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.playerInstument2 toConnectionPoints:self.connectionBusSend6 fromBus:0 format:self.audioFormat];
     [self.engine connect:self.playerDrums toConnectionPoints:self.connectionBusSend7 fromBus:0 format:self.audioFormat];
@@ -240,21 +244,22 @@
         NSLog(@"Instrument 1 failed to load samples %@",error);
     }
     
-    //self.samplerInstrument2URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"" ofType:@""]];
+    self.samplerInstrument2URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
     
-    [self.samplerInstrument2 loadInstrumentAtURL:self.samplerInstrument2URL error:&error];
+    [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Instrument 2 failed to load samples %@",error);
     }
     
-    //self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"" ofType:@""]];
+    self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"drumkit3.6all" ofType:@"sf2"]];
     
-    [self.samplerDrums loadInstrumentAtURL:self.samplerIDrumsURL error:&error];
+    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Drums failed to load samples %@",error);
     }
+    
     
 }
 
@@ -640,6 +645,23 @@
     
 }
 
+-(void) audioUnitTimePitchRate:(float)rate {
+    
+    self.audioUnitTimePitch.rate = rate;
+    
+}
+
+-(void) audioUnitTimePitchOverlap:(float)overlap {
+    
+    self.audioUnitTimePitch.overlap = overlap;
+    
+}
+
+-(void) audioUnitTimePitch:(float)pitch {
+    
+    self.audioUnitTimePitch.pitch = pitch;
+    
+}
 
 -(void) changeInstrument1:(NSInteger)selectedInstument1 {
     
@@ -686,8 +708,54 @@
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:86 bankMSB:0x79 bankLSB:0 error:&error];
         
     }
+}
+
+
+-(void) changeInstrument2:(NSInteger)selectedInstument2 {
     
+    NSError *error;
     
+    if (selectedInstument2 == 0){
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 1) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 2) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 3) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 4) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 5) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 6) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 7) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 8) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 9) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    }
 }
 
 
@@ -709,22 +777,24 @@
         NSLog(@"outputFileInstument1 file player error %@",error);
     }
     
-    AVAudioPCMBuffer *bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
+    self.bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
+    
+    [self.outputFileInstument1 readIntoBuffer:self.bufferInstument1 error:&error];
     
     if (error){
         NSLog(@"outputFileInstument1 buffer player error %@",error);
     }
     
-    if (self.isLoop == true){
+   if (self.isLoopInstument1 == true){
         
-        [self.playerInstument1 scheduleBuffer:bufferInstument1 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
+        [self.playerInstument1 scheduleBuffer:self.bufferInstument1 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
         
     } else {
         
-        [self.playerInstument1 scheduleBuffer:bufferInstument1 completionHandler:nil];
+       [self.playerInstument1 scheduleBuffer:self.bufferInstument1 completionHandler:nil];
     }
     
-    [self.outputFileInstument1 readIntoBuffer:bufferInstument1 error:&error];
+    
     
     if (self.playerInstument1.isPlaying == false) {
         
@@ -822,8 +892,6 @@
         
     }
     
-    
-    
 }
 
 
@@ -864,6 +932,101 @@
         self.isRecordingMainOut = NO;
         
         NSLog(@"Recording stopped on main out");
+        
+    }
+}
+
+-(void) startPlayingMicrophone {
+    
+    NSError *error;
+    
+    if (self.isRecordingMicrophone == YES){
+        
+        [self stopRecordingMicrophone];
+        
+    }
+    
+    self.outputFileMicrophoneURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"microphoneOutput.caf"]];
+    
+    self.outputFileMicrophone = [[AVAudioFile alloc] initForReading:self.outputFileMicrophoneURL error:&error];
+    
+    if (error){
+        NSLog(@"outputFileMicrophone file player error %@",error);
+    }
+    
+    self.bufferMicrophone = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileMicrophone.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileMicrophone.length];
+    
+    [self.outputFileInstument1 readIntoBuffer:self.bufferInstument1 error:&error];
+    
+    if (error){
+        NSLog(@"outputFileMicrohpone buffer player error %@",error);
+    }
+    
+    [self.outputFileMicrophone readIntoBuffer:self.bufferMicrophone error:&error];
+    
+    if (self.isLoopMicrophone == true){
+        
+        [self.playerMicrophone scheduleBuffer:self.bufferMicrophone atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
+        
+    } else {
+        
+        [self.playerMicrophone scheduleBuffer:self.bufferMicrophone completionHandler:nil];
+    }
+    
+    if (self.playerMicrophone.isPlaying == false) {
+        
+        [self.playerMicrophone play];
+        
+        NSLog(@"Playing microphone player");
+
+        
+    } else if (self.playerMicrophone.isPlaying == true){
+        
+        [self.playerMicrophone stop];
+        
+        NSLog(@"Stopping microphone player");
+        
+    }
+    
+}
+
+-(void) startRecordingMicrophone
+{
+    NSError *error;
+    self.outputFileMicrophoneURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"microphoneOutput.caf"]];
+    
+    self.outputFileMicrophone= [[AVAudioFile alloc] initForWriting:self.outputFileMicrophoneURL settings:self.audioFormat.settings error:&error];
+    
+    if (error){
+        NSLog(@"outputFileMicrophone file recording error %@",error);
+    }
+    
+    [self.inputMicrophone installTapOnBus:0 bufferSize:4096 format:self.audioFormat block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
+        
+        NSError *error;
+        
+        [self.outputFileMicrophone writeFromBuffer:buffer error:&error];
+        
+        if (error){
+            NSLog(@"outputFileMicrohpone buffer recording error %@",error);
+            [self stopRecordingMicrophone];
+            self.isRecordingMicrophone = NO;
+        }
+        
+    }];
+    
+    self.isRecordingMicrophone = YES;
+    
+    NSLog(@"Recording started on microphone ");
+}
+
+-(void) stopRecordingMicrophone
+{
+    if (self.isRecordingMicrophone) {
+        [self.inputMicrophone removeTapOnBus:0];
+        self.isRecordingMicrophone = NO;
+        
+        NSLog(@"Recording stopped on microphone");
         
     }
 }

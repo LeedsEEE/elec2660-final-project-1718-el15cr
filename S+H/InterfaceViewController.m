@@ -20,6 +20,7 @@
     
     self.audioEngine = [[audioEngine alloc]init];
     self.settings = [[settings alloc]init];
+    
 }
 
 
@@ -47,6 +48,16 @@
 - (IBAction)didTapPlay:(UIButton *)sender {
     
     [self.audioEngine startPlayingMainOut];
+    
+    if (self.audioEngine.playerMainOut.isPlaying == true) {
+        
+        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        
+    } else if (self.audioEngine.playerMainOut.isPlaying == false){
+        
+        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        
+    }
     
 }
 

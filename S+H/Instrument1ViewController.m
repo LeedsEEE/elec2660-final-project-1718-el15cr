@@ -175,7 +175,7 @@
 - (IBAction)didTapPlay:(UIButton *)sender {
     
     [self.audioEngine startPlayingInstument1];
-    self.audioEngine.isLoop = self.switchLoop.isOn;
+    self.audioEngine.isLoopInstument1 = self.switchLoop.isOn;
     
 }
 
@@ -195,7 +195,7 @@
 
 - (IBAction)didTapSwitchLoop:(UISwitch *)sender {
     
-    self.audioEngine.isLoop = self.switchLoop.isOn;
+    self.audioEngine.isLoopInstument1 = self.switchLoop.isOn;
     
 }
 
