@@ -50,7 +50,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Drums"/>
                                 <connections>
-                                    <segue destination="P8u-HH-lTR" kind="presentation" id="Z4q-sm-HUP"/>
+                                    <segue destination="P8u-HH-lTR" kind="presentation" identifier="settings" id="Z4q-sm-HUP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysz-YF-Ywi">
@@ -58,7 +58,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Instrument 2"/>
                                 <connections>
-                                    <segue destination="7E0-yg-Uhn" kind="presentation" id="Sdp-7m-Gss"/>
+                                    <segue destination="7E0-yg-Uhn" kind="presentation" identifier="settings" id="Sdp-7m-Gss"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-zb-ekp">
@@ -366,61 +366,109 @@
                                 <rect key="frame" x="5" y="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note1"/>
+                                <connections>
+                                    <action selector="didTapDownNote1:" destination="7E0-yg-Uhn" eventType="touchDown" id="gtK-I6-bUJ"/>
+                                    <action selector="didTapInsideNote1:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="fFk-Rh-tEk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5Q-3K-yc8">
                                 <rect key="frame" x="58" y="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note3"/>
+                                <connections>
+                                    <action selector="didTapDownNote3:" destination="7E0-yg-Uhn" eventType="touchDown" id="MBv-g9-If1"/>
+                                    <action selector="didTapInsideNote3:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="nf8-01-CtJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-nd-QtM">
                                 <rect key="frame" x="112" y="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note5"/>
+                                <connections>
+                                    <action selector="didTapDownNote5:" destination="7E0-yg-Uhn" eventType="touchDown" id="5rG-ZW-rXy"/>
+                                    <action selector="didTapInsideNote5:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="bfe-6w-mXb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5P-fe-b1o">
                                 <rect key="frame" x="165" y="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note6"/>
+                                <connections>
+                                    <action selector="didTapDownNote6:" destination="7E0-yg-Uhn" eventType="touchDown" id="D6Z-y2-WRv"/>
+                                    <action selector="didTapInsideNote6:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="qnD-hY-dhs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-6g-3fs">
                                 <rect key="frame" x="270" y="230" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note10"/>
+                                <connections>
+                                    <action selector="didTapDownNote10:" destination="7E0-yg-Uhn" eventType="touchDown" id="Dh4-aE-1cq"/>
+                                    <action selector="didTapInsideNote10:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="7n5-cq-4lw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igg-UP-zQ5">
                                 <rect key="frame" x="220" y="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note8"/>
+                                <connections>
+                                    <action selector="didTapDownNote8:" destination="7E0-yg-Uhn" eventType="touchDown" id="OuY-0V-cTW"/>
+                                    <action selector="didTapInsideNote8:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="DBa-2k-fD6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-N9-vSf">
                                 <rect key="frame" x="325" y="230" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note12"/>
+                                <connections>
+                                    <action selector="didTapDownNote12:" destination="7E0-yg-Uhn" eventType="touchDown" id="V2L-ct-ayf"/>
+                                    <action selector="didTapInsideNote12:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="uxA-vV-JPe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8H-Q3-yIa">
                                 <rect key="frame" x="34" y="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note2"/>
+                                <connections>
+                                    <action selector="didTapDownNote2:" destination="7E0-yg-Uhn" eventType="touchDown" id="k8d-dW-7qb"/>
+                                    <action selector="didTapInsideNote2:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="NER-JZ-p8Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-Cs-o6z">
                                 <rect key="frame" x="103" y="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note4"/>
+                                <connections>
+                                    <action selector="didTapDownNote4:" destination="7E0-yg-Uhn" eventType="touchDown" id="AQw-vP-kfo"/>
+                                    <action selector="didTapInsideNote4:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="TyV-by-D3j"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-hS-Hpo">
                                 <rect key="frame" x="191" y="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note7"/>
+                                <connections>
+                                    <action selector="didTapDownNote7:" destination="7E0-yg-Uhn" eventType="touchDown" id="nDE-dY-e2f"/>
+                                    <action selector="didTapInsideNote7:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="Vwr-Hr-det"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-pr-Si1">
                                 <rect key="frame" x="248" y="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note9"/>
+                                <connections>
+                                    <action selector="didTapDownNote9:" destination="7E0-yg-Uhn" eventType="touchDown" id="ueY-Lb-m2T"/>
+                                    <action selector="didTapInsideNote9:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="bWo-bi-bWD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F54-Pl-5eQ">
                                 <rect key="frame" x="305" y="192" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note11"/>
+                                <connections>
+                                    <action selector="didTapDownNote11:" destination="7E0-yg-Uhn" eventType="touchDown" id="maV-WK-Qf3"/>
+                                    <action selector="didTapInsideNote11:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="MH0-XY-atu"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-nN-4fh">
                                 <rect key="frame" x="0.0" y="66" width="414" height="118"/>
@@ -429,26 +477,41 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nmd-xr-Kg0">
                                 <rect key="frame" x="128" y="514" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderPan:" destination="7E0-yg-Uhn" eventType="valueChanged" id="ADO-uW-SXc"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB2-JI-YGv">
                                 <rect key="frame" x="79" y="599" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="didTapPlay:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="qQa-Tp-SxG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ou1-7f-MB4">
                                 <rect key="frame" x="85" y="401" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave up"/>
+                                <connections>
+                                    <action selector="didTapOctaveUp:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="bBd-kO-c88"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-tX-Rsa">
                                 <rect key="frame" x="234" y="401" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave Down"/>
+                                <connections>
+                                    <action selector="didTapOctaveDown:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="oD9-se-T2e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cso-jX-dr2">
                                 <rect key="frame" x="248" y="599" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="didTapRecord:" destination="7E0-yg-Uhn" eventType="touchUpInside" id="kHX-uI-lrA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c8-hA-YSQ">
                                 <rect key="frame" x="165" y="473" width="42" height="21"/>
@@ -460,10 +523,18 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2t-Zz-beE">
                                 <rect key="frame" x="165" y="630" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapSwitchLoop:" destination="7E0-yg-Uhn" eventType="valueChanged" id="vRI-pY-SI9"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerInstrument2" destination="pKH-nN-4fh" id="Nw8-VX-PwF"/>
+                        <outlet property="sliderPan" destination="nmd-xr-Kg0" id="3Fr-Of-pBh"/>
+                        <outlet property="switchLoop" destination="i2t-Zz-beE" id="JWN-Nc-JOU"/>
+                    </connections>
                 </viewController>
                 <exit id="NzP-Uy-QNN" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOG-p8-wqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,61 +570,100 @@
                                 <rect key="frame" x="85" y="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note1"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-JR-TZv">
-                                <rect key="frame" x="85" y="261" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Note3"/>
+                                <connections>
+                                    <action selector="didTapDownNote1:" destination="P8u-HH-lTR" eventType="touchDown" id="QaQ-Hy-wUt"/>
+                                    <action selector="didTapInsideNote1:" destination="P8u-HH-lTR" eventType="touchUpInside" id="vn3-n8-O4p"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-04-i0v">
                                 <rect key="frame" x="155" y="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note5"/>
+                                <connections>
+                                    <action selector="didTapDownNote5:" destination="P8u-HH-lTR" eventType="touchDown" id="Z6k-B8-BZC"/>
+                                    <action selector="didTapInsideNote5:" destination="P8u-HH-lTR" eventType="touchUpInside" id="ZMP-Et-mx3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-FY-hwb">
                                 <rect key="frame" x="155" y="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note6"/>
+                                <connections>
+                                    <action selector="didTapDownNote6:" destination="P8u-HH-lTR" eventType="touchDown" id="3Tg-HH-iSY"/>
+                                    <action selector="didTapInsideNote6:" destination="P8u-HH-lTR" eventType="touchUpInside" id="iYl-X3-aDn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKu-zH-T94">
                                 <rect key="frame" x="275" y="205" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note10"/>
+                                <connections>
+                                    <action selector="didTapDownNote10:" destination="P8u-HH-lTR" eventType="touchDown" id="lws-N0-XKz"/>
+                                    <action selector="didTapInsideNote10:" destination="P8u-HH-lTR" eventType="touchUpInside" id="TzI-cz-xew"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7e-Vz-bFT">
                                 <rect key="frame" x="218" y="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note8"/>
+                                <connections>
+                                    <action selector="didTapDownNote8:" destination="P8u-HH-lTR" eventType="touchDown" id="S54-5q-0Om"/>
+                                    <action selector="didTapInsideNote8:" destination="P8u-HH-lTR" eventType="touchUpInside" id="yBq-IV-TqT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chl-le-4dx">
                                 <rect key="frame" x="276" y="319" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note12"/>
+                                <connections>
+                                    <action selector="didTapDownNote12:" destination="P8u-HH-lTR" eventType="touchDown" id="bTj-at-B3r"/>
+                                    <action selector="didTapInsideNote12:" destination="P8u-HH-lTR" eventType="touchUpInside" id="7EN-dS-fzj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA4-2d-w0i">
-                                <rect key="frame" x="85" y="205" width="46" height="30"/>
+                                <rect key="frame" x="85" y="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note2"/>
+                                <connections>
+                                    <action selector="didTapDownNote2:" destination="P8u-HH-lTR" eventType="touchDown" id="9u9-cT-k5y"/>
+                                    <action selector="didTapInsideNote2:" destination="P8u-HH-lTR" eventType="touchUpInside" id="2xY-Ij-io6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXR-PX-8cC">
                                 <rect key="frame" x="155" y="205" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note4"/>
+                                <connections>
+                                    <action selector="didTapDownNote4:" destination="P8u-HH-lTR" eventType="touchDown" id="Pzi-VF-tXo"/>
+                                    <action selector="didTapInsideNote4:" destination="P8u-HH-lTR" eventType="touchUpInside" id="1sa-Yt-QYt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-Nu-A2Y">
                                 <rect key="frame" x="218" y="205" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note7"/>
+                                <connections>
+                                    <action selector="didTapDownNote7:" destination="P8u-HH-lTR" eventType="touchDown" id="ZHR-tQ-Rol"/>
+                                    <action selector="didTapInsideNote7:" destination="P8u-HH-lTR" eventType="touchUpInside" id="l91-rV-Ykw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whC-hF-fZV">
                                 <rect key="frame" x="218" y="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note9"/>
+                                <connections>
+                                    <action selector="didTapDownNote9:" destination="P8u-HH-lTR" eventType="touchDown" id="kjQ-4y-04w"/>
+                                    <action selector="didTapInsideNote9:" destination="P8u-HH-lTR" eventType="touchUpInside" id="s3M-NS-Tbu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0j-Rt-WcY">
                                 <rect key="frame" x="276" y="261" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note11"/>
+                                <connections>
+                                    <action selector="didTapDownNote11:" destination="P8u-HH-lTR" eventType="touchDown" id="2mF-M2-h2c"/>
+                                    <action selector="didTapInsideNote11:" destination="P8u-HH-lTR" eventType="touchUpInside" id="Swe-xT-Jxi"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-Nq-go2">
                                 <rect key="frame" x="0.0" y="66" width="414" height="118"/>
@@ -563,19 +673,41 @@
                                 <rect key="frame" x="85" y="432" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="didTapPlay:" destination="P8u-HH-lTR" eventType="touchUpInside" id="WSG-6E-l8W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT9-pr-et2">
                                 <rect key="frame" x="266" y="432" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="didTapRecord:" destination="P8u-HH-lTR" eventType="touchUpInside" id="EB2-DR-h88"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-my-hoz">
                                 <rect key="frame" x="183" y="465" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapSwitchLoop:" destination="P8u-HH-lTR" eventType="valueChanged" id="e6e-6Q-dyc"/>
+                                </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-JR-TZv">
+                                <rect key="frame" x="85" y="205" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Note3"/>
+                                <connections>
+                                    <action selector="didTapDownNote3:" destination="P8u-HH-lTR" eventType="touchDown" id="BDe-lg-Nr6"/>
+                                    <action selector="didTapInsideNote3:" destination="P8u-HH-lTR" eventType="touchUpInside" id="9Jn-Fe-Oo9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerDrums" destination="Cj4-Nq-go2" id="pik-ZY-jK6"/>
+                        <outlet property="switchLoop" destination="FSR-my-hoz" id="n3m-7R-GVu"/>
+                    </connections>
                 </viewController>
                 <exit id="kzV-oG-2kj" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGo-zs-a0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1186,13 +1318,6 @@
                                     <action selector="didSlideLoop:" destination="8Ot-1o-BtT" eventType="valueChanged" id="4oN-VO-OXf"/>
                                 </connections>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.029999999999999999" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-27-3mN">
-                                <rect key="frame" x="148" y="366" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="didMoveSliderRate:" destination="8Ot-1o-BtT" eventType="valueChanged" id="qKH-bX-cGW"/>
-                                </connections>
-                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-2400" maxValue="2400" translatesAutoresizingMaskIntoConstraints="NO" id="Xxs-PF-pX9">
                                 <rect key="frame" x="148" y="275" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1228,6 +1353,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.029999999999999999" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-27-3mN">
+                                <rect key="frame" x="130" y="372" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderRate:" destination="8Ot-1o-BtT" eventType="valueChanged" id="qKH-bX-cGW"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

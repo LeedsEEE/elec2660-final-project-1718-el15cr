@@ -17,11 +17,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.pickerInstrument2.delegate = self;
+    self.pickerInstrument2.dataSource = self;
+    
+    self.audioEngine.octave = self.audioEngine.octave;
+    
+    [self.pickerInstrument2 selectRow:self.settings.selectedInstrument2 inComponent:0 animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    self.settings.selectedInstrument2 = [self.pickerInstrument2 selectedRowInComponent:0];
+    
+    [self.audioEngine changeInstrument2:self.settings.selectedInstrument2];
+    
+    NSLog(@"Instrument 2 selected: %@",self.settings.pickerInstrument2Data[row]);
+    
+}
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+    
+}
+
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return self.settings.pickerInstrument2Data.count;
+    
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    return self.settings.pickerInstrument2Data[row];
+    
 }
 
 /*
@@ -35,77 +73,77 @@
 */
 
 - (IBAction)didTapDownNote1:(UIButton *)sender {
-    [self.audioEngine playInstrument1:60];
+    [self.audioEngine playInstrument2:60];
 }
 - (IBAction)didTapDownNote2:(UIButton *)sender {
-    [self.audioEngine playInstrument1:61];
+    [self.audioEngine playInstrument2:61];
 }
 - (IBAction)didTapDownNote3:(UIButton *)sender {
-    [self.audioEngine playInstrument1:62];
+    [self.audioEngine playInstrument2:62];
 }
 - (IBAction)didTapDownNote4:(UIButton *)sender {
-    [self.audioEngine playInstrument1:63];
+    [self.audioEngine playInstrument2:63];
 }
 - (IBAction)didTapDownNote5:(UIButton *)sender {
-    [self.audioEngine playInstrument1:64];
+    [self.audioEngine playInstrument2:64];
 }
 - (IBAction)didTapDownNote6:(UIButton *)sender {
-    [self.audioEngine playInstrument1:65];
+    [self.audioEngine playInstrument2:65];
 }
 - (IBAction)didTapDownNote7:(UIButton *)sender {
-    [self.audioEngine playInstrument1:66];
+    [self.audioEngine playInstrument2:66];
 }
 - (IBAction)didTapDownNote8:(UIButton *)sender {
-    [self.audioEngine playInstrument1:67];
+    [self.audioEngine playInstrument2:67];
 }
 - (IBAction)didTapDownNote9:(UIButton *)sender {
-    [self.audioEngine playInstrument1:68];
+    [self.audioEngine playInstrument2:68];
 }
 - (IBAction)didTapDownNote10:(UIButton *)sender {
-    [self.audioEngine playInstrument1:69];
+    [self.audioEngine playInstrument2:69];
 }
 - (IBAction)didTapDownNote11:(UIButton *)sender {
-    [self.audioEngine playInstrument1:70];
+    [self.audioEngine playInstrument2:70];
 }
 - (IBAction)didTapDownNote12:(UIButton *)sender {
-    [self.audioEngine playInstrument1:71];
+    [self.audioEngine playInstrument2:71];
 }
 
 - (IBAction)didTapInsideNote1:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:60];
+    [self.audioEngine stopInstrument2:60];
 }
 - (IBAction)didTapInsideNote2:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:61];
+    [self.audioEngine stopInstrument2:61];
 }
 - (IBAction)didTapInsideNote3:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:62];
+    [self.audioEngine stopInstrument2:62];
 }
 - (IBAction)didTapInsideNote4:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:63];
+    [self.audioEngine stopInstrument2:63];
 }
 - (IBAction)didTapInsideNote5:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:64];
+    [self.audioEngine stopInstrument2:64];
 }
 - (IBAction)didTapInsideNote6:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:65];
+    [self.audioEngine stopInstrument2:65];
 }
 - (IBAction)didTapInsideNote7:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:66];
+    [self.audioEngine stopInstrument2:66];
 }
 - (IBAction)didTapInsideNote8:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:67];
+    [self.audioEngine stopInstrument2:67];
 }
 - (IBAction)didTapInsideNote9:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:68];
+    [self.audioEngine stopInstrument2:68];
 }
 - (IBAction)didTapInsideNote10:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:69];
+    [self.audioEngine stopInstrument2:69];
 }
 - (IBAction)didTapInsideNote11:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:70];
+    [self.audioEngine stopInstrument2:70];
 }
 - (IBAction)didTapInsideNote12:(UIButton *)sender {
-    [self.audioEngine stopInstrument1:71];
+    [self.audioEngine stopInstrument2:71];
 }
 
 - (IBAction)didTapOctaveUp:(UIButton *)sender {
@@ -122,26 +160,26 @@
 
 - (IBAction)didMoveSliderPan:(UISlider *)sender {
     
-    [self.audioEngine panInstrument1:self.sliderPan.value];
+    [self.audioEngine panInstrument2:self.sliderPan.value];
     
 }
 
 - (IBAction)didTapPlay:(UIButton *)sender {
     
-    [self.audioEngine startPlayingInstument1];
-    self.audioEngine.isLoopInstument1 = self.switchLoop.isOn;
+    [self.audioEngine startPlayingInstument2];
+    self.audioEngine.isLoopInstument2 = self.switchLoop.isOn;
     
 }
 
 - (IBAction)didTapRecord:(UIButton *)sender {
     
-    if (self.audioEngine.isRecordingInstument1 == false) {
+    if (self.audioEngine.isRecordingInstument2 == false) {
         
-        [self.audioEngine startRecordingInstument1];
+        [self.audioEngine startRecordingInstument2];
         
     } else {
         
-        [self.audioEngine stopRecordingInstument1];
+        [self.audioEngine stopRecordingInstument2];
         
     }
     
@@ -149,7 +187,7 @@
 
 - (IBAction)didTapSwitchLoop:(UISwitch *)sender {
     
-    self.audioEngine.isLoopInstument1 = self.switchLoop.isOn;
+    self.audioEngine.isLoopInstument2 = self.switchLoop.isOn;
     
 }
 

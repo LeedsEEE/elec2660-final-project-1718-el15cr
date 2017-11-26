@@ -28,7 +28,9 @@
         
         self.pickerInstrument1Data = @[@"Piano 1", @"Piano 2",@"Xylophone",@"Church Organ",@"Violin",@"Viola",@"Choir Aahs",@"Ocarina",@"Chiffer Lead",@"5th Saw Wave"];
         
-
+        self.pickerInstrument2Data = @[@"Piano 1", @"Piano 2",@"Xylophone",@"Church Organ",@"Violin",@"Viola",@"Choir Aahs",@"Ocarina",@"Chiffer Lead",@"5th Saw Wave"];
+        
+        self.pickerDrumsData = @[@"Drums 1", @"Drums 2"];
         
     }
     return self;

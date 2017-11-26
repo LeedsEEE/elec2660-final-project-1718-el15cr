@@ -12,8 +12,8 @@
 
 @interface DistortionViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property audioEngine *audioEngine;
-@property settings *settings;
+@property (nonatomic, strong) audioEngine *audioEngine;
+@property (nonatomic, strong) settings *settings;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerDistortion;
 @property (weak, nonatomic) IBOutlet UISlider *sliderDryWetMix;

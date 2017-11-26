@@ -12,8 +12,8 @@
 
 @interface Instrument1ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property audioEngine *audioEngine;
-@property settings *settings;
+@property (nonatomic, strong) audioEngine *audioEngine;
+@property (nonatomic, strong) settings *settings;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument1;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPan;

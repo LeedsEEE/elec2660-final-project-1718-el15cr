@@ -254,7 +254,7 @@
     
     self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"drumkit3.6all" ofType:@"sf2"]];
     
-    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x7A bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Drums failed to load samples %@",error);
@@ -287,23 +287,23 @@
         
         [self.samplerInstrument1 startNote:(note-48) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note-48);
+        NSLog(@"Start note on instrument 1: = %i",note-48);
         
     } else if (self.octave==1){
         
-         self.octave=1;
+        self.octave=1;
         
         [self.samplerInstrument1 startNote:(note-36) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note-36);
+        NSLog(@"Start note on instrument 1: = %i",note-36);
         
     } else if (self.octave==2){
         
-         self.octave=2;
+        self.octave=2;
         
         [self.samplerInstrument1 startNote:(note-24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note-24);
+        NSLog(@"Start note on instrument 1: = %i",note-24);
         
     } else if (self.octave==3){
         
@@ -311,7 +311,7 @@
         
         [self.samplerInstrument1 startNote:(note-12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note-12);
+        NSLog(@"Start note on instrument 1: = %i",note-12);
         
     } else if (self.octave==4){
         
@@ -319,7 +319,7 @@
         
         [self.samplerInstrument1 startNote:(note) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note);
+        NSLog(@"Start note on instrument 1: = %i",note);
         
     } else if (self.octave==5){
         
@@ -327,7 +327,7 @@
         
         [self.samplerInstrument1 startNote:(note+12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note+12);
+        NSLog(@"Start note on instrument 1: = %i",note+12);
         
     } else if (self.octave>=6){
         
@@ -335,7 +335,7 @@
         
         [self.samplerInstrument1 startNote:(note+24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note = %i",note+24);
+        NSLog(@"Start note on instrument 1: = %i",note+24);
         
     }
     
@@ -351,7 +351,7 @@
         
         [self.samplerInstrument1 stopNote:(note-48) onChannel:0];
         
-        NSLog(@"Stop note = %i",note-48);
+        NSLog(@"Stop note on instrument 1: = %i",note-48);
         
     } else if (self.octave==1){
         
@@ -359,7 +359,7 @@
         
         [self.samplerInstrument1 stopNote:(note-36) onChannel:0];
         
-        NSLog(@"Stop note = %i",note-36);
+        NSLog(@"Stop note on instrument 1: = %i",note-36);
         
     } else if (self.octave==2){
         
@@ -367,7 +367,7 @@
         
         [self.samplerInstrument1 stopNote:(note-24) onChannel:0];
         
-        NSLog(@"Stop note = %i",note-24);
+        NSLog(@"Stop note on instrument 1: = %i",note-24);
         
     } else if (self.octave==3){
         
@@ -375,7 +375,7 @@
         
         [self.samplerInstrument1 stopNote:(note-12) onChannel:0];
         
-        NSLog(@"Stop note = %i",note-12);
+        NSLog(@"Stop note on instrument 1: = %i",note-12);
         
     } else if (self.octave==4){
         
@@ -383,7 +383,7 @@
         
         [self.samplerInstrument1 stopNote:note onChannel:0];
         
-        NSLog(@"Stop note = %i",note);
+        NSLog(@"Stop note on instrument 1: = %i",note);
         
     } else if (self.octave==5){
         
@@ -391,7 +391,7 @@
         
         [self.samplerInstrument1 stopNote:(note+12) onChannel:0];
         
-        NSLog(@"Stop note = %i",note+12);
+        NSLog(@"Stop note on instrument 1: = %i",note+12);
         
     } else if (self.octave>=6){
         
@@ -399,10 +399,138 @@
         
         [self.samplerInstrument1 stopNote:(note+24) onChannel:0];
         
-        NSLog(@"Stop note = %i",note+24);
+        NSLog(@"Stop note on instrument 1: = %i",note+24);
         
     }
+    
+}
 
+-(void) playInstrument2:(int)note {
+    
+    // Plays the note in the correct octave
+    
+    if (self.octave<=0){
+        
+        self.octave=0;
+        
+        [self.samplerInstrument2 startNote:(note-48) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note-48);
+        
+    } else if (self.octave==1){
+        
+        self.octave=1;
+        
+        [self.samplerInstrument2 startNote:(note-36) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note-36);
+        
+    } else if (self.octave==2){
+        
+        self.octave=2;
+        
+        [self.samplerInstrument2 startNote:(note-24) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note-24);
+        
+    } else if (self.octave==3){
+        
+        self.octave=3;
+        
+        [self.samplerInstrument2 startNote:(note-12) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note-12);
+        
+    } else if (self.octave==4){
+        
+        self.octave=4;
+        
+        [self.samplerInstrument2 startNote:(note) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note);
+        
+    } else if (self.octave==5){
+        
+        self.octave=5;
+        
+        [self.samplerInstrument2 startNote:(note+12) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note+12);
+        
+    } else if (self.octave>=6){
+        
+        self.octave=6;
+        
+        [self.samplerInstrument2 startNote:(note+24) withVelocity:127 onChannel:0];
+        
+        NSLog(@"Start note on instrument 2: %i",note+24);
+        
+    }
+    
+}
+
+-(void) stopInstrument2:(int)note {
+    
+    // Stops the note in the right octave
+    
+    if (self.octave<=0){
+        
+        self.octave=0;
+        
+        [self.samplerInstrument2 stopNote:(note-48) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note-48);
+        
+    } else if (self.octave==1){
+        
+        self.octave=1;
+        
+        [self.samplerInstrument2 stopNote:(note-36) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note-36);
+        
+    } else if (self.octave==2){
+        
+        self.octave=2;
+        
+        [self.samplerInstrument2 stopNote:(note-24) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note-24);
+        
+    } else if (self.octave==3){
+        
+        self.octave=3;
+        
+        [self.samplerInstrument2 stopNote:(note-12) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note-12);
+        
+    } else if (self.octave==4){
+        
+        self.octave=4;
+        
+        [self.samplerInstrument2 stopNote:note onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note);
+        
+    } else if (self.octave==5){
+        
+        self.octave=5;
+        
+        [self.samplerInstrument2 stopNote:(note+12) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note+12);
+        
+    } else if (self.octave>=6){
+        
+        self.octave=6;
+        
+        [self.samplerInstrument2 stopNote:(note+24) onChannel:0];
+        
+        NSLog(@"Stop note on instrument 2: %i",note+24);
+        
+    }
+    
 }
 
 -(void) panInstrument1: (float) pan{
@@ -418,7 +546,9 @@
     self.sendReverbInstrument1.volume = reverbInstrument1;
     self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
     self.sendReverbInstrument2.volume = reverbInstrument2;
+    self.sendReverbPlayerInstrument2.volume = reverbInstrument2;
     self.sendReverbDrums.volume = reverbDrums;
+    self.sendReverbPlayerDrums.volume = reverbDrums;
     self.sendReverbMicrophone.volume = reverbMicrohpone;
     
 }
@@ -490,7 +620,9 @@
     self.sendDelayInstrument1.volume = delayInstrument1;
     self.sendDelayPlayerInstrument1.volume = delayInstrument1;
     self.sendDelayInstrument2.volume = delayInstrument2;
+    self.sendDelayPlayerInstrument2.volume = delayInstrument2;
     self.sendDelayDrums.volume = delayDrums;
+    self.sendDelayPlayerDrums.volume = delayDrums;
     self.sendDelayMicrophone.volume = delayMicrohpone;
     
 }
@@ -524,7 +656,9 @@
     self.sendDistortionInstrument1.volume = distortionInstrument1;
     self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
     self.sendDistortionInstrument2.volume = distortionInstrument2;
+    self.sendDistortionPlayerInstrument2.volume = distortionInstrument2;
     self.sendDistortionDrums.volume = distortionDrums;
+    self.sendDistortionPlayerDrums.volume = distortionDrums;
     self.sendDistortionMicrophone.volume = distortionMicrohpone;
     
 }
@@ -758,6 +892,21 @@
     }
 }
 
+-(void) changeDrums:(NSInteger)selectedDrums {
+    
+    NSError *error;
+    
+    if (selectedDrums == 0){
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedDrums == 1) {
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    }
+}
+
 
 -(void) startPlayingInstument1 {
     
@@ -847,6 +996,189 @@
         self.isRecordingInstument1 = NO;
         
         NSLog(@"Recording stopped on Instrument1");
+    }
+}
+
+-(void) startPlayingInstument2 {
+    
+    NSError *error;
+    
+    if (self.isRecordingInstument2 == YES){
+        
+        [self stopRecordingInstument2];
+        
+    }
+    
+    self.outputFileInstument2URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument2Output.caf"]];
+    
+    self.outputFileInstument2 = [[AVAudioFile alloc] initForReading:self.outputFileInstument2URL error:&error];
+    
+    if (error){
+        NSLog(@"outputFileInstument2 file player error %@",error);
+    }
+    
+    self.bufferInstument2 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument2.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument2.length];
+    
+    [self.outputFileInstument2 readIntoBuffer:self.bufferInstument2 error:&error];
+    
+    if (error){
+        NSLog(@"outputFileInstument2 buffer player error %@",error);
+    }
+    
+    if (self.isLoopInstument2 == true){
+        
+        [self.playerInstument2 scheduleBuffer:self.bufferInstument2 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
+        
+    } else {
+        
+        [self.playerInstument2 scheduleBuffer:self.bufferInstument2 completionHandler:nil];
+    }
+    
+    
+    
+    if (self.playerInstument2.isPlaying == false) {
+        
+        [self.playerInstument2 play];
+        
+        NSLog(@"Playing Instrument2 player");
+        
+    } else {
+        
+        [self.playerInstument2 stop];
+        
+        NSLog(@"Stopping Instrument2 player");
+        
+    }
+}
+
+
+-(void) startRecordingInstument2
+{
+    NSError *error;
+    self.outputFileInstument2URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument2Output.caf"]];
+    
+    self.outputFileInstument2 = [[AVAudioFile alloc] initForWriting:self.outputFileInstument2URL settings:[[self.samplerInstrument2 outputFormatForBus:0] settings] error:&error];
+    
+    if (error){
+        NSLog(@"outputFileInstument2 file recording error %@",error);
+    }
+    
+    [self.samplerInstrument2 installTapOnBus:0 bufferSize:4096 format:[self.samplerInstrument2 outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
+        
+        NSError *error;
+        
+        [self.outputFileInstument2 writeFromBuffer:buffer error:&error];
+        
+        if (error){
+            NSLog(@"outputFileInstument2 buffer recording error %@",error);
+        }
+        
+        
+    }];
+    self.isRecordingInstument2 = YES;
+    
+    NSLog(@"Recording started on Instrument2");
+}
+
+-(void) stopRecordingInstument2
+{
+    if (self.isRecordingInstument2) {
+        [self.samplerInstrument2 removeTapOnBus:0];
+        self.isRecordingInstument2 = NO;
+        
+        NSLog(@"Recording stopped on Instrument2");
+    }
+}
+
+
+-(void) startPlayingDrums {
+    
+    NSError *error;
+    
+    if (self.isRecordingDrums == YES){
+        
+        [self stopRecordingDrums];
+        
+    }
+    
+    self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
+    
+    self.outputFileDrums= [[AVAudioFile alloc] initForReading:self.outputFileDrumsURL error:&error];
+    
+    if (error){
+        NSLog(@"outputFileDrums file player error %@",error);
+    }
+    
+    self.bufferDrums = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileDrums.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileDrums.length];
+    
+    [self.outputFileDrums readIntoBuffer:self.bufferDrums error:&error];
+    
+    if (error){
+        NSLog(@"outputFileDrums buffer player error %@",error);
+    }
+    
+    if (self.isLoopDrums == true){
+        
+        [self.playerDrums scheduleBuffer:self.bufferDrums atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
+        
+    } else {
+        
+        [self.playerDrums scheduleBuffer:self.bufferDrums completionHandler:nil];
+    }
+    
+    
+    
+    if (self.playerDrums.isPlaying == false) {
+        
+        [self.playerDrums play];
+        
+        NSLog(@"Playing Drums player");
+        
+    } else {
+        
+        [self.playerDrums stop];
+        
+        NSLog(@"Stopping Drums player");
+        
+    }
+}
+
+
+-(void) startRecordingDrums
+{
+    NSError *error;
+    self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
+    
+    self.outputFileDrums = [[AVAudioFile alloc] initForWriting:self.outputFileDrumsURL settings:[[self.samplerDrums outputFormatForBus:0] settings] error:&error];
+    
+    if (error){
+        NSLog(@"outputFileDrums file recording error %@",error);
+    }
+    
+    [self.samplerDrums installTapOnBus:0 bufferSize:4096 format:[self.samplerDrums outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
+        
+        NSError *error;
+        
+        [self.outputFileDrums writeFromBuffer:buffer error:&error];
+        
+        if (error){
+            NSLog(@"outputFileDrums buffer recording error %@",error);
+        }
+        
+        
+    }];
+    self.isRecordingDrums = YES;
+    
+    NSLog(@"Recording started on Drums");
+}
+
+-(void) stopRecordingDrums
+{
+    if (self.isRecordingDrums) {
+        [self.samplerDrums removeTapOnBus:0];
+        self.isRecordingDrums= NO;
+        
+        NSLog(@"Recording stopped on Drums");
     }
 }
 

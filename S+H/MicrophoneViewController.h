@@ -11,8 +11,8 @@
 
 @interface MicrophoneViewController : UIViewController
 
-@property audioEngine *audioEngine;
-@property settings *settings;
+@property (nonatomic, strong) audioEngine *audioEngine;
+@property (nonatomic, strong) settings *settings;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderOverlap;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPitch;

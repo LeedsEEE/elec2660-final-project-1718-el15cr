@@ -13,17 +13,17 @@
 
 @property audioEngine *audioEngine;
 
-@property (nonatomic) NSInteger selectedReverb;
-@property (nonatomic) NSInteger selectedDistortion;
-@property (nonatomic) NSInteger selectedInstrument1;
-@property (nonatomic) NSInteger selectedInstrument2;
-@property (nonatomic) NSInteger selectedDrums;
+@property NSInteger selectedReverb;
+@property NSInteger selectedDistortion;
+@property NSInteger selectedInstrument1;
+@property NSInteger selectedInstrument2;
+@property NSInteger selectedDrums;
 
-@property NSArray *pickerReverbData;
-@property NSArray *pickerDistortionData;
-@property NSArray *pickerInstrument1Data;
-@property NSArray *pickerInstrument2Data;
-@property NSArray *pickerDrumsData;
+@property (nonatomic, strong) NSArray *pickerReverbData;
+@property (nonatomic, strong) NSArray *pickerDistortionData;
+@property (nonatomic, strong) NSArray *pickerInstrument1Data;
+@property (nonatomic, strong) NSArray *pickerInstrument2Data;
+@property (nonatomic, strong) NSArray *pickerDrumsData;
 
 
 
