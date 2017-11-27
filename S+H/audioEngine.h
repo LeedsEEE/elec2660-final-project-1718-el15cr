@@ -18,11 +18,13 @@
 @property (nonatomic, strong) AVAudioPlayerNode *playerDrums;
 @property (nonatomic, strong) AVAudioPlayerNode *playerMicrophone;
 @property (nonatomic, strong) AVAudioPlayerNode *playerMainOut;
+@property (nonatomic, strong) AVAudioPlayerNode *playerMetronome;
 @property (nonatomic, strong) AVAudioFile *outputFileInstument1;
 @property (nonatomic, strong) AVAudioFile *outputFileInstument2;
 @property (nonatomic, strong) AVAudioFile *outputFileDrums;
 @property (nonatomic, strong) AVAudioFile *outputFileMicrophone;
 @property (nonatomic, strong) AVAudioFile *outputFileMainOut;
+@property (nonatomic, strong) AVAudioFile *fileMetronome;
 @property (nonatomic, strong) AVAudioMixerNode *mainMixer;
 @property (nonatomic, strong) AVAudioInputNode *inputMicrophone;
 @property (nonatomic, strong) AVAudioMixerNode *busReverb;
@@ -77,6 +79,7 @@
 @property (nonatomic, strong) NSURL *outputFileDrumsURL;
 @property (nonatomic, strong) NSURL *outputFileMicrophoneURL;
 @property (nonatomic, strong) NSURL *outputFileMainOutURL;
+@property (nonatomic, strong) NSURL *fileMetronomeURL;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend1;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend2;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend3;
@@ -84,16 +87,20 @@
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend5;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend6;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend7;
+@property (nonatomic, strong) NSTimer *timerMetronome;
+@property (nonatomic, strong) NSThread *threadMetronome; 
 @property NSInteger octave;
-@property bool isRecordingInstument1;
-@property bool isRecordingInstument2;
-@property bool isRecordingDrums;
-@property bool isRecordingMicrophone;
-@property bool isRecordingMainOut;
+@property float BPM; 
+@property BOOL isRecordingInstument1;
+@property BOOL isRecordingInstument2;
+@property BOOL isRecordingDrums;
+@property BOOL isRecordingMicrophone;
+@property BOOL isRecordingMainOut;
 @property BOOL isLoopInstument1;
 @property BOOL isLoopInstument2;
 @property BOOL isLoopDrums;
 @property BOOL isLoopMicrophone;
+@property BOOL isMetronome;
 
 -(void) createSession;
 -(void) createEngine;
@@ -103,6 +110,9 @@
 -(void) loadInstrumentDefaults;
 -(void) loadAudioUnitDefaults;
 -(void) perpareAndStartEngine;
+
+-(void) playMetronome;
+-(void) fireMetronome: (NSTimer*) timer;
 
 -(void) playInstrument1: (int) note;
 -(void) stopInstrument1: (int) note;

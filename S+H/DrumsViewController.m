@@ -73,77 +73,77 @@
 */
 
 - (IBAction)didTapDownNote1:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:36];
 }
 - (IBAction)didTapDownNote2:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:37];
 }
 - (IBAction)didTapDownNote3:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:38];
 }
 - (IBAction)didTapDownNote4:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:39];
 }
 - (IBAction)didTapDownNote5:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:40];
 }
 - (IBAction)didTapDownNote6:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:41];
 }
 - (IBAction)didTapDownNote7:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:42];
 }
 - (IBAction)didTapDownNote8:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:43];
 }
 - (IBAction)didTapDownNote9:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:44];
 }
 - (IBAction)didTapDownNote10:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:45];
 }
 - (IBAction)didTapDownNote11:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:46];
 }
 - (IBAction)didTapDownNote12:(UIButton *)sender {
-    [self.audioEngine playDrums:71];
+    [self.audioEngine playDrums:47];
 }
 
 - (IBAction)didTapInsideNote1:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:36];
 }
 - (IBAction)didTapInsideNote2:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:37];
 }
 - (IBAction)didTapInsideNote3:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:38];
 }
 - (IBAction)didTapInsideNote4:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:39];
 }
 - (IBAction)didTapInsideNote5:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:40];
 }
 - (IBAction)didTapInsideNote6:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:41];
 }
 - (IBAction)didTapInsideNote7:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:42];
 }
 - (IBAction)didTapInsideNote8:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:43];
 }
 - (IBAction)didTapInsideNote9:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:44];
 }
 - (IBAction)didTapInsideNote10:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:45];
 }
 - (IBAction)didTapInsideNote11:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:46];
 }
 - (IBAction)didTapInsideNote12:(UIButton *)sender {
-    [self.audioEngine stopDrums:71];
+    [self.audioEngine stopDrums:47];
 }
 
 - (IBAction)didTapPlay:(UIButton *)sender {

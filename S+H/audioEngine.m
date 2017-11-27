@@ -46,7 +46,7 @@
         // Calls the function loadAudioUnitDefaults and loads defaults for audio units
         
         [self loadAudioUnitDefaults];
-        
+    
         NSLog(@"init Complete");
         
     }
@@ -95,6 +95,7 @@
     self.playerInstument1 = [[AVAudioPlayerNode alloc]init];
     self.playerInstument2 = [[AVAudioPlayerNode alloc]init];
     self.playerDrums = [[AVAudioPlayerNode alloc]init];
+    self.playerMetronome = [[AVAudioPlayerNode alloc]init];
     self.mainMixer = [self.engine mainMixerNode];
     self.audioUnitTimePitch = [[AVAudioUnitTimePitch alloc]init];
     self.inputMicrophone = [self.engine inputNode];
@@ -124,6 +125,7 @@
     [self.engine attachNode:self.playerInstument2];
     [self.engine attachNode:self.playerDrums];
     [self.engine attachNode:self.audioUnitTimePitch];
+    [self.engine attachNode:self.playerMetronome];
     
     NSLog(@"Nodes attached");
     
@@ -167,6 +169,7 @@
     [self.engine connect:self.audioUnitDelay to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.busDirectOut to:self.mainMixer format:self.audioFormat];
     [self.engine connect:self.playerMainOut to:self.mainMixer format:self.audioFormat];
+    [self.engine connect:self.playerMetronome to:self.mainMixer format:self.audioFormat];
 
     
     NSLog(@"Connections created");
@@ -250,7 +253,7 @@
     
     self.samplerInstrument2URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
     
-    [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
+    [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:33 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Instrument 2 failed to load samples %@",error);
@@ -260,18 +263,20 @@
         
     }
     
-    self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"drumkit3.6all" ofType:@"sf2"]];
+    self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular TR-808" ofType:@"sf2"]];
     
-    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x54 bankLSB:0 error:&error];
+    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
-        NSLog(@"Drums failed to load samples %@",error);
-    } else {
         
+        NSLog(@"Drums failed to load samples %@",error);
+        
+    }  else {
+                
         NSLog(@"Drums loaded");
         
     }
-    
+
     
 }
 
@@ -344,6 +349,8 @@
     self.isRecordingInstument2 = false;
     self.isRecordingMicrophone = false;
     self.isRecordingMainOut = false;
+    
+    self.isMetronome = true;
     
     NSLog(@"Loaded audio unit defaults");
 }
@@ -982,7 +989,7 @@
         
     } else if (selectedInstument1 == 1) {
         
-        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:1 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:4 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument1 == 2) {
         
@@ -1028,43 +1035,47 @@
     
     if (selectedInstument2 == 0){
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:33 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 1) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:34 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 2) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:38 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 3) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:42 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 4) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:45 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 5) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:54 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 6) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:56 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 7) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:62 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 8) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:77 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedInstument2 == 9) {
         
-        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:87 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedInstument2 == 10) {
+        
+        [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:88 bankMSB:0x79 bankLSB:0 error:&error];
         
     }
 }
@@ -1077,9 +1088,37 @@
     
     if (selectedDrums == 0){
         
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular TR-808" ofType:@"sf2"]];
+        
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
     } else if (selectedDrums == 1) {
+        
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular TR-909" ofType:@"sf2"]];
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedDrums == 2) {
+        
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular Rave Set" ofType:@"sf2"]];
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedDrums == 3) {
+        
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular House Set" ofType:@"sf2"]];
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedDrums == 4) {
+        
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular Techno Set" ofType:@"sf2"]];
+        
+        [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+    } else if (selectedDrums == 5) {
+        
+        self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular Jazz1 Set" ofType:@"sf2"]];
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
@@ -1106,6 +1145,10 @@
     
     if (error){
         NSLog(@"outputFileInstument1 file player error %@",error);
+        
+        NSLog(@"No recorded flie?");
+        
+        return;
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1146,7 +1189,15 @@
 }
 
 -(void) startRecordingInstument1{
+    
     NSError *error;
+    
+    // Checks if recording is still enabled and disables it if YES
+    if (self.isRecordingInstument1 == YES){
+        
+        [self stopRecordingInstument1];
+        
+    }
     
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
@@ -1211,6 +1262,10 @@
     
     if (error){
         NSLog(@"outputFileInstument2 file player error %@",error);
+        
+        NSLog(@"No recorded flie?");
+        
+        return;
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1253,6 +1308,13 @@
 -(void) startRecordingInstument2
 {
     NSError *error;
+    
+    // Checks if recording is still enabled and disables it if YES
+    if (self.isRecordingInstument2 == YES){
+        
+        [self stopRecordingInstument2];
+        
+    }
     
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument2URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument2Output.caf"]];
@@ -1309,6 +1371,7 @@
         [self stopRecordingDrums];
         
     }
+    
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
     
@@ -1317,6 +1380,10 @@
     
     if (error){
         NSLog(@"outputFileDrums file player error %@",error);
+        
+        NSLog(@"No recorded flie?");
+        
+        return;
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1359,6 +1426,13 @@
 -(void) startRecordingDrums
 {
     NSError *error;
+    
+    // Checks if recording is still enabled and disables it if YES
+    if (self.isRecordingDrums == YES){
+        
+        [self stopRecordingDrums];
+        
+    }
     
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
@@ -1423,6 +1497,10 @@
     
     if (error){
         NSLog(@"outputFileMainOut file player error %@",error);
+        
+        NSLog(@"No recorded flie?");
+        
+        return;
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght
@@ -1459,6 +1537,13 @@
 -(void) startRecordingMainOut
 {
     NSError *error;
+    
+    // Checks if recording is still enabled and disables it if YES
+    if (self.isRecordingMainOut == YES){
+        
+        [self stopRecordingMainOut];
+        
+    }
     
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
@@ -1525,6 +1610,10 @@
     
     if (error){
         NSLog(@"outputFileMicrophone file player error %@",error);
+        
+        NSLog(@"No recorded flie?");
+        
+        return;
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1568,6 +1657,13 @@
 -(void) startRecordingMicrophone
 {
     NSError *error;
+    
+    // Checks if recording is still enabled and disables it if YES
+    if (self.isRecordingMicrophone == YES){
+        
+        [self stopRecordingMicrophone];
+        
+    }
     
     // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMicrophoneURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"microphoneOutput.caf"]];
@@ -1615,5 +1711,31 @@
     }
 }
 
+-(void) playMetronome {
+    
+    NSError *error;
+    
+    self.fileMetronomeURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep-07" ofType:@"wav"]];
+    
+    self.fileMetronome = [[AVAudioFile alloc] initForReading:self.fileMetronomeURL error:&error];
+    
+    [self.playerMetronome scheduleFile:self.fileMetronome atTime:nil completionHandler:nil];
+    
+    //do {
+        if (self.isMetronome == true) {
+            self.timerMetronome = [NSTimer scheduledTimerWithTimeInterval:(60/self.BPM) target:self selector:@selector(fireMetronome:) userInfo:nil repeats:YES];
+        } else {
+        
+            [self.timerMetronome invalidate];
+        
+        }
+    //} while (1);
+}
+
+-(void) fireMetronome: (NSTimer*) timer {
+    
+    [self.playerMetronome play];
+
+}
 
 @end

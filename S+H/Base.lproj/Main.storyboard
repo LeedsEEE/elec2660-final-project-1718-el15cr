@@ -763,11 +763,27 @@
                                     <action selector="didTapLoadPreset:" destination="hQd-3J-qyM" eventType="touchUpInside" id="7H3-gA-vy8"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JMM-WJ-DT9">
+                                <rect key="frame" x="183" y="332" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSwitchMetronome:" destination="hQd-3J-qyM" eventType="valueChanged" id="i6m-q1-Xxz"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="xca-kf-3p4">
+                                <rect key="frame" x="148" y="440" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didMoveSliderMetronome:" destination="hQd-3J-qyM" eventType="valueChanged" id="0ym-1P-nSB"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="pickerUserPreset" destination="0tV-qu-6fS" id="bvc-1i-JJN"/>
+                        <outlet property="sliderMetronome" destination="xca-kf-3p4" id="kpg-5O-oAL"/>
+                        <outlet property="switchMetronome" destination="JMM-WJ-DT9" id="ck9-aV-Gcy"/>
                     </connections>
                 </viewController>
                 <exit id="XuM-wG-1bB" userLabel="Exit" sceneMemberID="exit"/>

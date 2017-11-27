@@ -27,7 +27,13 @@
 		068113D71FC4391700E07608 /* MainMixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D61FC4391700E07608 /* MainMixViewController.m */; };
 		068113DA1FC43D1A00E07608 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113D91FC43D1A00E07608 /* SettingsViewController.m */; };
 		F20751411FC9CC9600BDC19B /* Chaos Bank V1.9 (12Mb).sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */; };
-		F20751431FCA11D600BDC19B /* drumkit3.6all.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F20751421FCA117E00BDC19B /* drumkit3.6all.sf2 */; };
+		F244B6A41FCC8D0700D9C0FD /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = F244B6A31FCC8D0700D9C0FD /* beep-07.wav */; };
+		F244B6A81FCCB1A200D9C0FD /* Angular TR-808.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6A71FCCB16600D9C0FD /* Angular TR-808.sf2 */; };
+		F244B6AD1FCCBCE200D9C0FD /* Angular Rave Set.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6AA1FCCBC7A00D9C0FD /* Angular Rave Set.sf2 */; };
+		F244B6AE1FCCBCE200D9C0FD /* Angular TR-909.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6A91FCCBC6D00D9C0FD /* Angular TR-909.sf2 */; };
+		F244B6B21FCCC65A00D9C0FD /* Angular House Set.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6B01FCCC62800D9C0FD /* Angular House Set.sf2 */; };
+		F244B6B31FCCC65A00D9C0FD /* Angular Jazz1 Set.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6AF1FCCC61E00D9C0FD /* Angular Jazz1 Set.sf2 */; };
+		F244B6B41FCCC65A00D9C0FD /* Angular Techno Set.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = F244B6B11FCCC63B00D9C0FD /* Angular Techno Set.sf2 */; };
 		F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2587C061FC2000C0096461C /* Instrument1ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +93,13 @@
 		068113D81FC43D1A00E07608 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		068113D91FC43D1A00E07608 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chaos Bank V1.9 (12Mb).sf2"; sourceTree = "<group>"; };
-		F20751421FCA117E00BDC19B /* drumkit3.6all.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumkit3.6all.sf2; sourceTree = "<group>"; };
+		F244B6A31FCC8D0700D9C0FD /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
+		F244B6A71FCCB16600D9C0FD /* Angular TR-808.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular TR-808.sf2"; sourceTree = "<group>"; };
+		F244B6A91FCCBC6D00D9C0FD /* Angular TR-909.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular TR-909.sf2"; sourceTree = "<group>"; };
+		F244B6AA1FCCBC7A00D9C0FD /* Angular Rave Set.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular Rave Set.sf2"; sourceTree = "<group>"; };
+		F244B6AF1FCCC61E00D9C0FD /* Angular Jazz1 Set.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular Jazz1 Set.sf2"; sourceTree = "<group>"; };
+		F244B6B01FCCC62800D9C0FD /* Angular House Set.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular House Set.sf2"; sourceTree = "<group>"; };
+		F244B6B11FCCC63B00D9C0FD /* Angular Techno Set.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Angular Techno Set.sf2"; sourceTree = "<group>"; };
 		F2587C051FC2000C0096461C /* Instrument1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument1ViewController.h; sourceTree = "<group>"; };
 		F2587C061FC2000C0096461C /* Instrument1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +175,13 @@
 		063FE0D51FBF2FE700620A64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F20751421FCA117E00BDC19B /* drumkit3.6all.sf2 */,
+				F244B6B01FCCC62800D9C0FD /* Angular House Set.sf2 */,
+				F244B6AF1FCCC61E00D9C0FD /* Angular Jazz1 Set.sf2 */,
+				F244B6B11FCCC63B00D9C0FD /* Angular Techno Set.sf2 */,
+				F244B6AA1FCCBC7A00D9C0FD /* Angular Rave Set.sf2 */,
+				F244B6A91FCCBC6D00D9C0FD /* Angular TR-909.sf2 */,
+				F244B6A71FCCB16600D9C0FD /* Angular TR-808.sf2 */,
+				F244B6A31FCC8D0700D9C0FD /* beep-07.wav */,
 				F20751401FC9CC8E00BDC19B /* Chaos Bank V1.9 (12Mb).sf2 */,
 				063FE0D61FBF2FE700620A64 /* main.m */,
 			);
@@ -327,7 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20751431FCA11D600BDC19B /* drumkit3.6all.sf2 in Resources */,
+				F244B6B21FCCC65A00D9C0FD /* Angular House Set.sf2 in Resources */,
+				F244B6B31FCCC65A00D9C0FD /* Angular Jazz1 Set.sf2 in Resources */,
+				F244B6B41FCCC65A00D9C0FD /* Angular Techno Set.sf2 in Resources */,
+				F244B6AD1FCCBCE200D9C0FD /* Angular Rave Set.sf2 in Resources */,
+				F244B6AE1FCCBCE200D9C0FD /* Angular TR-909.sf2 in Resources */,
+				F244B6A81FCCB1A200D9C0FD /* Angular TR-808.sf2 in Resources */,
+				F244B6A41FCC8D0700D9C0FD /* beep-07.wav in Resources */,
 				F20751411FC9CC9600BDC19B /* Chaos Bank V1.9 (12Mb).sf2 in Resources */,
 				063FE0E51FBF2FE700620A64 /* LaunchScreen.storyboard in Resources */,
 				063FE0E21FBF2FE700620A64 /* Assets.xcassets in Resources */,

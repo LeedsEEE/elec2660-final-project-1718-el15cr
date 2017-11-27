@@ -33,9 +33,9 @@
         
         self.pickerInstrument1Data = @[@"Piano 1", @"Piano 2",@"Xylophone",@"Church Organ",@"Violin",@"Viola",@"Choir Aahs",@"Ocarina",@"Chiffer Lead",@"5th Saw Wave"];
         
-        self.pickerInstrument2Data = @[@"Piano 1", @"Piano 2",@"Xylophone",@"Church Organ",@"Violin",@"Viola",@"Choir Aahs",@"Ocarina",@"Chiffer Lead",@"5th Saw Wave"];
+        self.pickerInstrument2Data = @[@"Fingered Bass", @"Picked Bass",@"Synth Bass",@"Cello",@"Pizzicato",@"Synth Vox",@"Trumpet",@"Synth Brass",@"Shakuhachi",@"Bass and Lead",@"Fantasia"];
         
-        self.pickerDrumsData = @[@"Drums 1", @"Drums 2"];
+        self.pickerDrumsData = @[@"TR-808", @"TR-909", @"Rave", @"House", @"Techno", @"Jazz"];
         
         self.pickerUserPresetData = @[@"User Preset 1", @"User Preset 2"];
         

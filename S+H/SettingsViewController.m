@@ -76,6 +76,17 @@
     [self loadUserPresetData];
     
 }
+
+- (IBAction)didMoveSliderMetronome:(UISlider *)sender {
+    
+    
+}
+
+- (IBAction)didMoveSwitchMetronome:(UISwitch *)sender {
+    
+
+    
+}
 - (IBAction)didTapStorePreset:(UIButton *)sender {
     
     [self storeUserPresetData];
