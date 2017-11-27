@@ -13,11 +13,11 @@
 
 @property (nonatomic, strong) audioEngine *audioEngine;
 @property (nonatomic, strong) settings *settings;
+@property (nonatomic, strong) NSTimer *timerRecord;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderOverlap;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPitch;
 @property (weak, nonatomic) IBOutlet UISlider *sliderRate;
-@property (weak, nonatomic) IBOutlet UISlider *sliderPan;
 @property (weak, nonatomic) IBOutlet UISwitch *switchLoop;
 
 
@@ -27,7 +27,7 @@
 - (IBAction)didMoveSliderOverlap:(UISlider *)sender;
 - (IBAction)didMoveSliderPitch:(UISlider *)sender;
 - (IBAction)didMoveSliderRate:(UISlider *)sender;
-- (IBAction)didMoveSliderPan:(UISlider *)sender;
+
 
 
 @end

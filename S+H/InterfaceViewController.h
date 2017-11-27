@@ -25,10 +25,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonMicrophone;
 @property (weak, nonatomic) IBOutlet UIButton *buttonInstument2;
 @property (weak, nonatomic) IBOutlet UIButton *buttonInstument1;
+@property (weak, nonatomic) IBOutlet UISlider *sliderVolume;
 
 
 - (IBAction)didTapPlay:(UIButton *)sender;
 - (IBAction)didTapRecord:(UIButton *)sender;
+- (IBAction)didMoveSliderVolume:(UISlider *)sender;
 
 @end
 

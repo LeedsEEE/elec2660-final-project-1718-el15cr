@@ -47,6 +47,31 @@
 
 - (IBAction)didTapPlay:(UIButton *)sender {
     
+    if (self.audioEngine.playerMicrophone.isPlaying == true){
+        
+        [self.audioEngine.playerMicrophone stop];
+        
+    }
+    
+    if (self.audioEngine.playerDrums.isPlaying == true){
+        
+        [self.audioEngine.playerDrums stop];
+        
+    }
+    
+    if (self.audioEngine.playerInstument1.isPlaying == true){
+        
+        [self.audioEngine.playerInstument1 stop];
+        
+    }
+    
+    if (self.audioEngine.playerInstument2.isPlaying == true){
+        
+        [self.audioEngine.playerInstument2 stop];
+        
+    }
+
+    
     [self.audioEngine startPlayingMainOut];
     
     if (self.audioEngine.playerMainOut.isPlaying == true) {
@@ -72,6 +97,12 @@
         [self.audioEngine stopRecordingMainOut];
         
     }
+    
+}
+
+- (IBAction)didMoveSliderVolume:(UISlider *)sender {
+    
+    [self.audioEngine volumeMainMixer:self.sliderVolume.value];
     
 }
 @end

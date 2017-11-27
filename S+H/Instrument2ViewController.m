@@ -175,7 +175,7 @@
     
     if (self.audioEngine.isRecordingInstument2 == false) {
         
-        [self.audioEngine startRecordingInstument2];
+        self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordInstument2:) userInfo:nil repeats:NO];
         
     } else {
         
@@ -188,6 +188,12 @@
 - (IBAction)didTapSwitchLoop:(UISwitch *)sender {
     
     self.audioEngine.isLoopInstument2 = self.switchLoop.isOn;
+    
+}
+
+-(void) recordInstument2: (NSTimer*) timer {
+    
+    [self.audioEngine startRecordingInstument2];
     
 }
 

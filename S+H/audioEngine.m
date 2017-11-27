@@ -136,8 +136,6 @@
     // Uses arrays to create connection points. Theses are used to send the instumnet to multiple outputs. They are being sent the the effects busses.
     
     self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:1],nil ];
-    
-   //self.connectionBusSend1 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:1], nil ];
     self.connectionBusSend2 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:2],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:2],nil ];
     self.connectionBusSend3 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:3],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:3],nil ];
     self.connectionBusSend4 = [NSArray arrayWithObjects:[[AVAudioConnectionPoint alloc] initWithNode:self.busDelay bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDistortion bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busReverb bus:4],[[AVAudioConnectionPoint alloc] initWithNode:self.busDirectOut bus:4],nil ];
@@ -234,6 +232,8 @@
 
 -(void) loadInstrumentDefaults {
     
+    // Loads the initialised defaults for the sampler units
+    
     NSError *error;
     
     self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
@@ -242,6 +242,10 @@
     
     if (error) {
         NSLog(@"Instrument 1 failed to load samples %@",error);
+    } else {
+        
+        NSLog(@"Instrument 1 loaded");
+        
     }
     
     self.samplerInstrument2URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
@@ -250,20 +254,30 @@
     
     if (error) {
         NSLog(@"Instrument 2 failed to load samples %@",error);
+    } else {
+        
+        NSLog(@"Instrument 2 loaded");
+        
     }
     
     self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"drumkit3.6all" ofType:@"sf2"]];
     
-    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x81 bankLSB:0 error:&error];
+    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x54 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Drums failed to load samples %@",error);
+    } else {
+        
+        NSLog(@"Drums loaded");
+        
     }
     
     
 }
 
 -(void) loadAudioUnitDefaults {
+    
+    // Loads the initialised defaults for the audio units
     
     [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
     [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBitBrush];
@@ -302,13 +316,36 @@
     self.sendDistortionPlayerDrums.volume = 0;
     self.sendDistortionMicrophone.volume = 0;
     
-    self.sendDirectOutInstrument1.volume = 100;
-    self.sendDirectOutPlayerInstrument1.volume = 100;
-    self.sendDirectOutInstrument2.volume = 100;
-    self.sendDirectOutPlayerInstrument2.volume = 100;
-    self.sendDirectOutDrums.volume = 100;
-    self.sendDirectOutPlayerDrums.volume = 100;
-    self.sendDirectOutMicrophone.volume = 100;
+    self.sendDirectOutInstrument1.volume = 1;
+    self.sendDirectOutPlayerInstrument1.volume = 1;
+    self.sendDirectOutInstrument2.volume = 1;
+    self.sendDirectOutPlayerInstrument2.volume = 1;
+    self.sendDirectOutDrums.volume = 1;
+    self.sendDirectOutPlayerDrums.volume = 1;
+    self.sendDirectOutMicrophone.volume = 1;
+    
+    self.mainMixer.outputVolume = 1;
+
+    self.playerInstument1.pan = 0;
+    self.playerInstument2.pan = 0;
+    self.playerDrums.pan = 0;
+    self.samplerInstrument1.pan = 0;
+    self.samplerInstrument2.pan = 0;
+    
+    self.octave = 4;
+    
+    self.isLoopDrums = true;
+    self.isLoopInstument1 = true;
+    self.isLoopInstument2 = true;
+    self.isLoopMicrophone = true;
+    
+    self.isRecordingDrums = false;
+    self.isRecordingInstument1 = false;
+    self.isRecordingInstument2 = false;
+    self.isRecordingMicrophone = false;
+    self.isRecordingMainOut = false;
+    
+    NSLog(@"Loaded audio unit defaults");
 }
 
 
@@ -570,17 +607,52 @@
     
 }
 
+-(void) playDrums:(int)note {
+    
+    // Starts the drums playing on correct midi note
+    
+    [self.samplerDrums startNote:note withVelocity:127 onChannel:0];
+    
+    NSLog(@"Start note %i on Drums",note);
+    
+}
+
+-(void) stopDrums:(int)note {
+    
+    // Stops the drums playing on correct midi note
+
+        [self.samplerDrums stopNote:note onChannel:0];
+        
+        NSLog(@"Stop note %i on Drums",note);
+}
+
 -(void) panInstrument1: (float) pan{
     
+    // Pan for the instument and player
+    
     self.samplerInstrument1.pan = pan;
+    self.playerInstument1.pan = pan;
     
     NSLog(@"Instument 1 Pan: %.2f",pan);
+    
+}
+
+-(void) panInstrument2: (float) pan{
+    
+    // Pan for the instument and player
+    
+    self.samplerInstrument2.pan = pan;
+    self.playerInstument2.pan = pan;
+    
+    NSLog(@"Instument 2 Pan: %.2f",pan);
     
 }
 
 #pragma methods for audio units
 
 -(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
+    
+     // The amount of input volume for each bus that it is being sent to
     
     self.sendReverbInstrument1.volume = reverbInstrument1;
     self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
@@ -594,12 +666,16 @@
 
 -(void) audioUnitReverbWetDry: (float) wetDry{
     
+    // Changes how wet or dry the signal of the audio unit is
+    
     self.audioUnitReverb.wetDryMix = wetDry;
     
     NSLog(@"Reverb Wet/Dry: %.2f",wetDry);
 }
 
 -(void) changeReverb: (NSInteger) selectedReverb {
+    
+    // Loads a diffrent reverb preset depending on the selected input value
     
     if (selectedReverb == 0){
         
@@ -658,6 +734,8 @@
 
 -(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
     
+    // The amount of input volume for each bus that it is being sent to
+    
     self.sendDelayInstrument1.volume = delayInstrument1;
     self.sendDelayPlayerInstrument1.volume = delayInstrument1;
     self.sendDelayInstrument2.volume = delayInstrument2;
@@ -670,6 +748,8 @@
 
 -(void) audioUnitDelayWetDry:(float)wetDry {
     
+    // Changes how wet or dry the signal of the audio unit is
+    
     self.audioUnitDelay.wetDryMix = wetDry;
     
     NSLog(@"Delay Wet/Dry: %.2f",wetDry);
@@ -677,6 +757,8 @@
 }
 
 -(void) audioUnitDelayTime:(float)delayTime {
+    
+    // Changes the delay time of the audio unit
     
     self.audioUnitDelay.delayTime = delayTime;
     
@@ -686,6 +768,8 @@
 
 -(void) audioUnitDelayFeedback:(float)feedback {
     
+    // Changes the feedback of the audio unit
+    
     self.audioUnitDelay.feedback = feedback;
     
     NSLog(@"Delay Feedback: %.2f",feedback);
@@ -693,6 +777,8 @@
 }
 
 -(void) audioUnitDelayLowPassCutoff:(float)cutoff {
+    
+    // Changes the low pass cutt off of the audio unit
 
     self.audioUnitDelay.lowPassCutoff = cutoff;
     
@@ -701,6 +787,8 @@
 }
 
 -(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
+    
+    // The amount of input volume for each bus that it is being sent to
     
     self.sendDistortionInstrument1.volume = distortionInstrument1;
     self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
@@ -714,6 +802,8 @@
 
 -(void) audioUnitDistortionWetDry:(float)wetDry {
     
+    // Changes how wet or dry the signal of the audio unit is
+    
     self.audioUnitDistortion.wetDryMix = wetDry;
     
     NSLog(@"Distortion Wet/Dry: %.2f",wetDry);
@@ -722,6 +812,8 @@
 
 -(void) audioUnitDistortionPreGain:(float)preGain {
     
+    // Changes the pre-gain of the audio unit
+    
     self.audioUnitDistortion.preGain = preGain;
     
     NSLog(@"Distortion PreGain: %.2f",preGain);
@@ -729,6 +821,8 @@
 }
 
 -(void) changeDistortion:(NSInteger)selectedDistortion {
+    
+    // Loads a diffrent distortion preset depending on the selected input value
     
     if (selectedDistortion == 0){
         
@@ -824,6 +918,8 @@
 
 -(void) sendsForDirectOut:(float)directInstrument1 :(float)directInstrument2 :(float)directDrums :(float)directMicrohpone{
     
+    // The amount of input volume for each bus that it is being sent to
+    
     self.sendDirectOutInstrument1.volume = directInstrument1;
     self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
     self.sendDirectOutInstrument2.volume = directInstrument2;
@@ -834,7 +930,19 @@
     
 }
 
+-(void) volumeMainMixer: (float) volume {
+    
+    // Changes the volume for the main mixer (which is the mainMixer Node)
+    
+    self.mainMixer.outputVolume = volume;
+    
+    NSLog(@"Volume %.2f",volume); 
+    
+}
+
 -(void) audioUnitTimePitchRate:(float)rate {
+    
+    // Changes the rate of the audio unit
     
     self.audioUnitTimePitch.rate = rate;
     
@@ -844,6 +952,8 @@
 
 -(void) audioUnitTimePitchOverlap:(float)overlap {
     
+    // Changes the overlap of the audio unit
+    
     self.audioUnitTimePitch.overlap = overlap;
     
     NSLog(@"Time Pitch Overlap: %.2f",overlap);
@@ -852,6 +962,8 @@
 
 -(void) audioUnitTimePitch:(float)pitch {
     
+    // Changes the pitch of the audio unit
+    
     self.audioUnitTimePitch.pitch = pitch;
     
     NSLog(@"Time Pitch: %.2f",pitch);
@@ -859,6 +971,8 @@
 }
 
 -(void) changeInstrument1:(NSInteger)selectedInstument1 {
+    
+    // Loads a diffrent program depending on the selected instrument
     
     NSError *error;
     
@@ -908,6 +1022,8 @@
 
 -(void) changeInstrument2:(NSInteger)selectedInstument2 {
     
+    // Loads a diffrent program depending on the selected instrument
+    
     NSError *error;
     
     if (selectedInstument2 == 0){
@@ -955,6 +1071,8 @@
 
 -(void) changeDrums:(NSInteger)selectedDrums {
     
+    // Loads a diffrent program depending on the selected drums
+    
     NSError *error;
     
     if (selectedDrums == 0){
@@ -973,28 +1091,34 @@
     
     NSError *error;
     
+    // Checks if recording is still enabled and disables it if YES
     if (self.isRecordingInstument1 == YES){
         
         [self stopRecordingInstument1];
         
     }
     
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
     
+    // Prepares the file to be read
     self.outputFileInstument1 = [[AVAudioFile alloc] initForReading:self.outputFileInstument1URL error:&error];
     
     if (error){
         NSLog(@"outputFileInstument1 file player error %@",error);
     }
     
+    // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
     
+    // Reads data from buffer
     [self.outputFileInstument1 readIntoBuffer:self.bufferInstument1 error:&error];
     
     if (error){
         NSLog(@"outputFileInstument1 buffer player error %@",error);
     }
     
+    // If loop is enabled schedule loop buffer, if not play non-loop
    if (self.isLoopInstument1 == true){
         
         [self.playerInstument1 scheduleBuffer:self.bufferInstument1 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
@@ -1005,7 +1129,7 @@
     }
     
     
-    
+    // If the player is not playing then play. If the player is playing then stop.
     if (self.playerInstument1.isPlaying == false) {
         
         [self.playerInstument1 play];
@@ -1023,14 +1147,18 @@
 
 -(void) startRecordingInstument1{
     NSError *error;
+    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
     
+    // Prepares the file to be written to and sets the format.
     self.outputFileInstument1 = [[AVAudioFile alloc] initForWriting:self.outputFileInstument1URL settings:[[self.samplerInstrument1 outputFormatForBus:0] settings] error:&error];
     
     if (error){
         NSLog(@"outputFileInstument1 file recording error %@",error);
     }
     
+    // Installs a tap on the output of a bus. This allows for the output to be captured. A local buffer then writes the captured data to the file.
     [self.samplerInstrument1 installTapOnBus:0 bufferSize:4096 format:[self.samplerInstrument1 outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
         
         NSError *error;
@@ -1043,6 +1171,8 @@
 
         
     }];
+    
+    // Recording is enabled
     self.isRecordingInstument1 = YES;
     
     NSLog(@"Recording started on Instrument1");
@@ -1051,7 +1181,11 @@
 -(void) stopRecordingInstument1
 {
     if (self.isRecordingInstument1) {
+        
+        // Removes the tap and stops the recording.
         [self.samplerInstrument1 removeTapOnBus:0];
+        
+        // Recording is disabled
         self.isRecordingInstument1 = NO;
         
         NSLog(@"Recording stopped on Instrument1");
@@ -1062,28 +1196,34 @@
     
     NSError *error;
     
+    // Checks if recording is still enabled and disables it if YES
     if (self.isRecordingInstument2 == YES){
         
         [self stopRecordingInstument2];
         
     }
     
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument2URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument2Output.caf"]];
     
+    // Prepares the file to be read
     self.outputFileInstument2 = [[AVAudioFile alloc] initForReading:self.outputFileInstument2URL error:&error];
     
     if (error){
         NSLog(@"outputFileInstument2 file player error %@",error);
     }
     
+    // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferInstument2 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument2.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument2.length];
     
+    // Reads data from buffer
     [self.outputFileInstument2 readIntoBuffer:self.bufferInstument2 error:&error];
     
     if (error){
         NSLog(@"outputFileInstument2 buffer player error %@",error);
     }
     
+    // If loop is enabled schedule loop buffer, if not play non-loop
     if (self.isLoopInstument2 == true){
         
         [self.playerInstument2 scheduleBuffer:self.bufferInstument2 atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
@@ -1093,8 +1233,7 @@
         [self.playerInstument2 scheduleBuffer:self.bufferInstument2 completionHandler:nil];
     }
     
-    
-    
+    // If the player is not playing then play. If the player is playing then stop.
     if (self.playerInstument2.isPlaying == false) {
         
         [self.playerInstument2 play];
@@ -1114,14 +1253,18 @@
 -(void) startRecordingInstument2
 {
     NSError *error;
+    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileInstument2URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument2Output.caf"]];
     
+    // Prepares the file to be written to and sets the format.
     self.outputFileInstument2 = [[AVAudioFile alloc] initForWriting:self.outputFileInstument2URL settings:[[self.samplerInstrument2 outputFormatForBus:0] settings] error:&error];
     
     if (error){
         NSLog(@"outputFileInstument2 file recording error %@",error);
     }
     
+    // Installs a tap on the output of a bus. This allows for the output to be captured. A local buffer then writes the captured data to the file.
     [self.samplerInstrument2 installTapOnBus:0 bufferSize:4096 format:[self.samplerInstrument2 outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
         
         NSError *error;
@@ -1134,6 +1277,8 @@
         
         
     }];
+    
+    // Recording is enabled
     self.isRecordingInstument2 = YES;
     
     NSLog(@"Recording started on Instrument2");
@@ -1142,7 +1287,11 @@
 -(void) stopRecordingInstument2
 {
     if (self.isRecordingInstument2) {
+        
+        // Removes the tap and stops the recording.
         [self.samplerInstrument2 removeTapOnBus:0];
+        
+        // Recording is disabled
         self.isRecordingInstument2 = NO;
         
         NSLog(@"Recording stopped on Instrument2");
@@ -1154,28 +1303,33 @@
     
     NSError *error;
     
+    // Checks if recording is still enabled and disables it if YES
     if (self.isRecordingDrums == YES){
         
         [self stopRecordingDrums];
         
     }
-    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
     
+    // Prepares the file to be read
     self.outputFileDrums= [[AVAudioFile alloc] initForReading:self.outputFileDrumsURL error:&error];
     
     if (error){
         NSLog(@"outputFileDrums file player error %@",error);
     }
     
+    // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferDrums = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileDrums.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileDrums.length];
     
+    // Reads data from buffer
     [self.outputFileDrums readIntoBuffer:self.bufferDrums error:&error];
     
     if (error){
         NSLog(@"outputFileDrums buffer player error %@",error);
     }
     
+    // If loop is enabled schedule loop buffer, if not play non-loop
     if (self.isLoopDrums == true){
         
         [self.playerDrums scheduleBuffer:self.bufferDrums atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
@@ -1185,8 +1339,7 @@
         [self.playerDrums scheduleBuffer:self.bufferDrums completionHandler:nil];
     }
     
-    
-    
+    // If the player is not playing then play. If the player is playing then stop.
     if (self.playerDrums.isPlaying == false) {
         
         [self.playerDrums play];
@@ -1206,14 +1359,18 @@
 -(void) startRecordingDrums
 {
     NSError *error;
+    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileDrumsURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"drumsOutput.caf"]];
     
+    // Prepares the file to be written to and sets the format.
     self.outputFileDrums = [[AVAudioFile alloc] initForWriting:self.outputFileDrumsURL settings:[[self.samplerDrums outputFormatForBus:0] settings] error:&error];
     
     if (error){
         NSLog(@"outputFileDrums file recording error %@",error);
     }
     
+    // Installs a tap on the output of a bus. This allows for the output to be captured. A local buffer then writes the captured data to the file.
     [self.samplerDrums installTapOnBus:0 bufferSize:4096 format:[self.samplerDrums outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
         
         NSError *error;
@@ -1226,6 +1383,8 @@
         
         
     }];
+    
+    // Recording is enabled
     self.isRecordingDrums = YES;
     
     NSLog(@"Recording started on Drums");
@@ -1234,7 +1393,11 @@
 -(void) stopRecordingDrums
 {
     if (self.isRecordingDrums) {
+        
+        // Removes the tap and stops the recording.
         [self.samplerDrums removeTapOnBus:0];
+        
+        // Recording is disabled
         self.isRecordingDrums= NO;
         
         NSLog(@"Recording stopped on Drums");
@@ -1245,30 +1408,37 @@
     
     NSError *error;
     
+    // Checks if recording is still enabled and disables it if YES
     if (self.isRecordingMainOut == YES){
         
         [self stopRecordingMainOut];
         
     }
     
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
     
+    // Prepares the file to be read
     self.outputFileMainOut = [[AVAudioFile alloc] initForReading:self.outputFileMainOutURL error:&error];
     
     if (error){
         NSLog(@"outputFileMainOut file player error %@",error);
     }
     
+    // Creates a buffer for playback and sets the format to the file and lenght
     AVAudioPCMBuffer *bufferMainOut= [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileMainOut.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileMainOut.length];
     
     if (error){
         NSLog(@"outputFileMainOut buffer player error %@",error);
     }
     
+    // Reads data from buffer
     [self.outputFileMainOut readIntoBuffer:bufferMainOut error:&error];
-    
+
+    // Schedule main out buffer
     [self.playerMainOut scheduleBuffer:bufferMainOut completionHandler:nil];
     
+    // If the player is not playing then play. If the player is playing then stop.
     if (self.playerMainOut.isPlaying == false) {
         
         [self.playerMainOut play];
@@ -1289,14 +1459,18 @@
 -(void) startRecordingMainOut
 {
     NSError *error;
+    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMainOutURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"mainoutOutput.caf"]];
     
+    // Prepares the file to be written to and sets the format.
     self.outputFileMainOut = [[AVAudioFile alloc] initForWriting:self.outputFileMainOutURL settings:[[self.mainMixer outputFormatForBus:0] settings] error:&error];
     
     if (error){
         NSLog(@"outputFileMainOut file recording error %@",error);
     }
     
+    // Installs a tap on the output of a bus. This allows for the output to be captured. A local buffer then writes the captured data to the file.
     [self.mainMixer installTapOnBus:0 bufferSize:4096 format:[self.mainMixer outputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
         
         NSError *error;
@@ -1311,6 +1485,7 @@
         
     }];
     
+    // Recording is enabled
     self.isRecordingMainOut = YES;
     
     NSLog(@"Recording started on main out ");
@@ -1319,7 +1494,11 @@
 -(void) stopRecordingMainOut
 {
     if (self.isRecordingMainOut) {
+        
+        // Removes the tap and stops the recording.
         [self.mainMixer removeTapOnBus:0];
+        
+        // Recording is disabled
         self.isRecordingMainOut = NO;
         
         NSLog(@"Recording stopped on main out");
@@ -1331,30 +1510,34 @@
     
     NSError *error;
     
+    // Checks if recording is still enabled and disables it if YES
     if (self.isRecordingMicrophone == YES){
         
         [self stopRecordingMicrophone];
         
     }
     
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMicrophoneURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"microphoneOutput.caf"]];
     
+    // Prepares the file to be read
     self.outputFileMicrophone = [[AVAudioFile alloc] initForReading:self.outputFileMicrophoneURL error:&error];
     
     if (error){
         NSLog(@"outputFileMicrophone file player error %@",error);
     }
     
+    // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferMicrophone = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileMicrophone.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileMicrophone.length];
     
-    [self.outputFileInstument1 readIntoBuffer:self.bufferInstument1 error:&error];
+    // Reads data from buffer
+    [self.outputFileMicrophone readIntoBuffer:self.bufferMicrophone error:&error];
     
     if (error){
         NSLog(@"outputFileMicrohpone buffer player error %@",error);
     }
     
-    [self.outputFileMicrophone readIntoBuffer:self.bufferMicrophone error:&error];
-    
+    // If loop is enabled schedule loop buffer, if not play non-loop
     if (self.isLoopMicrophone == true){
         
         [self.playerMicrophone scheduleBuffer:self.bufferMicrophone atTime:nil options:AVAudioPlayerNodeBufferLoops completionHandler:nil];
@@ -1364,6 +1547,7 @@
         [self.playerMicrophone scheduleBuffer:self.bufferMicrophone completionHandler:nil];
     }
     
+    // If the player is not playing then play. If the player is playing then stop.
     if (self.playerMicrophone.isPlaying == false) {
         
         [self.playerMicrophone play];
@@ -1384,14 +1568,18 @@
 -(void) startRecordingMicrophone
 {
     NSError *error;
+    
+    // Sets the location for the recoreded file. This is in NSTemporaryDirectory
     self.outputFileMicrophoneURL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"microphoneOutput.caf"]];
     
+    // Prepares the file to be written to and sets the format.
     self.outputFileMicrophone= [[AVAudioFile alloc] initForWriting:self.outputFileMicrophoneURL settings:self.audioFormat.settings error:&error];
     
     if (error){
         NSLog(@"outputFileMicrophone file recording error %@",error);
     }
     
+    // Installs a tap on the output of a bus. This allows for the output to be captured. A local buffer then writes the captured data to the file.
     [self.inputMicrophone installTapOnBus:0 bufferSize:4096 format:self.audioFormat block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when) {
         
         NSError *error;
@@ -1406,6 +1594,7 @@
         
     }];
     
+    // Recording is enabled
     self.isRecordingMicrophone = YES;
     
     NSLog(@"Recording started on microphone ");
@@ -1414,7 +1603,11 @@
 -(void) stopRecordingMicrophone
 {
     if (self.isRecordingMicrophone) {
+        
+        // Removes the tap and stops the recording.
         [self.inputMicrophone removeTapOnBus:0];
+        
+        // Recording is disabled
         self.isRecordingMicrophone = NO;
         
         NSLog(@"Recording stopped on microphone");

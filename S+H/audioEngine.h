@@ -120,6 +120,8 @@
 -(void) sendsForDelay: (float)delayInstrument1 : (float)delayInstrument2 : (float)delayDrums : (float)delayMicrohpone;
 -(void) sendsForDistortion: (float)distortionInstrument1 : (float)distortionInstrument2 : (float)distortionDrums : (float)distortionMicrohpone;
 
+-(void) volumeMainMixer: (float) volume;
+
 -(void) audioUnitReverbWetDry: (float) wetDry;
 
 -(void) audioUnitDelayTime: (float) delayTime;

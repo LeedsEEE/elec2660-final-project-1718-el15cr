@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) audioEngine *audioEngine;
 @property (nonatomic, strong) settings *settings;
-
+@property (nonatomic, strong) NSTimer *timerRecord;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerDrums;
 @property (weak, nonatomic) IBOutlet UISwitch *switchLoop;

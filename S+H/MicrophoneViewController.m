@@ -49,7 +49,7 @@
     
     if (self.audioEngine.isRecordingMicrophone == false){
         
-        [self.audioEngine startRecordingMicrophone];
+        self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordMicrophone:) userInfo:nil repeats:NO];
         
     } else {
         
@@ -81,6 +81,11 @@
     
 }
 
-- (IBAction)didMoveSliderPan:(UISlider *)sender {
+-(void) recordMicrophone: (NSTimer*) timer {
+    
+    [self.audioEngine startRecordingMicrophone];
+    
 }
+
+
 @end

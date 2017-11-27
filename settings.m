@@ -45,6 +45,8 @@
 
 -(void) loadUserPreset {
     
+    // Loads the array that was stored in user deafaults using the key.
+    
     if (self.selectedUserPreset == 0) {
         
         self.userPresetData1 = [[self.userDefaults arrayForKey:@"userPreset1"] mutableCopy];
@@ -62,6 +64,8 @@
 }
 
 -(void) storeUserPreset {
+    
+    // Stores the array in user deafaults using the key to easliy find the array again
     
     if (self.selectedUserPreset == 0) {
         
