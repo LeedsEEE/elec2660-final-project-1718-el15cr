@@ -12,6 +12,7 @@
 @interface DelayViewController : UIViewController
 
 @property (nonatomic, strong) audioEngine *audioEngine;
+@property (nonatomic, strong) settings *settings;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderWetDry;
 @property (weak, nonatomic) IBOutlet UISlider *sliderDelayTime;

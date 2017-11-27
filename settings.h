@@ -7,24 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "audioEngine.h"
 
 @interface settings : NSObject
 
-@property audioEngine *audioEngine;
+@property (nonatomic, strong) NSUserDefaults *userDefaults; 
 
 @property NSInteger selectedReverb;
 @property NSInteger selectedDistortion;
 @property NSInteger selectedInstrument1;
 @property NSInteger selectedInstrument2;
 @property NSInteger selectedDrums;
+@property NSInteger selectedUserPreset;
 
 @property (nonatomic, strong) NSArray *pickerReverbData;
 @property (nonatomic, strong) NSArray *pickerDistortionData;
 @property (nonatomic, strong) NSArray *pickerInstrument1Data;
 @property (nonatomic, strong) NSArray *pickerInstrument2Data;
 @property (nonatomic, strong) NSArray *pickerDrumsData;
+@property (nonatomic, strong) NSArray *pickerUserPresetData;
+@property (nonatomic, strong) NSMutableArray *userPresetData1;
+@property (nonatomic, strong) NSMutableArray *userPresetData2;
 
-
+-(void) storeUserPreset;
+-(void) loadUserPreset;
 
 @end

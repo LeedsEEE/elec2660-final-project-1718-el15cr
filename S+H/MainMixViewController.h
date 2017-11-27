@@ -12,6 +12,7 @@
 @interface MainMixViewController : UIViewController
 
 @property (nonatomic, strong) audioEngine *audioEngine;
+@property (nonatomic, strong) settings *settings;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderInstrument1;
 @property (weak, nonatomic) IBOutlet UISlider *sliderInstrument2;

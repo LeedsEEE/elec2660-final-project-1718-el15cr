@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-
 @interface audioEngine : NSObject
 
 @property (nonatomic, strong) AVAudioSession *audioSession;
@@ -95,7 +94,6 @@
 @property BOOL isLoopInstument2;
 @property BOOL isLoopDrums;
 @property BOOL isLoopMicrophone;
-
 
 -(void) createSession;
 -(void) createEngine;

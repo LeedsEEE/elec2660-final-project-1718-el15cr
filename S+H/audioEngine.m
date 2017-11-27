@@ -238,7 +238,7 @@
     
     self.samplerInstrument1URL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Chaos Bank V1.9 (12Mb)" ofType:@"sf2"]];
     
-    [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
+    [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Instrument 1 failed to load samples %@",error);
@@ -254,7 +254,7 @@
     
     self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"drumkit3.6all" ofType:@"sf2"]];
     
-    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x7A bankLSB:0 error:&error];
+    [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:25 bankMSB:0x81 bankLSB:0 error:&error];
     
     if (error) {
         NSLog(@"Drums failed to load samples %@",error);
@@ -265,13 +265,50 @@
 
 -(void) loadAudioUnitDefaults {
     
-    [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
-    [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechAlienChatter];
-    self.audioUnitDistortion.wetDryMix = 0;
-    self.audioUnitDelay.delayTime = 0;
-    self.audioUnitDelay.wetDryMix = 0;
-    self.audioUnitReverb.wetDryMix =0;
+    [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
+    [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBitBrush];
     
+    self.audioUnitDistortion.wetDryMix = 100;
+    self.audioUnitDistortion.preGain = 0;
+    
+    self.audioUnitDelay.wetDryMix = 100;
+    self.audioUnitDelay.delayTime = 0;
+    self.audioUnitDelay.lowPassCutoff = 100;
+    self.audioUnitDelay.feedback = 20;
+    
+    self.audioUnitReverb.wetDryMix = 100;
+    
+    self.sendReverbInstrument1.volume = 0;
+    self.sendReverbPlayerInstrument1.volume = 0;
+    self.sendReverbInstrument2.volume = 0;
+    self.sendReverbPlayerInstrument2.volume = 0;
+    self.sendReverbDrums.volume = 0;
+    self.sendReverbPlayerDrums.volume = 0;
+    self.sendReverbMicrophone.volume = 0;
+    
+    self.sendDelayInstrument1.volume = 0;
+    self.sendDelayPlayerInstrument1.volume = 0;
+    self.sendDelayInstrument2.volume = 0;
+    self.sendDelayPlayerInstrument2.volume = 0;
+    self.sendDelayDrums.volume = 0;
+    self.sendDelayPlayerDrums.volume = 0;
+    self.sendDelayMicrophone.volume = 0;
+    
+    self.sendDistortionInstrument1.volume = 0;
+    self.sendDistortionPlayerInstrument1.volume = 0;
+    self.sendDistortionInstrument2.volume = 0;
+    self.sendDistortionPlayerInstrument2.volume = 0;
+    self.sendDistortionDrums.volume = 0;
+    self.sendDistortionPlayerDrums.volume = 0;
+    self.sendDistortionMicrophone.volume = 0;
+    
+    self.sendDirectOutInstrument1.volume = 100;
+    self.sendDirectOutPlayerInstrument1.volume = 100;
+    self.sendDirectOutInstrument2.volume = 100;
+    self.sendDirectOutPlayerInstrument2.volume = 100;
+    self.sendDirectOutDrums.volume = 100;
+    self.sendDirectOutPlayerDrums.volume = 100;
+    self.sendDirectOutMicrophone.volume = 100;
 }
 
 
@@ -287,7 +324,7 @@
         
         [self.samplerInstrument1 startNote:(note-48) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note-48);
+        NSLog(@"Start note %i on instrument 1",note-48);
         
     } else if (self.octave==1){
         
@@ -295,7 +332,7 @@
         
         [self.samplerInstrument1 startNote:(note-36) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note-36);
+        NSLog(@"Start note %i on instrument 1",note-36);
         
     } else if (self.octave==2){
         
@@ -303,7 +340,7 @@
         
         [self.samplerInstrument1 startNote:(note-24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note-24);
+        NSLog(@"Start note %i on instrument 1",note-24);
         
     } else if (self.octave==3){
         
@@ -311,7 +348,7 @@
         
         [self.samplerInstrument1 startNote:(note-12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note-12);
+        NSLog(@"Start note %i on instrument 1",note-12);
         
     } else if (self.octave==4){
         
@@ -319,7 +356,7 @@
         
         [self.samplerInstrument1 startNote:(note) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note);
+        NSLog(@"Start note %i on instrument 1",note);
         
     } else if (self.octave==5){
         
@@ -327,7 +364,7 @@
         
         [self.samplerInstrument1 startNote:(note+12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note+12);
+        NSLog(@"Start note %i on instrument 1",note+12);
         
     } else if (self.octave>=6){
         
@@ -335,7 +372,7 @@
         
         [self.samplerInstrument1 startNote:(note+24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 1: = %i",note+24);
+        NSLog(@"Start note %i on instrument 1",note+24);
         
     }
     
@@ -351,7 +388,7 @@
         
         [self.samplerInstrument1 stopNote:(note-48) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note-48);
+        NSLog(@"Stop note %i on instrument 1",note-48);
         
     } else if (self.octave==1){
         
@@ -359,7 +396,7 @@
         
         [self.samplerInstrument1 stopNote:(note-36) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note-36);
+        NSLog(@"Stop note %i on instrument 1",note-36);
         
     } else if (self.octave==2){
         
@@ -367,7 +404,7 @@
         
         [self.samplerInstrument1 stopNote:(note-24) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note-24);
+        NSLog(@"Stop note %i on instrument 1",note-24);
         
     } else if (self.octave==3){
         
@@ -375,7 +412,7 @@
         
         [self.samplerInstrument1 stopNote:(note-12) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note-12);
+        NSLog(@"Stop note %i on instrument 1",note-12);
         
     } else if (self.octave==4){
         
@@ -383,7 +420,7 @@
         
         [self.samplerInstrument1 stopNote:note onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note);
+        NSLog(@"Stop note %i on instrument 1",note);
         
     } else if (self.octave==5){
         
@@ -391,7 +428,7 @@
         
         [self.samplerInstrument1 stopNote:(note+12) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note+12);
+        NSLog(@"Stop note %i on instrument 1",note+12);
         
     } else if (self.octave>=6){
         
@@ -399,7 +436,7 @@
         
         [self.samplerInstrument1 stopNote:(note+24) onChannel:0];
         
-        NSLog(@"Stop note on instrument 1: = %i",note+24);
+        NSLog(@"Stop note %i on instrument 1",note+24);
         
     }
     
@@ -415,7 +452,7 @@
         
         [self.samplerInstrument2 startNote:(note-48) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note-48);
+        NSLog(@"Start note %i on instrument 2",note-48);
         
     } else if (self.octave==1){
         
@@ -423,7 +460,7 @@
         
         [self.samplerInstrument2 startNote:(note-36) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note-36);
+        NSLog(@"Start note %i on instrument 2",note-36);
         
     } else if (self.octave==2){
         
@@ -431,7 +468,7 @@
         
         [self.samplerInstrument2 startNote:(note-24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note-24);
+        NSLog(@"Start note %i on instrument 2",note-24);
         
     } else if (self.octave==3){
         
@@ -439,7 +476,7 @@
         
         [self.samplerInstrument2 startNote:(note-12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note-12);
+        NSLog(@"Start note %i on instrument 2",note-12);
         
     } else if (self.octave==4){
         
@@ -447,7 +484,7 @@
         
         [self.samplerInstrument2 startNote:(note) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note);
+        NSLog(@"Start note %i on instrument 2",note);
         
     } else if (self.octave==5){
         
@@ -455,7 +492,7 @@
         
         [self.samplerInstrument2 startNote:(note+12) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note+12);
+        NSLog(@"Start note %i on instrument 2",note+12);
         
     } else if (self.octave>=6){
         
@@ -463,7 +500,7 @@
         
         [self.samplerInstrument2 startNote:(note+24) withVelocity:127 onChannel:0];
         
-        NSLog(@"Start note on instrument 2: %i",note+24);
+        NSLog(@"Start note %i on instrument 2",note+24);
         
     }
     
@@ -479,7 +516,7 @@
         
         [self.samplerInstrument2 stopNote:(note-48) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note-48);
+        NSLog(@"Stop note %i on instrument 2",note-48);
         
     } else if (self.octave==1){
         
@@ -487,7 +524,7 @@
         
         [self.samplerInstrument2 stopNote:(note-36) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note-36);
+        NSLog(@"Stop note %i on instrument 2",note-36);
         
     } else if (self.octave==2){
         
@@ -495,7 +532,7 @@
         
         [self.samplerInstrument2 stopNote:(note-24) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note-24);
+        NSLog(@"Stop note %i on instrument 2",note-24);
         
     } else if (self.octave==3){
         
@@ -503,7 +540,7 @@
         
         [self.samplerInstrument2 stopNote:(note-12) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note-12);
+        NSLog(@"Stop note %i on instrument 2",note-12);
         
     } else if (self.octave==4){
         
@@ -511,7 +548,7 @@
         
         [self.samplerInstrument2 stopNote:note onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note);
+        NSLog(@"Stop note %i on instrument 2",note);
         
     } else if (self.octave==5){
         
@@ -519,7 +556,7 @@
         
         [self.samplerInstrument2 stopNote:(note+12) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note+12);
+        NSLog(@"Stop note %i on instrument 2",note+12);
         
     } else if (self.octave>=6){
         
@@ -527,7 +564,7 @@
         
         [self.samplerInstrument2 stopNote:(note+24) onChannel:0];
         
-        NSLog(@"Stop note on instrument 2: %i",note+24);
+        NSLog(@"Stop note %i on instrument 2",note+24);
         
     }
     
@@ -536,6 +573,8 @@
 -(void) panInstrument1: (float) pan{
     
     self.samplerInstrument1.pan = pan;
+    
+    NSLog(@"Instument 1 Pan: %.2f",pan);
     
 }
 
@@ -556,6 +595,8 @@
 -(void) audioUnitReverbWetDry: (float) wetDry{
     
     self.audioUnitReverb.wetDryMix = wetDry;
+    
+    NSLog(@"Reverb Wet/Dry: %.2f",wetDry);
 }
 
 -(void) changeReverb: (NSInteger) selectedReverb {
@@ -631,11 +672,15 @@
     
     self.audioUnitDelay.wetDryMix = wetDry;
     
+    NSLog(@"Delay Wet/Dry: %.2f",wetDry);
+    
 }
 
 -(void) audioUnitDelayTime:(float)delayTime {
     
     self.audioUnitDelay.delayTime = delayTime;
+    
+    NSLog(@"Delay Time: %.2f",delayTime);
     
 }
 
@@ -643,11 +688,15 @@
     
     self.audioUnitDelay.feedback = feedback;
     
+    NSLog(@"Delay Feedback: %.2f",feedback);
+    
 }
 
 -(void) audioUnitDelayLowPassCutoff:(float)cutoff {
 
     self.audioUnitDelay.lowPassCutoff = cutoff;
+    
+    NSLog(@"Delay Low Pass Cuttoff: %.2f",cutoff);
     
 }
 
@@ -667,11 +716,15 @@
     
     self.audioUnitDistortion.wetDryMix = wetDry;
     
+    NSLog(@"Distortion Wet/Dry: %.2f",wetDry);
+    
 }
 
 -(void) audioUnitDistortionPreGain:(float)preGain {
     
     self.audioUnitDistortion.preGain = preGain;
+    
+    NSLog(@"Distortion PreGain: %.2f",preGain);
     
 }
 
@@ -774,7 +827,9 @@
     self.sendDirectOutInstrument1.volume = directInstrument1;
     self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
     self.sendDirectOutInstrument2.volume = directInstrument2;
+    self.sendDirectOutPlayerInstrument2.volume = directInstrument2;
     self.sendDirectOutDrums.volume = directDrums;
+    self.sendDirectOutPlayerDrums.volume = directDrums;
     self.sendDirectOutMicrophone.volume = directMicrohpone;
     
 }
@@ -783,17 +838,23 @@
     
     self.audioUnitTimePitch.rate = rate;
     
+    NSLog(@"Time Pitch Rate: %.2f",rate);
+    
 }
 
 -(void) audioUnitTimePitchOverlap:(float)overlap {
     
     self.audioUnitTimePitch.overlap = overlap;
     
+    NSLog(@"Time Pitch Overlap: %.2f",overlap);
+    
 }
 
 -(void) audioUnitTimePitch:(float)pitch {
     
     self.audioUnitTimePitch.pitch = pitch;
+    
+    NSLog(@"Time Pitch: %.2f",pitch);
     
 }
 
@@ -960,9 +1021,7 @@
     }
 }
 
-
--(void) startRecordingInstument1
-{
+-(void) startRecordingInstument1{
     NSError *error;
     self.outputFileInstument1URL = [NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingString:@"instument1Output.caf"]];
     

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InterfaceViewController.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property settings *settings;
+@property audioEngine *audioEngine; 
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerUserPreset;
+
+
+- (IBAction)didTapStorePreset:(UIButton *)sender;
+- (IBAction)didTapLoadPreset:(UIButton *)sender;
+
 
 @end

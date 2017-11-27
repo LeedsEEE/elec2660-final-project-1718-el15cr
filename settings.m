@@ -8,7 +8,6 @@
 
 #import "settings.h"
 
-
 @implementation settings
 
 - (instancetype)init
@@ -16,11 +15,17 @@
     self = [super init];
     if (self) {
         
+        self.userDefaults = [NSUserDefaults standardUserDefaults];
+        
+        self.userPresetData1 = [NSMutableArray array];
+        self.userPresetData2 = [NSMutableArray array];
+        
         self.selectedReverb = 0;
         self.selectedDistortion =0;
         self.selectedInstrument1 =0;
         self.selectedInstrument2 =0;
         self.selectedDrums =0;
+        self.selectedUserPreset =0;
         
         self.pickerReverbData = @[@"Small Room", @"Medium Room",@"Large Room",@"Large Room 2",@"Meduim Hall",@"Medium Hall 2",@"Meduim Hall 3",@"Large Hall",@"Large Hall 2",@"Medium Chamber",@"Large Chamber",@"Plate",@"Cathedral"];
         
@@ -32,9 +37,49 @@
         
         self.pickerDrumsData = @[@"Drums 1", @"Drums 2"];
         
+        self.pickerUserPresetData = @[@"User Preset 1", @"User Preset 2"];
+        
     }
     return self;
 }
 
+-(void) loadUserPreset {
+    
+    if (self.selectedUserPreset == 0) {
+        
+        self.userPresetData1 = [[self.userDefaults arrayForKey:@"userPreset1"] mutableCopy];
+        
+        NSLog(@"User Preset 1 loaded");
+        
+    } else if (self.selectedUserPreset == 1){
+        
+        self.userPresetData2 = [[self.userDefaults arrayForKey:@"userPreset2"] mutableCopy];
+        
+        NSLog(@"User Preset 2 loaded");
+    }
+    
+
+}
+
+-(void) storeUserPreset {
+    
+    if (self.selectedUserPreset == 0) {
+        
+        [self.userDefaults setObject:self.userPresetData1 forKey:@"userPreset1"];
+        
+        [self.userDefaults synchronize];
+        
+        NSLog(@"User Preset 1 stored");
+        
+    } else if (self.selectedUserPreset == 1){
+        
+        [self.userDefaults setObject:self.userPresetData2 forKey:@"userPreset2"];
+        
+        [self.userDefaults synchronize];
+        
+        NSLog(@"User Preset 2 stored");
+    }
+    
+}
 
 @end

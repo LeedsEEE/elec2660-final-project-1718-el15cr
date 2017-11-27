@@ -31,17 +31,17 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    ViewController *controller = [segue destinationViewController];
+    
     // Sends audioEngine object via segue to other view controller
     
-    ViewController *controller = [segue destinationViewController];
-    controller.audioEngine = self.audioEngine;
-    
-     if ([[segue identifier] isEqualToString:@"settings"]){
-         
-         controller.settings = self.settings; 
-         
-     }
-    
+    if ([[segue identifier] isEqualToString:@"AudioEngineAndSettings"]){
+        
+        controller.settings = self.settings;
+        controller.audioEngine = self.audioEngine;
+        
+    }
+
 }
 
 

@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Instrument 1"/>
                                 <connections>
-                                    <segue destination="ixC-8H-8dI" kind="presentation" identifier="settings" id="4ax-YI-2BX"/>
+                                    <segue destination="ixC-8H-8dI" kind="presentation" identifier="AudioEngineAndSettings" id="4ax-YI-2BX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-bU-wa0">
@@ -34,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delay"/>
                                 <connections>
-                                    <segue destination="Xjp-Nl-lMF" kind="presentation" id="aMa-bP-AgC"/>
+                                    <segue destination="Xjp-Nl-lMF" kind="presentation" identifier="AudioEngineAndSettings" id="aMa-bP-AgC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbX-wm-e3x">
@@ -42,7 +42,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Microphone"/>
                                 <connections>
-                                    <segue destination="8Ot-1o-BtT" kind="presentation" identifier="settings" id="wgJ-vj-J1I"/>
+                                    <segue destination="8Ot-1o-BtT" kind="presentation" identifier="AudioEngineAndSettings" id="wgJ-vj-J1I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZD-zJ-Osp">
@@ -50,7 +50,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Drums"/>
                                 <connections>
-                                    <segue destination="P8u-HH-lTR" kind="presentation" identifier="settings" id="Z4q-sm-HUP"/>
+                                    <segue destination="P8u-HH-lTR" kind="presentation" identifier="AudioEngineAndSettings" id="Z4q-sm-HUP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysz-YF-Ywi">
@@ -58,7 +58,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Instrument 2"/>
                                 <connections>
-                                    <segue destination="7E0-yg-Uhn" kind="presentation" identifier="settings" id="Sdp-7m-Gss"/>
+                                    <segue destination="7E0-yg-Uhn" kind="presentation" identifier="AudioEngineAndSettings" id="Sdp-7m-Gss"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-zb-ekp">
@@ -66,7 +66,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reverb"/>
                                 <connections>
-                                    <segue destination="VmV-lj-Mps" kind="presentation" identifier="settings" id="zrm-3i-KUW"/>
+                                    <segue destination="VmV-lj-Mps" kind="presentation" identifier="AudioEngineAndSettings" id="zrm-3i-KUW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-eY-uH5">
@@ -74,7 +74,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Distortion"/>
                                 <connections>
-                                    <segue destination="Eae-BN-jFz" kind="presentation" identifier="settings" id="yFD-Zc-vRj"/>
+                                    <segue destination="Eae-BN-jFz" kind="presentation" identifier="AudioEngineAndSettings" id="yFD-Zc-vRj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uut-gT-dXC">
@@ -102,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Main Mix"/>
                                 <connections>
-                                    <segue destination="Kvw-rx-tZs" kind="presentation" id="dAp-YP-c1d"/>
+                                    <segue destination="Kvw-rx-tZs" kind="presentation" identifier="AudioEngineAndSettings" id="dAp-YP-c1d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-Vt-fd8">
@@ -110,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="hQd-3J-qyM" kind="presentation" id="pf4-Vk-bSZ"/>
+                                    <segue destination="hQd-3J-qyM" kind="presentation" identifier="AudioEngineAndSettings" id="pf4-Vk-bSZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -744,13 +744,27 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-nN-jzz">
-                                <rect key="frame" x="154" y="192" width="106" height="30"/>
+                                <rect key="frame" x="70" y="192" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Store Preset"/>
+                                <connections>
+                                    <action selector="didTapStorePreset:" destination="hQd-3J-qyM" eventType="touchUpInside" id="X1w-9B-JPL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-lB-L1T">
+                                <rect key="frame" x="254" y="191" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load Preset"/>
+                                <connections>
+                                    <action selector="didTapLoadPreset:" destination="hQd-3J-qyM" eventType="touchUpInside" id="7H3-gA-vy8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerUserPreset" destination="0tV-qu-6fS" id="bvc-1i-JJN"/>
+                    </connections>
                 </viewController>
                 <exit id="XuM-wG-1bB" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WB2-B8-MiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1027,7 +1041,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ4-4W-NMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Eu2-Xf-O6l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2146" y="993"/>
+            <point key="canvasLocation" x="-2146" y="994"/>
         </scene>
         <!--Distortion View Controller-->
         <scene sceneID="gxZ-5h-odD">
@@ -1158,7 +1172,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZo-wa-MiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jLm-d7-AXd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1231.2" y="993.55322338830592"/>
+            <point key="canvasLocation" x="-1158" y="994"/>
         </scene>
         <!--Main Mix View Controller-->
         <scene sceneID="Dmb-Xb-1yw">
