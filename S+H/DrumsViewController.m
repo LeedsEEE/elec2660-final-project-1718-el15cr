@@ -157,9 +157,13 @@
     
     if (self.audioEngine.isRecordingDrums == false) {
         
+        self.audioEngine.isRecordingDrums = true;
+        
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordDrums:) userInfo:nil repeats:NO];
         
     } else {
+        
+        [self.timerRecord invalidate];
         
         [self.audioEngine stopRecordingDrums];
         

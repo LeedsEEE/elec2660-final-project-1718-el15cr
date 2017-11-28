@@ -36,6 +36,7 @@
     
     NSLog(@"User preset selected: %@",self.settings.pickerUserPresetData[row]);
     
+    
 }
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -79,11 +80,9 @@
 
 - (IBAction)didMoveSliderMetronome:(UISlider *)sender {
     
-    
 }
 
 - (IBAction)didMoveSwitchMetronome:(UISwitch *)sender {
-    
 
     
 }
@@ -107,6 +106,7 @@
     NSNumber *reverbWetDry = [self.settings.userPresetData1 objectAtIndex:0];
     float floatReverbWetDry = [reverbWetDry floatValue];
     self.audioEngine.audioUnitReverb.wetDryMix = floatReverbWetDry;
+    [self.timer fire];
 
 }
 

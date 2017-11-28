@@ -183,9 +183,13 @@
     
     if (self.audioEngine.isRecordingInstument1 == false) {
         
+        self.audioEngine.isRecordingInstument1 = true; 
+        
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordInstument1:) userInfo:nil repeats:NO];
         
     } else {
+        
+        [self.timerRecord invalidate];
         
         [self.audioEngine stopRecordingInstument1]; 
         

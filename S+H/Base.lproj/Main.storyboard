@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,106 +16,132 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-2Y-erU">
-                                <rect key="frame" x="63" y="76" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Instrument 1"/>
-                                <connections>
-                                    <segue destination="ixC-8H-8dI" kind="presentation" identifier="AudioEngineAndSettings" id="4ax-YI-2BX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-bU-wa0">
-                                <rect key="frame" x="128" y="205" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delay"/>
-                                <connections>
-                                    <segue destination="Xjp-Nl-lMF" kind="presentation" identifier="AudioEngineAndSettings" id="aMa-bP-AgC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbX-wm-e3x">
-                                <rect key="frame" x="192" y="114" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Microphone"/>
-                                <connections>
-                                    <segue destination="8Ot-1o-BtT" kind="presentation" identifier="AudioEngineAndSettings" id="wgJ-vj-J1I"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZD-zJ-Osp">
-                                <rect key="frame" x="92" y="114" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Drums"/>
-                                <connections>
-                                    <segue destination="P8u-HH-lTR" kind="presentation" identifier="AudioEngineAndSettings" id="Z4q-sm-HUP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysz-YF-Ywi">
-                                <rect key="frame" x="186" y="76" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Instrument 2"/>
-                                <connections>
-                                    <segue destination="7E0-yg-Uhn" kind="presentation" identifier="AudioEngineAndSettings" id="Sdp-7m-Gss"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-zb-ekp">
-                                <rect key="frame" x="156" y="247" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-zb-ekp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Kf2-tQ-Nak"/>
+                                </constraints>
                                 <state key="normal" title="Reverb"/>
                                 <connections>
                                     <segue destination="VmV-lj-Mps" kind="presentation" identifier="AudioEngineAndSettings" id="zrm-3i-KUW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-eY-uH5">
-                                <rect key="frame" x="186" y="205" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Distortion"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-bU-wa0">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="4F6-fn-sOk"/>
+                                    <constraint firstAttribute="height" constant="30" id="HCc-AC-SFl"/>
+                                    <constraint firstAttribute="width" constant="69" id="xVM-Kp-aVX"/>
+                                </constraints>
+                                <state key="normal" title="Delay"/>
                                 <connections>
-                                    <segue destination="Eae-BN-jFz" kind="presentation" identifier="AudioEngineAndSettings" id="yFD-Zc-vRj"/>
+                                    <segue destination="Xjp-Nl-lMF" kind="presentation" identifier="AudioEngineAndSettings" id="aMa-bP-AgC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uut-gT-dXC">
-                                <rect key="frame" x="96" y="566" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="didTapPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UjI-37-7R1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izX-Fe-CbJ">
-                                <rect key="frame" x="206" y="566" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izX-Fe-CbJ">
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="didTapRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="asy-o1-lt1"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-TX-8eu">
-                                <rect key="frame" x="129" y="516" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-TX-8eu">
                                 <connections>
                                     <action selector="didMoveSliderVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tyx-mS-bpI"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1T-ZQ-3Ze">
-                                <rect key="frame" x="150" y="389" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uut-gT-dXC">
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="didTapPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UjI-37-7R1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1T-ZQ-3Ze">
                                 <state key="normal" title="Main Mix"/>
                                 <connections>
                                     <segue destination="Kvw-rx-tZs" kind="presentation" identifier="AudioEngineAndSettings" id="dAp-YP-c1d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-Vt-fd8">
-                                <rect key="frame" x="167" y="642" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-Vt-fd8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="c9h-c0-qEI"/>
+                                </constraints>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <segue destination="hQd-3J-qyM" kind="presentation" identifier="AudioEngineAndSettings" id="pf4-Vk-bSZ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6eZ-hc-3cS">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dmY-9R-B82">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysz-YF-Ywi">
+                                                <state key="normal" title="Instrument 2"/>
+                                                <connections>
+                                                    <segue destination="7E0-yg-Uhn" kind="presentation" identifier="AudioEngineAndSettings" id="Sdp-7m-Gss"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-2Y-erU">
+                                                <state key="normal" title="Instrument 1"/>
+                                                <connections>
+                                                    <segue destination="ixC-8H-8dI" kind="presentation" identifier="AudioEngineAndSettings" id="4ax-YI-2BX"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-5C-qLL">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbX-wm-e3x">
+                                                        <state key="normal" title="Microphone"/>
+                                                        <connections>
+                                                            <segue destination="8Ot-1o-BtT" kind="presentation" identifier="AudioEngineAndSettings" id="wgJ-vj-J1I"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZD-zJ-Osp">
+                                                        <state key="normal" title="Drums"/>
+                                                        <connections>
+                                                            <segue destination="P8u-HH-lTR" kind="presentation" identifier="AudioEngineAndSettings" id="Z4q-sm-HUP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa1-eY-uH5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="4kn-X9-BBA"/>
+                                    <constraint firstAttribute="height" constant="34" id="JlF-K2-ef5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="ns4-oL-OEH"/>
+                                </constraints>
+                                <state key="normal" title="Distortion"/>
+                                <connections>
+                                    <segue destination="Eae-BN-jFz" kind="presentation" identifier="AudioEngineAndSettings" id="yFD-Zc-vRj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266839378239" green="0.32877266839378239" blue="0.32877266839378239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oUT-Vt-fd8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="159" id="3KZ-QT-7Yr"/>
+                            <constraint firstItem="IaH-zb-ekp" firstAttribute="trailing" secondItem="9uI-bU-wa0" secondAttribute="trailing" id="6g0-Wl-fFC"/>
+                            <constraint firstItem="9uI-bU-wa0" firstAttribute="top" secondItem="IaH-zb-ekp" secondAttribute="bottom" constant="2" id="7hf-eo-MCg"/>
+                            <constraint firstItem="izX-Fe-CbJ" firstAttribute="leading" secondItem="uut-gT-dXC" secondAttribute="trailing" constant="22" id="7xs-Yw-BzW"/>
+                            <constraint firstItem="6eZ-hc-3cS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="9xj-CW-TKr"/>
+                            <constraint firstItem="IaH-zb-ekp" firstAttribute="top" secondItem="6eZ-hc-3cS" secondAttribute="bottom" constant="72" id="D9j-VP-Io1"/>
+                            <constraint firstItem="Wmw-TX-8eu" firstAttribute="top" secondItem="uut-gT-dXC" secondAttribute="bottom" constant="8" symbolic="YES" id="DIB-bC-JIR"/>
+                            <constraint firstItem="Xa1-eY-uH5" firstAttribute="trailing" secondItem="izX-Fe-CbJ" secondAttribute="trailing" id="Ec5-ye-BNk"/>
+                            <constraint firstItem="6eZ-hc-3cS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="139" id="HJf-nJ-Gvf"/>
+                            <constraint firstItem="Xa1-eY-uH5" firstAttribute="centerX" secondItem="Wmw-TX-8eu" secondAttribute="centerX" id="Ipy-we-W1T"/>
+                            <constraint firstItem="uut-gT-dXC" firstAttribute="top" secondItem="a1T-ZQ-3Ze" secondAttribute="bottom" constant="49" id="LmV-5P-VAf"/>
+                            <constraint firstItem="Xa1-eY-uH5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MEK-VM-PSB"/>
+                            <constraint firstItem="Xa1-eY-uH5" firstAttribute="top" secondItem="9uI-bU-wa0" secondAttribute="bottom" constant="8" id="PLn-v8-er3"/>
+                            <constraint firstItem="a1T-ZQ-3Ze" firstAttribute="top" secondItem="Xa1-eY-uH5" secondAttribute="bottom" constant="8" id="PQO-Ed-bZB"/>
+                            <constraint firstItem="Xa1-eY-uH5" firstAttribute="top" secondItem="9uI-bU-wa0" secondAttribute="bottom" constant="8" id="Qks-m5-h5S"/>
+                            <constraint firstItem="uut-gT-dXC" firstAttribute="baseline" secondItem="izX-Fe-CbJ" secondAttribute="baseline" id="gcp-0Q-SMK"/>
+                            <constraint firstItem="a1T-ZQ-3Ze" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="155" id="m8P-y1-bN9"/>
+                            <constraint firstItem="oUT-Vt-fd8" firstAttribute="top" secondItem="Wmw-TX-8eu" secondAttribute="bottom" constant="2" id="nZy-Hk-UcV"/>
+                            <constraint firstItem="9uI-bU-wa0" firstAttribute="centerX" secondItem="Xa1-eY-uH5" secondAttribute="centerX" id="wnS-fv-NDR"/>
+                            <constraint firstItem="Wmw-TX-8eu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="zgh-2R-rlF"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonDelay" destination="9uI-bU-wa0" id="7Vb-iD-fxj"/>
@@ -135,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1231.8840579710145" y="52.989130434782609"/>
+            <point key="canvasLocation" x="-1232.8" y="52.623688155922046"/>
         </scene>
         <!--Instrument1 View Controller-->
         <scene sceneID="cKZ-cU-PlP">
@@ -146,11 +170,11 @@
                         <viewControllerLayoutGuide type="bottom" id="vgW-tN-EHl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Jh-aw-XTa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZZ-Ob-DMn">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Instrument 1" id="WGQ-Ga-ich">
@@ -163,7 +187,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGF-dQ-4rw">
-                                <rect key="frame" x="5" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="5" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note1"/>
                                 <connections>
@@ -172,7 +196,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWm-Dh-dh4">
-                                <rect key="frame" x="58" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="58" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note3"/>
                                 <connections>
@@ -181,7 +205,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lC-2p-elq">
-                                <rect key="frame" x="112" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="112" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note5"/>
                                 <connections>
@@ -190,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrR-gU-QPT">
-                                <rect key="frame" x="165" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="165" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note6"/>
                                 <connections>
@@ -199,7 +223,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi1-hf-LKt">
-                                <rect key="frame" x="270" y="230" width="53" height="30"/>
+                                <frame key="frameInset" minX="270" minY="230" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note10"/>
                                 <connections>
@@ -208,7 +232,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sio-19-O56">
-                                <rect key="frame" x="220" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="220" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note8"/>
                                 <connections>
@@ -217,7 +241,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-bD-D5p">
-                                <rect key="frame" x="325" y="230" width="52" height="30"/>
+                                <frame key="frameInset" minX="325" minY="230" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note12"/>
                                 <connections>
@@ -226,7 +250,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRz-TR-PJM">
-                                <rect key="frame" x="34" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="34" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note2"/>
                                 <connections>
@@ -235,7 +259,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-Cf-SPj">
-                                <rect key="frame" x="103" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="103" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note4"/>
                                 <connections>
@@ -244,7 +268,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-IO-H4Z">
-                                <rect key="frame" x="191" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="191" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note7"/>
                                 <connections>
@@ -253,7 +277,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLw-Ht-NL4">
-                                <rect key="frame" x="248" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="248" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note9"/>
                                 <connections>
@@ -262,7 +286,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-0i-L2R">
-                                <rect key="frame" x="305" y="192" width="51" height="30"/>
+                                <frame key="frameInset" minX="305" minY="192" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note11"/>
                                 <connections>
@@ -271,18 +295,18 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-I0-oTu">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OSP-6l-Dzk">
-                                <rect key="frame" x="128" y="514" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="514" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderPan:" destination="ixC-8H-8dI" eventType="valueChanged" id="cey-tP-gcp"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lj-eR-Yks">
-                                <rect key="frame" x="79" y="599" width="46" height="30"/>
+                                <frame key="frameInset" minX="79" minY="599" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -290,7 +314,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-fp-8XM">
-                                <rect key="frame" x="85" y="401" width="80" height="30"/>
+                                <frame key="frameInset" minX="85" minY="401" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave up"/>
                                 <connections>
@@ -298,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er4-n8-La8">
-                                <rect key="frame" x="234" y="401" width="104" height="30"/>
+                                <frame key="frameInset" minX="234" minY="401" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave Down"/>
                                 <connections>
@@ -306,7 +330,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-N1-Qbo">
-                                <rect key="frame" x="248" y="599" width="71" height="30"/>
+                                <frame key="frameInset" minX="248" minY="599" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
@@ -314,14 +338,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-sb-spJ">
-                                <rect key="frame" x="165" y="473" width="42" height="21"/>
+                                <frame key="frameInset" minX="165" minY="473" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlV-vm-m0a">
-                                <rect key="frame" x="165" y="630" width="51" height="31"/>
+                                <frame key="frameInset" minX="165" minY="630" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapSwitchLoop:" destination="ixC-8H-8dI" eventType="valueChanged" id="crw-it-5KR"/>
@@ -350,11 +374,11 @@
                         <viewControllerLayoutGuide type="bottom" id="M8f-Zq-MPv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QwG-fI-isq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7a-LK-kiV">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Instrument 2" id="Aca-oL-opZ">
@@ -367,7 +391,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4Z-Kk-eQI">
-                                <rect key="frame" x="5" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="5" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note1"/>
                                 <connections>
@@ -376,7 +400,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5Q-3K-yc8">
-                                <rect key="frame" x="58" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="58" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note3"/>
                                 <connections>
@@ -385,7 +409,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-nd-QtM">
-                                <rect key="frame" x="112" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="112" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note5"/>
                                 <connections>
@@ -394,7 +418,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5P-fe-b1o">
-                                <rect key="frame" x="165" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="165" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note6"/>
                                 <connections>
@@ -403,7 +427,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-6g-3fs">
-                                <rect key="frame" x="270" y="230" width="53" height="30"/>
+                                <frame key="frameInset" minX="270" minY="230" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note10"/>
                                 <connections>
@@ -412,7 +436,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igg-UP-zQ5">
-                                <rect key="frame" x="220" y="230" width="46" height="30"/>
+                                <frame key="frameInset" minX="220" minY="230" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note8"/>
                                 <connections>
@@ -421,7 +445,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-N9-vSf">
-                                <rect key="frame" x="325" y="230" width="52" height="30"/>
+                                <frame key="frameInset" minX="325" minY="230" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note12"/>
                                 <connections>
@@ -430,7 +454,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8H-Q3-yIa">
-                                <rect key="frame" x="34" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="34" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note2"/>
                                 <connections>
@@ -439,7 +463,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb2-Cs-o6z">
-                                <rect key="frame" x="103" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="103" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note4"/>
                                 <connections>
@@ -448,7 +472,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-hS-Hpo">
-                                <rect key="frame" x="191" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="191" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note7"/>
                                 <connections>
@@ -457,7 +481,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-pr-Si1">
-                                <rect key="frame" x="248" y="192" width="46" height="30"/>
+                                <frame key="frameInset" minX="248" minY="192" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note9"/>
                                 <connections>
@@ -466,7 +490,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F54-Pl-5eQ">
-                                <rect key="frame" x="305" y="192" width="51" height="30"/>
+                                <frame key="frameInset" minX="305" minY="192" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note11"/>
                                 <connections>
@@ -475,18 +499,18 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-nN-4fh">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nmd-xr-Kg0">
-                                <rect key="frame" x="128" y="514" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="514" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderPan:" destination="7E0-yg-Uhn" eventType="valueChanged" id="ADO-uW-SXc"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB2-JI-YGv">
-                                <rect key="frame" x="79" y="599" width="46" height="30"/>
+                                <frame key="frameInset" minX="79" minY="599" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -494,7 +518,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ou1-7f-MB4">
-                                <rect key="frame" x="85" y="401" width="80" height="30"/>
+                                <frame key="frameInset" minX="85" minY="401" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave up"/>
                                 <connections>
@@ -502,7 +526,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-tX-Rsa">
-                                <rect key="frame" x="234" y="401" width="104" height="30"/>
+                                <frame key="frameInset" minX="234" minY="401" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Octave Down"/>
                                 <connections>
@@ -510,7 +534,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cso-jX-dr2">
-                                <rect key="frame" x="248" y="599" width="71" height="30"/>
+                                <frame key="frameInset" minX="248" minY="599" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
@@ -518,14 +542,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c8-hA-YSQ">
-                                <rect key="frame" x="165" y="473" width="42" height="21"/>
+                                <frame key="frameInset" minX="165" minY="473" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2t-Zz-beE">
-                                <rect key="frame" x="165" y="630" width="51" height="31"/>
+                                <frame key="frameInset" minX="165" minY="630" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapSwitchLoop:" destination="7E0-yg-Uhn" eventType="valueChanged" id="vRI-pY-SI9"/>
@@ -554,11 +578,11 @@
                         <viewControllerLayoutGuide type="bottom" id="gCP-ef-vyw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y0j-nT-1dZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWc-n1-VSL">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Drums" id="zOo-TT-8d4">
@@ -571,7 +595,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-qQ-w4P">
-                                <rect key="frame" x="85" y="319" width="46" height="30"/>
+                                <frame key="frameInset" minX="85" minY="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note1"/>
                                 <connections>
@@ -580,7 +604,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-04-i0v">
-                                <rect key="frame" x="155" y="261" width="46" height="30"/>
+                                <frame key="frameInset" minX="155" minY="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note5"/>
                                 <connections>
@@ -589,7 +613,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfW-FY-hwb">
-                                <rect key="frame" x="155" y="319" width="46" height="30"/>
+                                <frame key="frameInset" minX="155" minY="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note6"/>
                                 <connections>
@@ -598,7 +622,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKu-zH-T94">
-                                <rect key="frame" x="275" y="205" width="53" height="30"/>
+                                <frame key="frameInset" minX="275" minY="205" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note10"/>
                                 <connections>
@@ -607,7 +631,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7e-Vz-bFT">
-                                <rect key="frame" x="218" y="261" width="46" height="30"/>
+                                <frame key="frameInset" minX="218" minY="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note8"/>
                                 <connections>
@@ -616,7 +640,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chl-le-4dx">
-                                <rect key="frame" x="276" y="319" width="52" height="30"/>
+                                <frame key="frameInset" minX="276" minY="319" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note12"/>
                                 <connections>
@@ -625,7 +649,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA4-2d-w0i">
-                                <rect key="frame" x="85" y="261" width="46" height="30"/>
+                                <frame key="frameInset" minX="85" minY="261" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note2"/>
                                 <connections>
@@ -634,7 +658,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXR-PX-8cC">
-                                <rect key="frame" x="155" y="205" width="46" height="30"/>
+                                <frame key="frameInset" minX="155" minY="205" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note4"/>
                                 <connections>
@@ -643,7 +667,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-Nu-A2Y">
-                                <rect key="frame" x="218" y="205" width="46" height="30"/>
+                                <frame key="frameInset" minX="218" minY="205" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note7"/>
                                 <connections>
@@ -652,7 +676,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whC-hF-fZV">
-                                <rect key="frame" x="218" y="319" width="46" height="30"/>
+                                <frame key="frameInset" minX="218" minY="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note9"/>
                                 <connections>
@@ -661,7 +685,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0j-Rt-WcY">
-                                <rect key="frame" x="276" y="261" width="51" height="30"/>
+                                <frame key="frameInset" minX="276" minY="261" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note11"/>
                                 <connections>
@@ -670,11 +694,11 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-Nq-go2">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zf-Zm-bBS">
-                                <rect key="frame" x="85" y="432" width="46" height="30"/>
+                                <frame key="frameInset" minX="85" minY="432" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -682,7 +706,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT9-pr-et2">
-                                <rect key="frame" x="266" y="432" width="71" height="30"/>
+                                <frame key="frameInset" minX="266" minY="432" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
@@ -690,14 +714,14 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-my-hoz">
-                                <rect key="frame" x="183" y="465" width="51" height="31"/>
+                                <frame key="frameInset" minX="183" minY="465" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapSwitchLoop:" destination="P8u-HH-lTR" eventType="valueChanged" id="e6e-6Q-dyc"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-JR-TZv">
-                                <rect key="frame" x="85" y="205" width="46" height="30"/>
+                                <frame key="frameInset" minX="85" minY="205" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Note3"/>
                                 <connections>
@@ -727,11 +751,11 @@
                         <viewControllerLayoutGuide type="bottom" id="3MA-pt-jNv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jsg-dL-Vwn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8v-rU-YtI">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Settings" id="39k-eW-o93">
@@ -744,11 +768,11 @@
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-qu-6fS">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU8-nN-jzz">
-                                <rect key="frame" x="70" y="192" width="106" height="30"/>
+                                <frame key="frameInset" minX="70" minY="192" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Store Preset"/>
                                 <connections>
@@ -756,7 +780,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-lB-L1T">
-                                <rect key="frame" x="254" y="191" width="106" height="30"/>
+                                <frame key="frameInset" minX="254" minY="191" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Load Preset"/>
                                 <connections>
@@ -764,14 +788,14 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JMM-WJ-DT9">
-                                <rect key="frame" x="183" y="332" width="51" height="31"/>
+                                <frame key="frameInset" minX="183" minY="332" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSwitchMetronome:" destination="hQd-3J-qyM" eventType="valueChanged" id="i6m-q1-Xxz"/>
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="xca-kf-3p4">
-                                <rect key="frame" x="148" y="440" width="118" height="31"/>
+                                <frame key="frameInset" minX="148" minY="440" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderMetronome:" destination="hQd-3J-qyM" eventType="valueChanged" id="0ym-1P-nSB"/>
@@ -800,11 +824,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sbF-VL-D7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tHg-f8-zF0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-lF-uPa">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Reverb" id="5iE-Ny-EP7">
@@ -817,74 +841,74 @@
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XN-xD-7gC">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oW0-Ro-Fpm">
-                                <rect key="frame" x="128" y="231" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="231" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderWetDryMix:" destination="VmV-lj-Mps" eventType="valueChanged" id="HFC-PA-HD4"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iEG-o5-unv">
-                                <rect key="frame" x="128" y="355" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="355" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="VmV-lj-Mps" eventType="valueChanged" id="BCE-hx-Egp"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="b1Q-a6-Jot">
-                                <rect key="frame" x="128" y="438" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="438" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="VmV-lj-Mps" eventType="valueChanged" id="dWK-MB-e3o"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-VJ-Bzb">
-                                <rect key="frame" x="128" y="505" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="505" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="VmV-lj-Mps" eventType="valueChanged" id="9vo-na-txt"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="U74-xI-n9W">
-                                <rect key="frame" x="128" y="579" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="579" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderMicrophone:" destination="VmV-lj-Mps" eventType="valueChanged" id="XuS-jm-wwx"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-fa-h0e">
-                                <rect key="frame" x="118" y="202" width="138" height="21"/>
+                                <frame key="frameInset" minX="118" minY="202" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2 Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-es-0Jh">
-                                <rect key="frame" x="107" y="403" width="180" height="21"/>
+                                <frame key="frameInset" minX="107" minY="403" width="180" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJT-A7-lbR">
-                                <rect key="frame" x="107" y="476" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="476" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAp-RJ-3KA">
-                                <rect key="frame" x="107" y="550" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="550" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1 Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Z5-V1h">
-                                <rect key="frame" x="101" y="323" width="173" height="21"/>
+                                <frame key="frameInset" minX="101" minY="323" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -916,11 +940,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Qbh-ev-7nF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eSL-LO-SlO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-tv-sak">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Delay" id="0df-oh-5hE">
@@ -933,112 +957,112 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-Sv-RFi">
-                                <rect key="frame" x="128" y="101" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="101" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDryWetMix:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="sVh-8N-Ngx"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-iE-8IH">
-                                <rect key="frame" x="129" y="163" width="118" height="31"/>
+                                <frame key="frameInset" minX="129" minY="163" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDelayTime:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="o7h-2T-tjY"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="h16-VD-Yf5">
-                                <rect key="frame" x="129" y="229" width="118" height="31"/>
+                                <frame key="frameInset" minX="129" minY="229" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderFeedback:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="15g-3t-Kw3"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AXJ-gC-SdI">
-                                <rect key="frame" x="128" y="401" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="401" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="Kpq-tQ-b02"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-WZ-keV">
-                                <rect key="frame" x="128" y="484" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="484" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="nGo-kN-MrP"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-CX-lj8">
-                                <rect key="frame" x="128" y="551" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="551" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="wBS-1j-A22"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHH-qp-WeW">
-                                <rect key="frame" x="128" y="625" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="625" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderMicrophone:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="zvC-5c-iA8"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-FX-sio">
-                                <rect key="frame" x="118" y="76" width="138" height="21"/>
+                                <frame key="frameInset" minX="118" minY="76" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delay Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-SF-exb">
-                                <rect key="frame" x="119" y="136" width="138" height="21"/>
+                                <frame key="frameInset" minX="119" minY="136" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-QE-pPF">
-                                <rect key="frame" x="119" y="197" width="138" height="21"/>
+                                <frame key="frameInset" minX="119" minY="197" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Pass Cutoff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-JM-pVg">
-                                <rect key="frame" x="119" y="263" width="138" height="21"/>
+                                <frame key="frameInset" minX="119" minY="263" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOf-vQ-5rM">
-                                <rect key="frame" x="107" y="449" width="180" height="21"/>
+                                <frame key="frameInset" minX="107" minY="449" width="180" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-p0-dmZ">
-                                <rect key="frame" x="107" y="522" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="522" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-Xi-9T1">
-                                <rect key="frame" x="107" y="596" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="596" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-JV-aI1">
-                                <rect key="frame" x="101" y="369" width="173" height="21"/>
+                                <frame key="frameInset" minX="101" minY="369" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-O0-h1Y">
-                                <rect key="frame" x="128" y="295" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="295" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderLowPassCutoff:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="tLh-bj-f89"/>
@@ -1072,11 +1096,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0P4-Pw-iLi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DNi-dM-OBJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-yS-bG9">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Distortion" id="rN7-Ho-PXy">
@@ -1089,88 +1113,88 @@
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wek-Yk-jbE">
-                                <rect key="frame" x="0.0" y="66" width="414" height="118"/>
+                                <frame key="frameInset" minY="66" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-SW-ywH">
-                                <rect key="frame" x="128" y="231" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="231" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDryWetMix:" destination="Eae-BN-jFz" eventType="valueChanged" id="xdh-yj-PZX"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-ss-Gxq">
-                                <rect key="frame" x="128" y="298" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="298" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderPreGain:" destination="Eae-BN-jFz" eventType="valueChanged" id="phi-BT-Adb"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fB7-NW-8dz">
-                                <rect key="frame" x="128" y="375" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="375" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="Eae-BN-jFz" eventType="valueChanged" id="Tck-y0-Ycn"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-0E-QGq">
-                                <rect key="frame" x="128" y="458" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="458" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="Eae-BN-jFz" eventType="valueChanged" id="K6v-Xl-Ipa"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-0a-9aZ">
-                                <rect key="frame" x="128" y="525" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="525" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="Eae-BN-jFz" eventType="valueChanged" id="m74-lg-cX1"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-RH-91c">
-                                <rect key="frame" x="128" y="599" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="599" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderMicrophone:" destination="Eae-BN-jFz" eventType="valueChanged" id="CQS-ju-nC5"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sy-gC-o09">
-                                <rect key="frame" x="118" y="202" width="138" height="21"/>
+                                <frame key="frameInset" minX="118" minY="202" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pre-Gain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-l7-Y5E">
-                                <rect key="frame" x="119" y="267" width="138" height="21"/>
+                                <frame key="frameInset" minX="119" minY="267" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2 Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-T3-aUO">
-                                <rect key="frame" x="107" y="423" width="180" height="21"/>
+                                <frame key="frameInset" minX="107" minY="423" width="180" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-d9-ycF">
-                                <rect key="frame" x="107" y="496" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="496" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ux-ur-ASs">
-                                <rect key="frame" x="107" y="570" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="570" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1 Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-qw-qld">
-                                <rect key="frame" x="101" y="343" width="173" height="21"/>
+                                <frame key="frameInset" minX="101" minY="343" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1203,11 +1227,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TMg-zI-imi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ASl-Sz-Dmw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0sG-X9-56I">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Main Mix" id="Lr6-ec-dRp">
@@ -1220,56 +1244,56 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OWR-WI-HSy">
-                                <rect key="frame" x="128" y="112" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="112" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="Kvw-rx-tZs" eventType="valueChanged" id="pUf-gU-5AJ"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-sb-R6T">
-                                <rect key="frame" x="128" y="195" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="195" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="Kvw-rx-tZs" eventType="valueChanged" id="0Bm-f1-sLb"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F1G-kb-xjP">
-                                <rect key="frame" x="128" y="262" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="262" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="Kvw-rx-tZs" eventType="valueChanged" id="EUG-2L-tMv"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ewg-6p-NQX">
-                                <rect key="frame" x="128" y="336" width="118" height="31"/>
+                                <frame key="frameInset" minX="128" minY="336" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderMircophone:" destination="Kvw-rx-tZs" eventType="valueChanged" id="jqS-ft-mV3"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogE-nw-rul">
-                                <rect key="frame" x="107" y="160" width="180" height="21"/>
+                                <frame key="frameInset" minX="107" minY="160" width="180" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLN-0d-TCh">
-                                <rect key="frame" x="107" y="233" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="233" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUV-CG-cO7">
-                                <rect key="frame" x="107" y="307" width="155" height="21"/>
+                                <frame key="frameInset" minX="107" minY="307" width="155" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ7-xc-kyw">
-                                <rect key="frame" x="101" y="80" width="173" height="21"/>
+                                <frame key="frameInset" minX="101" minY="80" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1299,11 +1323,11 @@
                         <viewControllerLayoutGuide type="bottom" id="h1O-kd-w1c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BgH-7G-LMM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-0S-ilF">
-                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <frame key="frameInset" minY="22" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Microphone" id="Jch-Ka-e99">
@@ -1316,7 +1340,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo2-Qq-rKX">
-                                <rect key="frame" x="79" y="599" width="46" height="30"/>
+                                <frame key="frameInset" minX="79" minY="599" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -1324,7 +1348,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luh-VS-cSU">
-                                <rect key="frame" x="248" y="599" width="71" height="30"/>
+                                <frame key="frameInset" minX="248" minY="599" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
@@ -1332,49 +1356,49 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TST-4r-rV1">
-                                <rect key="frame" x="165" y="630" width="51" height="31"/>
+                                <frame key="frameInset" minX="165" minY="630" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didSlideLoop:" destination="8Ot-1o-BtT" eventType="valueChanged" id="4oN-VO-OXf"/>
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-2400" maxValue="2400" translatesAutoresizingMaskIntoConstraints="NO" id="Xxs-PF-pX9">
-                                <rect key="frame" x="148" y="275" width="118" height="31"/>
+                                <frame key="frameInset" minX="148" minY="275" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderPitch:" destination="8Ot-1o-BtT" eventType="valueChanged" id="KJO-Tu-IRX"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="3" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-Zu-2LL">
-                                <rect key="frame" x="148" y="190" width="118" height="31"/>
+                                <frame key="frameInset" minX="148" minY="190" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderOverlap:" destination="8Ot-1o-BtT" eventType="valueChanged" id="bB1-tS-h6B"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OverLap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5m-6I-xwd">
-                                <rect key="frame" x="165" y="161" width="93" height="21"/>
+                                <frame key="frameInset" minX="165" minY="161" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aun-pL-dEi">
-                                <rect key="frame" x="161" y="235" width="93" height="21"/>
+                                <frame key="frameInset" minX="161" minY="235" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqH-VM-lVa">
-                                <rect key="frame" x="161" y="330" width="93" height="21"/>
+                                <frame key="frameInset" minX="161" minY="330" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.029999999999999999" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-27-3mN">
-                                <rect key="frame" x="130" y="372" width="118" height="31"/>
+                                <frame key="frameInset" minX="130" minY="372" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSliderRate:" destination="8Ot-1o-BtT" eventType="valueChanged" id="qKH-bX-cGW"/>

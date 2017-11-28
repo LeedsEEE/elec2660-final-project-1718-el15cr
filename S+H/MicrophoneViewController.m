@@ -49,9 +49,13 @@
     
     if (self.audioEngine.isRecordingMicrophone == false){
         
+        self.audioEngine.isRecordingMicrophone = true;
+        
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordMicrophone:) userInfo:nil repeats:NO];
         
     } else {
+        
+        [self.timerRecord invalidate];
         
         [self.audioEngine stopRecordingMicrophone];
         

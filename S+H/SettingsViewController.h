@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchMetronome;
 @property (weak, nonatomic) IBOutlet UISlider *sliderMetronome;
 
+@property (nonatomic, strong) NSTimer *timer; 
 
 - (IBAction)didTapStorePreset:(UIButton *)sender;
 - (IBAction)didTapLoadPreset:(UIButton *)sender;

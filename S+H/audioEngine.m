@@ -46,7 +46,7 @@
         // Calls the function loadAudioUnitDefaults and loads defaults for audio units
         
         [self loadAudioUnitDefaults];
-    
+        
         NSLog(@"init Complete");
         
     }
@@ -71,6 +71,8 @@
     }
     
     NSLog(@"Session created");
+    
+    //
     
 }
 
@@ -101,6 +103,7 @@
     self.inputMicrophone = [self.engine inputNode];
     self.audioFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
 
+    
     NSLog(@"Engine created");
     
 }
@@ -1151,6 +1154,15 @@
         return;
     }
     
+    if (self.outputFileInstument1.length <= 44100){
+        
+        // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
+        // then return from the method. Error occurs with buffer on assembly code on div.
+        
+        return;
+        
+    }
+    
     // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferInstument1 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument1.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument1.length];
     
@@ -1268,6 +1280,15 @@
         return;
     }
     
+    if (self.outputFileInstument2.length <= 44100){
+        
+        // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
+        // then return from the method. Error occurs with buffer on assembly code on div.
+        
+        return;
+        
+    }
+    
     // Creates a buffer for playback and sets the format to the file and lenght.
     self.bufferInstument2 = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.outputFileInstument2.processingFormat frameCapacity:(AVAudioFrameCount)self.outputFileInstument2.length];
     
@@ -1277,7 +1298,7 @@
     if (error){
         NSLog(@"outputFileInstument2 buffer player error %@",error);
     }
-    
+
     // If loop is enabled schedule loop buffer, if not play non-loop
     if (self.isLoopInstument2 == true){
         
@@ -1384,6 +1405,15 @@
         NSLog(@"No recorded flie?");
         
         return;
+    }
+    
+    if (self.outputFileDrums.length <= 44100){
+        
+        // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
+        // then return from the method. Error occurs with buffer on assembly code on div.
+        
+        return;
+        
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1498,9 +1528,18 @@
     if (error){
         NSLog(@"outputFileMainOut file player error %@",error);
         
-        NSLog(@"No recorded flie?");
+        NSLog(@"No recorded file?");
         
         return;
+    }
+    
+    if (self.outputFileMainOut.length <= 44100){
+        
+        // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
+        // then return from the method. Error occurs with buffer on assembly code on div.
+        
+        return;
+        
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght
@@ -1611,9 +1650,18 @@
     if (error){
         NSLog(@"outputFileMicrophone file player error %@",error);
         
-        NSLog(@"No recorded flie?");
+        NSLog(@"No recorded file?");
         
         return;
+    }
+    
+    if (self.outputFileMicrophone.length <= 44100){
+        
+        // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
+        // then return from the method. Error occurs with buffer on assembly code on div.
+        
+        return;
+        
     }
     
     // Creates a buffer for playback and sets the format to the file and lenght.
@@ -1711,7 +1759,16 @@
     }
 }
 
--(void) playMetronome {
+-(void) playMetronome: (float) BPM {
+    
+        if (self.isMetronome == false) {
+           [self.timerMetronome invalidate];
+        }
+
+}
+
+
+-(void) fireMetronome {
     
     NSError *error;
     
@@ -1719,22 +1776,8 @@
     
     self.fileMetronome = [[AVAudioFile alloc] initForReading:self.fileMetronomeURL error:&error];
     
-    [self.playerMetronome scheduleFile:self.fileMetronome atTime:nil completionHandler:nil];
-    
-    //do {
-        if (self.isMetronome == true) {
-            self.timerMetronome = [NSTimer scheduledTimerWithTimeInterval:(60/self.BPM) target:self selector:@selector(fireMetronome:) userInfo:nil repeats:YES];
-        } else {
-        
-            [self.timerMetronome invalidate];
-        
-        }
-    //} while (1);
-}
-
--(void) fireMetronome: (NSTimer*) timer {
-    
     [self.playerMetronome play];
+    NSLog(@"fire");
 
 }
 

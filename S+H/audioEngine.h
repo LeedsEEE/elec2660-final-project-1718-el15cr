@@ -111,8 +111,8 @@
 -(void) loadAudioUnitDefaults;
 -(void) perpareAndStartEngine;
 
--(void) playMetronome;
--(void) fireMetronome: (NSTimer*) timer;
+-(void) playMetronome: (float) BPM;
+-(void) fireMetronome; 
 
 -(void) playInstrument1: (int) note;
 -(void) stopInstrument1: (int) note;

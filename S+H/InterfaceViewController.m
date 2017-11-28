@@ -21,6 +21,8 @@
     self.audioEngine = [[audioEngine alloc]init];
     self.settings = [[settings alloc]init];
     
+
+    
 }
 
 
@@ -33,7 +35,7 @@
     
     ViewController *controller = [segue destinationViewController];
     
-    // Sends audioEngine object via segue to other view controller
+    // Sends audioEngine and settings object via segue to other view controller
     
     if ([[segue identifier] isEqualToString:@"AudioEngineAndSettings"]){
         
