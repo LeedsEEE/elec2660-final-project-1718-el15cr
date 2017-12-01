@@ -21,6 +21,24 @@
     self.pickerInstrument2.delegate = self;
     self.pickerInstrument2.dataSource = self;
     
+    self.buttonRecord.layer.cornerRadius = 10;
+    self.buttonPlay.layer.cornerRadius = 10;
+    self.buttonOctaveUp.layer.cornerRadius = 10;
+    self.buttonOctaveDown.layer.cornerRadius = 10;
+    
+    self.buttonNote1.layer.cornerRadius = 5;
+    self.buttonNote2.layer.cornerRadius = 5;
+    self.buttonNote3.layer.cornerRadius = 5;
+    self.buttonNote4.layer.cornerRadius = 5;
+    self.buttonNote5.layer.cornerRadius = 5;
+    self.buttonNote6.layer.cornerRadius = 5;
+    self.buttonNote7.layer.cornerRadius = 5;
+    self.buttonNote8.layer.cornerRadius = 5;
+    self.buttonNote9.layer.cornerRadius = 5;
+    self.buttonNote10.layer.cornerRadius = 5;
+    self.buttonNote11.layer.cornerRadius = 5;
+    self.buttonNote12.layer.cornerRadius = 5;
+    
     self.audioEngine.octave = self.audioEngine.octave;
     
     [self.pickerInstrument2 selectRow:self.settings.selectedInstrument2 inComponent:0 animated:YES];

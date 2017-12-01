@@ -18,6 +18,22 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerInstrument2;
 @property (weak, nonatomic) IBOutlet UISlider *sliderPan;
 @property (weak, nonatomic) IBOutlet UISwitch *switchLoop;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote1;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote2;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote3;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote4;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote5;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote6;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote7;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote8;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote9;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote10;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote11;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNote12;
+@property (weak, nonatomic) IBOutlet UIButton *buttonOctaveDown;
+@property (weak, nonatomic) IBOutlet UIButton *buttonOctaveUp;
+@property (weak, nonatomic) IBOutlet UIButton *buttonPlay;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRecord;
 
 // If the button is taped down then play the note
 
