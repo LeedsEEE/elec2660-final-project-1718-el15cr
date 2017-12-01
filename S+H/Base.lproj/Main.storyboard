@@ -1243,12 +1243,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-tv-sak">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-tv-sak">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Delay" id="0df-oh-5hE">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="2bW-Z1-Wfu">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <segue destination="Eu2-Xf-O6l" kind="unwind" unwindAction="unwindForSegue:towardsViewController:" id="p5V-5x-OxT"/>
                                             </connections>
@@ -1256,120 +1256,175 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-Sv-RFi">
-                                <rect key="frame" x="128" y="101" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-Sv-RFi">
+                                <rect key="frame" x="14" y="109" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderDryWetMix:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="sVh-8N-Ngx"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-iE-8IH">
-                                <rect key="frame" x="129" y="163" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-iE-8IH">
+                                <rect key="frame" x="14" y="176" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderDelayTime:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="o7h-2T-tjY"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="h16-VD-Yf5">
-                                <rect key="frame" x="129" y="229" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="h16-VD-Yf5">
+                                <rect key="frame" x="14" y="243" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderFeedback:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="15g-3t-Kw3"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AXJ-gC-SdI">
-                                <rect key="frame" x="128" y="401" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AXJ-gC-SdI">
+                                <rect key="frame" x="14" y="405" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="Kpq-tQ-b02"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-WZ-keV">
-                                <rect key="frame" x="128" y="484" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-WZ-keV">
+                                <rect key="frame" x="14" y="472" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="nGo-kN-MrP"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-CX-lj8">
-                                <rect key="frame" x="128" y="551" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-CX-lj8">
+                                <rect key="frame" x="14" y="539" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="wBS-1j-A22"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHH-qp-WeW">
-                                <rect key="frame" x="128" y="625" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHH-qp-WeW">
+                                <rect key="frame" x="14" y="606" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderMicrophone:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="zvC-5c-iA8"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-FX-sio">
-                                <rect key="frame" x="118" y="76" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-FX-sio">
+                                <rect key="frame" x="119" y="80" width="138" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="uYR-Kg-Spe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delay Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-SF-exb">
-                                <rect key="frame" x="119" y="136" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-SF-exb">
+                                <rect key="frame" x="119" y="147" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-QE-pPF">
-                                <rect key="frame" x="119" y="197" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-QE-pPF">
+                                <rect key="frame" x="119" y="214" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Low Pass Cutoff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-JM-pVg">
-                                <rect key="frame" x="119" y="263" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Pass Cutoff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-JM-pVg">
+                                <rect key="frame" x="119" y="281" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOf-vQ-5rM">
-                                <rect key="frame" x="107" y="449" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOf-vQ-5rM">
+                                <rect key="frame" x="98" y="443" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-p0-dmZ">
-                                <rect key="frame" x="107" y="522" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-p0-dmZ">
+                                <rect key="frame" x="110" y="510" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-Xi-9T1">
-                                <rect key="frame" x="107" y="596" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-Xi-9T1">
+                                <rect key="frame" x="110" y="577" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-JV-aI1">
-                                <rect key="frame" x="101" y="369" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-JV-aI1">
+                                <rect key="frame" x="101" y="376" width="173" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-O0-h1Y">
-                                <rect key="frame" x="128" y="295" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-O0-h1Y">
+                                <rect key="frame" x="14" y="310" width="347" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderLowPassCutoff:" destination="Xjp-Nl-lMF" eventType="valueChanged" id="tLh-bj-f89"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ByF-O0-h1Y" firstAttribute="leading" secondItem="AXJ-gC-SdI" secondAttribute="leading" id="0Gj-gJ-Ttv"/>
+                            <constraint firstItem="EOf-vQ-5rM" firstAttribute="top" secondItem="AXJ-gC-SdI" secondAttribute="bottom" constant="8" symbolic="YES" id="1Cm-T2-FQA"/>
+                            <constraint firstItem="AXJ-gC-SdI" firstAttribute="centerX" secondItem="EOf-vQ-5rM" secondAttribute="centerX" id="1RE-eR-8hl"/>
+                            <constraint firstItem="tgt-Xi-9T1" firstAttribute="top" secondItem="NYN-CX-lj8" secondAttribute="bottom" constant="8" symbolic="YES" id="1Rt-bN-mJH"/>
+                            <constraint firstItem="xHH-qp-WeW" firstAttribute="top" secondItem="tgt-Xi-9T1" secondAttribute="bottom" constant="8" symbolic="YES" id="5Rr-It-ihe"/>
+                            <constraint firstItem="4C1-JV-aI1" firstAttribute="centerX" secondItem="AXJ-gC-SdI" secondAttribute="centerX" id="5c8-rI-lW2"/>
+                            <constraint firstItem="YRJ-WZ-keV" firstAttribute="leading" secondItem="NYN-CX-lj8" secondAttribute="leading" id="616-ll-Hfm"/>
+                            <constraint firstItem="h16-VD-Yf5" firstAttribute="trailing" secondItem="ByF-O0-h1Y" secondAttribute="trailing" id="6Vl-ct-cL1"/>
+                            <constraint firstItem="oVD-iE-8IH" firstAttribute="top" secondItem="m9I-SF-exb" secondAttribute="bottom" constant="8" symbolic="YES" id="BDu-hk-fr1"/>
+                            <constraint firstItem="NYN-CX-lj8" firstAttribute="trailing" secondItem="xHH-qp-WeW" secondAttribute="trailing" id="C1P-gr-b6i"/>
+                            <constraint firstItem="sKJ-FX-sio" firstAttribute="leading" secondItem="m9I-SF-exb" secondAttribute="leading" id="E3r-CZ-M1B"/>
+                            <constraint firstItem="sKJ-FX-sio" firstAttribute="top" secondItem="4UM-tv-sak" secondAttribute="bottom" constant="14" id="EJU-be-G2w"/>
+                            <constraint firstItem="YRJ-WZ-keV" firstAttribute="trailing" secondItem="NYN-CX-lj8" secondAttribute="trailing" id="FGO-iV-hDj"/>
+                            <constraint firstItem="aSW-Sv-RFi" firstAttribute="trailing" secondItem="oVD-iE-8IH" secondAttribute="trailing" id="FLe-wF-Ydp"/>
+                            <constraint firstItem="4UM-tv-sak" firstAttribute="leading" secondItem="eSL-LO-SlO" secondAttribute="leading" id="GWy-UM-h9u"/>
+                            <constraint firstItem="AXJ-gC-SdI" firstAttribute="leading" secondItem="YRJ-WZ-keV" secondAttribute="leading" id="HfN-9j-JEF"/>
+                            <constraint firstItem="JrS-JM-pVg" firstAttribute="top" secondItem="h16-VD-Yf5" secondAttribute="bottom" constant="8" symbolic="YES" id="HtK-vh-jkW"/>
+                            <constraint firstItem="NYN-CX-lj8" firstAttribute="top" secondItem="Zeu-p0-dmZ" secondAttribute="bottom" constant="8" symbolic="YES" id="HzJ-Vx-saW"/>
+                            <constraint firstItem="YRJ-WZ-keV" firstAttribute="centerX" secondItem="Zeu-p0-dmZ" secondAttribute="centerX" id="Kj7-ex-u8A"/>
+                            <constraint firstItem="aSW-Sv-RFi" firstAttribute="top" secondItem="sKJ-FX-sio" secondAttribute="bottom" constant="8" symbolic="YES" id="Lqb-W9-Zuy"/>
+                            <constraint firstItem="m9I-SF-exb" firstAttribute="trailing" secondItem="zkh-QE-pPF" secondAttribute="trailing" id="NnI-ZN-6j4"/>
+                            <constraint firstItem="Zeu-p0-dmZ" firstAttribute="trailing" secondItem="tgt-Xi-9T1" secondAttribute="trailing" id="S8N-PJ-2rK"/>
+                            <constraint firstItem="Zeu-p0-dmZ" firstAttribute="leading" secondItem="eSL-LO-SlO" secondAttribute="leadingMargin" constant="94" id="Sfb-pc-1l5"/>
+                            <constraint firstItem="4UM-tv-sak" firstAttribute="top" secondItem="b0U-iV-xeF" secondAttribute="bottom" constant="2" id="Smf-3G-fJF"/>
+                            <constraint firstItem="m9I-SF-exb" firstAttribute="top" secondItem="aSW-Sv-RFi" secondAttribute="bottom" constant="8" symbolic="YES" id="Uke-hk-BY0"/>
+                            <constraint firstItem="Qbh-ev-7nF" firstAttribute="top" secondItem="xHH-qp-WeW" secondAttribute="bottom" constant="31" id="Vf1-cJ-RpL"/>
+                            <constraint firstItem="zkh-QE-pPF" firstAttribute="top" secondItem="oVD-iE-8IH" secondAttribute="bottom" constant="8" symbolic="YES" id="Vfg-pm-sDP"/>
+                            <constraint firstItem="aSW-Sv-RFi" firstAttribute="leading" secondItem="oVD-iE-8IH" secondAttribute="leading" id="WE4-oz-ck4"/>
+                            <constraint firstItem="YRJ-WZ-keV" firstAttribute="top" secondItem="EOf-vQ-5rM" secondAttribute="bottom" constant="8" symbolic="YES" id="Y1j-9Y-UFy"/>
+                            <constraint firstItem="h16-VD-Yf5" firstAttribute="leading" secondItem="ByF-O0-h1Y" secondAttribute="leading" id="ZQf-Y8-0ZP"/>
+                            <constraint firstItem="oVD-iE-8IH" firstAttribute="trailing" secondItem="h16-VD-Yf5" secondAttribute="trailing" id="ZQz-Md-vsj"/>
+                            <constraint firstItem="zkh-QE-pPF" firstAttribute="leading" secondItem="JrS-JM-pVg" secondAttribute="leading" id="ZbQ-yG-XwO"/>
+                            <constraint firstItem="EOf-vQ-5rM" firstAttribute="leading" secondItem="eSL-LO-SlO" secondAttribute="leadingMargin" constant="82" id="aJ7-Fz-O8y"/>
+                            <constraint firstItem="AXJ-gC-SdI" firstAttribute="top" secondItem="4C1-JV-aI1" secondAttribute="bottom" constant="8" symbolic="YES" id="aq6-K4-3HQ"/>
+                            <constraint firstItem="ByF-O0-h1Y" firstAttribute="trailing" secondItem="AXJ-gC-SdI" secondAttribute="trailing" id="bSo-FK-ZRS"/>
+                            <constraint firstItem="zkh-QE-pPF" firstAttribute="trailing" secondItem="JrS-JM-pVg" secondAttribute="trailing" id="geI-n9-5pK"/>
+                            <constraint firstItem="h16-VD-Yf5" firstAttribute="top" secondItem="zkh-QE-pPF" secondAttribute="bottom" constant="8" symbolic="YES" id="hey-jW-Kme"/>
+                            <constraint firstItem="4UM-tv-sak" firstAttribute="centerX" secondItem="sKJ-FX-sio" secondAttribute="centerX" id="kIA-5x-zid"/>
+                            <constraint firstItem="oVD-iE-8IH" firstAttribute="leading" secondItem="h16-VD-Yf5" secondAttribute="leading" id="lHC-bY-QLH"/>
+                            <constraint firstAttribute="trailing" secondItem="4UM-tv-sak" secondAttribute="trailing" id="qD1-2b-FVj"/>
+                            <constraint firstItem="NYN-CX-lj8" firstAttribute="leading" secondItem="xHH-qp-WeW" secondAttribute="leading" id="swt-Fu-Yu8"/>
+                            <constraint firstItem="ByF-O0-h1Y" firstAttribute="top" secondItem="JrS-JM-pVg" secondAttribute="bottom" constant="8" symbolic="YES" id="t2N-9g-oSb"/>
+                            <constraint firstItem="aSW-Sv-RFi" firstAttribute="leading" secondItem="eSL-LO-SlO" secondAttribute="leadingMargin" id="tpv-FH-dKK"/>
+                            <constraint firstItem="m9I-SF-exb" firstAttribute="leading" secondItem="zkh-QE-pPF" secondAttribute="leading" id="vef-9k-eDI"/>
+                            <constraint firstItem="Zeu-p0-dmZ" firstAttribute="leading" secondItem="tgt-Xi-9T1" secondAttribute="leading" id="xRs-Nc-sRI"/>
+                            <constraint firstItem="AXJ-gC-SdI" firstAttribute="trailing" secondItem="YRJ-WZ-keV" secondAttribute="trailing" id="xdC-Jb-8by"/>
+                            <constraint firstItem="4C1-JV-aI1" firstAttribute="leading" secondItem="eSL-LO-SlO" secondAttribute="leadingMargin" constant="85" id="yhU-mO-Mxb"/>
+                            <constraint firstItem="sKJ-FX-sio" firstAttribute="centerX" secondItem="aSW-Sv-RFi" secondAttribute="centerX" id="ys4-hn-ckF"/>
+                            <constraint firstItem="sKJ-FX-sio" firstAttribute="trailing" secondItem="m9I-SF-exb" secondAttribute="trailing" id="yxr-M0-8qC"/>
+                            <constraint firstItem="Zeu-p0-dmZ" firstAttribute="top" secondItem="YRJ-WZ-keV" secondAttribute="bottom" constant="8" symbolic="YES" id="zDA-9P-VQo"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="sliderDelayTime" destination="oVD-iE-8IH" id="eFD-3O-6Xm"/>
@@ -1385,7 +1440,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ4-4W-NMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Eu2-Xf-O6l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2146" y="994"/>
+            <point key="canvasLocation" x="-2146.4000000000001" y="993.55322338830592"/>
         </scene>
         <!--Distortion View Controller-->
         <scene sceneID="gxZ-5h-odD">
@@ -1399,9 +1454,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-yS-bG9">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-yS-bG9">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ufx-op-8ck"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Distortion" id="rN7-Ho-PXy">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="RVa-RR-Z5p">
@@ -1413,108 +1470,176 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wek-Yk-jbE">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wek-Yk-jbE">
                                 <rect key="frame" x="0.0" y="66" width="375" height="118"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-SW-ywH">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-SW-ywH">
                                 <rect key="frame" x="14" y="221" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OqA-N9-MM9"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderDryWetMix:" destination="Eae-BN-jFz" eventType="valueChanged" id="xdh-yj-PZX"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-ss-Gxq">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-ss-Gxq">
                                 <rect key="frame" x="14" y="288" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5PV-ft-07J"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderPreGain:" destination="Eae-BN-jFz" eventType="valueChanged" id="phi-BT-Adb"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fB7-NW-8dz">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fB7-NW-8dz">
                                 <rect key="frame" x="14" y="383" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hyn-Li-s7b"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument1:" destination="Eae-BN-jFz" eventType="valueChanged" id="Tck-y0-Ycn"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-0E-QGq">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-0E-QGq">
                                 <rect key="frame" x="14" y="466" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cyx-9i-uEd"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderInstrument2:" destination="Eae-BN-jFz" eventType="valueChanged" id="K6v-Xl-Ipa"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-0a-9aZ">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-0a-9aZ">
                                 <rect key="frame" x="14" y="533" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="diq-WY-HY9"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderDrums:" destination="Eae-BN-jFz" eventType="valueChanged" id="m74-lg-cX1"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-RH-91c">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-RH-91c">
                                 <rect key="frame" x="14" y="607" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="u7W-pZ-wr1"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didMoveSliderMicrophone:" destination="Eae-BN-jFz" eventType="valueChanged" id="CQS-ju-nC5"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sy-gC-o09">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sy-gC-o09">
                                 <rect key="frame" x="118" y="192" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="Gum-5Y-SLa"/>
+                                    <constraint firstAttribute="height" constant="21" id="lpw-qJ-vmR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pre-Gain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-l7-Y5E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-Gain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-l7-Y5E">
                                 <rect key="frame" x="119" y="259" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8Kq-ek-gnT"/>
+                                    <constraint firstAttribute="width" constant="138" id="DA4-nA-p0R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-T3-aUO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-T3-aUO">
                                 <rect key="frame" x="98" y="437" width="180" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="yPA-NX-C9p"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-d9-ycF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-d9-ycF">
                                 <rect key="frame" x="110" y="504" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uYm-UY-obh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ux-ur-ASs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ux-ur-ASs">
                                 <rect key="frame" x="110" y="578" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3T1-ub-g8s"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-qw-qld">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-qw-qld">
                                 <rect key="frame" x="101" y="354" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ivN-ql-dAc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.32877266840000002" green="0.32877266840000002" blue="0.32877266840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="o5A-yS-bG9" firstAttribute="leading" secondItem="Wek-Yk-jbE" secondAttribute="leading" id="0GU-Xz-qgN"/>
+                            <constraint firstItem="UBU-0a-9aZ" firstAttribute="trailing" secondItem="kdV-RH-91c" secondAttribute="trailing" id="1yG-R5-bWM"/>
+                            <constraint firstItem="E4b-d9-ycF" firstAttribute="trailing" secondItem="7ux-ur-ASs" secondAttribute="trailing" id="4UF-vv-qZb"/>
+                            <constraint firstItem="E4b-d9-ycF" firstAttribute="top" secondItem="JoK-0E-QGq" secondAttribute="bottom" constant="8" symbolic="YES" id="7lS-nJ-m6d"/>
+                            <constraint firstAttribute="trailing" secondItem="o5A-yS-bG9" secondAttribute="trailing" id="7o0-PU-vmE"/>
+                            <constraint firstItem="Au7-T3-aUO" firstAttribute="leading" secondItem="DNi-dM-OBJ" secondAttribute="leadingMargin" constant="82" id="CKv-U2-1tK"/>
+                            <constraint firstItem="1Sy-gC-o09" firstAttribute="top" secondItem="Wek-Yk-jbE" secondAttribute="bottom" constant="8" symbolic="YES" id="CXv-WQ-Iz1"/>
+                            <constraint firstItem="Au7-T3-aUO" firstAttribute="centerX" secondItem="JoK-0E-QGq" secondAttribute="centerX" id="Dfg-Jl-2d8"/>
+                            <constraint firstItem="pcP-SW-ywH" firstAttribute="centerX" secondItem="jbG-l7-Y5E" secondAttribute="centerX" id="F1U-8L-cPv"/>
+                            <constraint firstItem="E4b-d9-ycF" firstAttribute="leading" secondItem="7ux-ur-ASs" secondAttribute="leading" id="HXQ-FU-Gam"/>
+                            <constraint firstItem="gWr-ss-Gxq" firstAttribute="trailing" secondItem="fB7-NW-8dz" secondAttribute="trailing" id="HrI-jw-uw5"/>
+                            <constraint firstItem="gWr-ss-Gxq" firstAttribute="top" secondItem="jbG-l7-Y5E" secondAttribute="bottom" constant="8" symbolic="YES" id="Llu-CI-edP"/>
+                            <constraint firstItem="Wek-Yk-jbE" firstAttribute="centerX" secondItem="1Sy-gC-o09" secondAttribute="centerX" id="Nqa-UY-lXC"/>
+                            <constraint firstItem="7ux-ur-ASs" firstAttribute="top" secondItem="UBU-0a-9aZ" secondAttribute="bottom" constant="15" id="PRR-mn-dnv"/>
+                            <constraint firstItem="JoK-0E-QGq" firstAttribute="centerX" secondItem="E4b-d9-ycF" secondAttribute="centerX" id="PgJ-bp-Nga"/>
+                            <constraint firstItem="1Sy-gC-o09" firstAttribute="centerX" secondItem="pcP-SW-ywH" secondAttribute="centerX" id="PkT-HE-1A5"/>
+                            <constraint firstItem="0ZV-qw-qld" firstAttribute="leading" secondItem="DNi-dM-OBJ" secondAttribute="leadingMargin" constant="85" id="Qd6-Nd-e23"/>
+                            <constraint firstItem="o5A-yS-bG9" firstAttribute="trailing" secondItem="Wek-Yk-jbE" secondAttribute="trailing" id="QdE-TI-p4x"/>
+                            <constraint firstItem="jbG-l7-Y5E" firstAttribute="top" secondItem="pcP-SW-ywH" secondAttribute="bottom" constant="8" symbolic="YES" id="Qif-qD-9DF"/>
+                            <constraint firstItem="JoK-0E-QGq" firstAttribute="trailing" secondItem="UBU-0a-9aZ" secondAttribute="trailing" id="Rip-g9-pjK"/>
+                            <constraint firstItem="0P4-Pw-iLi" firstAttribute="top" secondItem="kdV-RH-91c" secondAttribute="bottom" constant="30" id="SOs-XI-t68"/>
+                            <constraint firstItem="kdV-RH-91c" firstAttribute="top" secondItem="7ux-ur-ASs" secondAttribute="bottom" constant="8" symbolic="YES" id="U05-Wz-9mY"/>
+                            <constraint firstItem="o5A-yS-bG9" firstAttribute="leading" secondItem="DNi-dM-OBJ" secondAttribute="leading" id="U4D-zu-czQ"/>
+                            <constraint firstItem="gWr-ss-Gxq" firstAttribute="leading" secondItem="fB7-NW-8dz" secondAttribute="leading" id="XzR-Ch-8IB"/>
+                            <constraint firstItem="UBU-0a-9aZ" firstAttribute="top" secondItem="E4b-d9-ycF" secondAttribute="bottom" constant="8" symbolic="YES" id="ZNq-tM-wo5"/>
+                            <constraint firstItem="JoK-0E-QGq" firstAttribute="top" secondItem="Au7-T3-aUO" secondAttribute="bottom" constant="8" symbolic="YES" id="dOW-JV-xma"/>
+                            <constraint firstItem="0ZV-qw-qld" firstAttribute="centerX" secondItem="fB7-NW-8dz" secondAttribute="centerX" id="fma-CN-9Od"/>
+                            <constraint firstItem="fB7-NW-8dz" firstAttribute="top" secondItem="0ZV-qw-qld" secondAttribute="bottom" constant="8" symbolic="YES" id="gHU-7r-VoS"/>
+                            <constraint firstItem="JoK-0E-QGq" firstAttribute="leading" secondItem="UBU-0a-9aZ" secondAttribute="leading" id="hWZ-h6-Wx1"/>
+                            <constraint firstItem="pcP-SW-ywH" firstAttribute="trailing" secondItem="gWr-ss-Gxq" secondAttribute="trailing" id="iJv-MF-Twn"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fB7-NW-8dz" secondAttribute="leading" id="jwh-96-Q0Y"/>
+                            <constraint firstItem="Wek-Yk-jbE" firstAttribute="top" secondItem="o5A-yS-bG9" secondAttribute="bottom" id="kLB-6A-HyH"/>
+                            <constraint firstItem="fB7-NW-8dz" firstAttribute="trailing" secondItem="JoK-0E-QGq" secondAttribute="trailing" id="nQZ-Uq-ZuH"/>
+                            <constraint firstItem="o5A-yS-bG9" firstAttribute="top" secondItem="TTD-nR-1dx" secondAttribute="bottom" constant="2" id="oGt-HA-P9R"/>
+                            <constraint firstItem="pcP-SW-ywH" firstAttribute="leading" secondItem="gWr-ss-Gxq" secondAttribute="leading" id="rQR-Ih-fUc"/>
+                            <constraint firstItem="Au7-T3-aUO" firstAttribute="top" secondItem="fB7-NW-8dz" secondAttribute="bottom" constant="24" id="scy-VQ-y0M"/>
+                            <constraint firstItem="E4b-d9-ycF" firstAttribute="leading" secondItem="DNi-dM-OBJ" secondAttribute="leadingMargin" constant="94" id="th0-jT-w0O"/>
+                            <constraint firstItem="pcP-SW-ywH" firstAttribute="top" secondItem="1Sy-gC-o09" secondAttribute="bottom" constant="8" symbolic="YES" id="vRK-Fa-SjI"/>
+                            <constraint firstItem="0ZV-qw-qld" firstAttribute="top" secondItem="gWr-ss-Gxq" secondAttribute="bottom" constant="36" id="vzL-08-pfj"/>
+                            <constraint firstItem="fB7-NW-8dz" firstAttribute="leading" secondItem="JoK-0E-QGq" secondAttribute="leading" id="yNs-WJ-eEr"/>
+                            <constraint firstItem="UBU-0a-9aZ" firstAttribute="leading" secondItem="kdV-RH-91c" secondAttribute="leading" id="zE0-E4-Rru"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pickerDistortion" destination="Wek-Yk-jbE" id="7Ao-Yb-Xnf"/>
