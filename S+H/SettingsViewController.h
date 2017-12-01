@@ -15,15 +15,12 @@
 @property audioEngine *audioEngine; 
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerUserPreset;
-@property (weak, nonatomic) IBOutlet UISwitch *switchMetronome;
-@property (weak, nonatomic) IBOutlet UISlider *sliderMetronome;
-
-@property (nonatomic, strong) NSTimer *timer; 
+@property (weak, nonatomic) IBOutlet UIButton *buttonStorePreset;
+@property (weak, nonatomic) IBOutlet UIButton *buttonLoadPreset;
 
 - (IBAction)didTapStorePreset:(UIButton *)sender;
 - (IBAction)didTapLoadPreset:(UIButton *)sender;
-- (IBAction)didMoveSliderMetronome:(UISlider *)sender;
-- (IBAction)didMoveSwitchMetronome:(UISwitch *)sender;
+
 
 
 @end

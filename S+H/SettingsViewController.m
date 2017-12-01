@@ -21,6 +21,9 @@
     self.pickerUserPreset.delegate = self;
     self.pickerUserPreset.dataSource = self;
     
+    self.buttonLoadPreset.layer.cornerRadius = 10;
+    self.buttonStorePreset.layer.cornerRadius = 10;
+    
     [self.pickerUserPreset selectRow:self.settings.selectedUserPreset inComponent:0 animated:YES];
     
 }
@@ -78,14 +81,6 @@
     
 }
 
-- (IBAction)didMoveSliderMetronome:(UISlider *)sender {
-    
-}
-
-- (IBAction)didMoveSwitchMetronome:(UISwitch *)sender {
-
-    
-}
 - (IBAction)didTapStorePreset:(UIButton *)sender {
     
     [self storeUserPresetData];
@@ -106,7 +101,6 @@
     NSNumber *reverbWetDry = [self.settings.userPresetData1 objectAtIndex:0];
     float floatReverbWetDry = [reverbWetDry floatValue];
     self.audioEngine.audioUnitReverb.wetDryMix = floatReverbWetDry;
-    [self.timer fire];
 
 }
 
