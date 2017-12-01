@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonInstument2;
 @property (weak, nonatomic) IBOutlet UIButton *buttonInstument1;
 @property (weak, nonatomic) IBOutlet UISlider *sliderVolume;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 
 
 - (IBAction)didTapPlay:(UIButton *)sender;

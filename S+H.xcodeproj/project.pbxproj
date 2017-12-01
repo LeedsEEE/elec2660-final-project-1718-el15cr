@@ -18,7 +18,6 @@
 		063FE0FB1FBF2FE700620A64 /* S_HUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE0FA1FBF2FE700620A64 /* S_HUITests.m */; };
 		063FE10D1FBF37A900620A64 /* audioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 063FE10C1FBF37A900620A64 /* audioEngine.m */; };
 		063FE1101FBF380D00620A64 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063FE10F1FBF380D00620A64 /* AVFoundation.framework */; };
-		065AFD391FCDA5980034CA90 /* Screen Shot 2017-11-28 at 14.08.47.png in Resources */ = {isa = PBXBuildFile; fileRef = 065AFD381FCDA5980034CA90 /* Screen Shot 2017-11-28 at 14.08.47.png */; };
 		068113C51FC438A000E07608 /* DrumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113C41FC438A000E07608 /* DrumsViewController.m */; };
 		068113C81FC438AE00E07608 /* DelayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113C71FC438AE00E07608 /* DelayViewController.m */; };
 		068113CB1FC438C200E07608 /* Instrument2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 068113CA1FC438C200E07608 /* Instrument2ViewController.m */; };
@@ -348,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065AFD391FCDA5980034CA90 /* Screen Shot 2017-11-28 at 14.08.47.png in Resources */,
 				F244B6B21FCCC65A00D9C0FD /* Angular House Set.sf2 in Resources */,
 				F244B6B31FCCC65A00D9C0FD /* Angular Jazz1 Set.sf2 in Resources */,
 				F244B6B41FCCC65A00D9C0FD /* Angular Techno Set.sf2 in Resources */,
@@ -550,6 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.ac.uk.S-H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -561,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leeds.ac.uk.S-H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

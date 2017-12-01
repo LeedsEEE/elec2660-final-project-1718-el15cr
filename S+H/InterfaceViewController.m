@@ -21,7 +21,17 @@
     self.audioEngine = [[audioEngine alloc]init];
     self.settings = [[settings alloc]init];
     
-
+    self.buttonPlay.layer.cornerRadius = 10;
+    self.buttonReverb.layer.cornerRadius = 10;
+    self.buttonRecord.layer.cornerRadius = 10;
+    self.buttonInstument1.layer.cornerRadius = 10;
+    self.buttonInstument2.layer.cornerRadius = 10;
+    self.buttonMicrophone.layer.cornerRadius = 10;
+    self.buttonDrums.layer.cornerRadius = 10;
+    self.buttonDistortion.layer.cornerRadius = 10;
+    self.buttonDelay.layer.cornerRadius = 10;
+    self.buttonMainMix.layer.cornerRadius = 10;
+    self.buttonSettings.layer.cornerRadius = 10;
     
 }
 
