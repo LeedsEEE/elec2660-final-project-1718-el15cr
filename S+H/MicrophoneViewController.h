@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *sliderPitch;
 @property (weak, nonatomic) IBOutlet UISlider *sliderRate;
 @property (weak, nonatomic) IBOutlet UISwitch *switchLoop;
+@property (weak, nonatomic) IBOutlet UIButton *buttonPlay;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRecord;
 
 
 - (IBAction)didTapPlay:(UIButton *)sender;

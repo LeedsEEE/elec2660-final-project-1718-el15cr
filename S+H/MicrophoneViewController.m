@@ -22,6 +22,9 @@
     self.sliderOverlap.value = self.audioEngine.audioUnitTimePitch.overlap;
     self.sliderPitch.value = self.audioEngine.audioUnitTimePitch.pitch;
     
+    self.buttonRecord.layer.cornerRadius = 10;
+    self.buttonPlay.layer.cornerRadius = 10;
+    
     self.audioEngine.isLoopMicrophone = self.switchLoop.isOn;
 }
 
