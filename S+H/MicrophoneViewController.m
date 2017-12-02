@@ -25,6 +25,16 @@
     self.buttonRecord.layer.cornerRadius = 10;
     self.buttonPlay.layer.cornerRadius = 10;
     
+    if (self.audioEngine.playerMicrophone.isPlaying == true) {
+        
+        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        
+    } else if (self.audioEngine.playerMicrophone.isPlaying == false){
+        
+        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        
+    }
+    
     self.audioEngine.isLoopMicrophone = self.switchLoop.isOn;
 }
 
@@ -45,7 +55,17 @@
 
 - (IBAction)didTapPlay:(UIButton *)sender {
     
-    [self.audioEngine startPlayingMicrophone]; 
+    [self.audioEngine startPlayingMicrophone];
+    
+    if (self.audioEngine.playerMicrophone.isPlaying == true) {
+        
+        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        
+    } else if (self.audioEngine.playerMicrophone.isPlaying == false){
+        
+        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        
+    }
     
 }
 - (IBAction)didTapRecord:(UIButton *)sender {
@@ -55,6 +75,10 @@
         self.audioEngine.isRecordingMicrophone = true;
         
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordMicrophone:) userInfo:nil repeats:NO];
+        
+        [self performSelector: @selector(recordTextLabe1:) withObject:self afterDelay: 2.0];
+        [self performSelector: @selector(recordTextLabe2:) withObject:self afterDelay: 1.0];
+        [self performSelector: @selector(recordTextLabe3:) withObject:self afterDelay: 0.0];
         
     } else {
         
@@ -94,5 +118,19 @@
     
 }
 
+-(void) recordTextLabe1: (id) trigger {
+    
+    [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+}
+
+-(void) recordTextLabe2: (id) trigger {
+    
+    [self.buttonRecord setTitle:@"2" forState:UIControlStateNormal];
+}
+
+-(void) recordTextLabe3: (id) trigger {
+    
+    [self.buttonRecord setTitle:@"1" forState:UIControlStateNormal];
+}
 
 @end

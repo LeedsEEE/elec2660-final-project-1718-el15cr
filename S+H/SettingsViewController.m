@@ -77,13 +77,13 @@
     
     [self.settings loadUserPreset];
     
-    [self loadUserPresetData];
+    //[self loadUserPresetData];
     
 }
 
 - (IBAction)didTapStorePreset:(UIButton *)sender {
     
-    [self storeUserPresetData];
+    //[self storeUserPresetData];
     
     [self.settings storeUserPreset];
     

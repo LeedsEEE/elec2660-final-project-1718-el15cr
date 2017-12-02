@@ -87,8 +87,6 @@
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend5;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend6;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend7;
-@property (nonatomic, strong) NSTimer *timerMetronome;
-@property (nonatomic, strong) NSThread *threadMetronome; 
 @property NSInteger octave;
 @property float BPM; 
 @property BOOL isRecordingInstument1;
@@ -100,7 +98,6 @@
 @property BOOL isLoopInstument2;
 @property BOOL isLoopDrums;
 @property BOOL isLoopMicrophone;
-@property BOOL isMetronome;
 
 -(void) createSession;
 -(void) createEngine;
@@ -110,9 +107,6 @@
 -(void) loadInstrumentDefaults;
 -(void) loadAudioUnitDefaults;
 -(void) perpareAndStartEngine;
-
--(void) playMetronome: (float) BPM;
--(void) fireMetronome; 
 
 -(void) playInstrument1: (int) note;
 -(void) stopInstrument1: (int) note;

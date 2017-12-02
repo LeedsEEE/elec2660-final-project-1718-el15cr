@@ -357,8 +357,6 @@
     self.isRecordingMicrophone = false;
     self.isRecordingMainOut = false;
     
-    self.isMetronome = true;
-    
     NSLog(@"Loaded audio unit defaults");
 }
 
@@ -1761,28 +1759,6 @@
         NSLog(@"Recording stopped on microphone");
         
     }
-}
-
--(void) playMetronome: (float) BPM {
-    
-        if (self.isMetronome == false) {
-           [self.timerMetronome invalidate];
-        }
-
-}
-
-
--(void) fireMetronome {
-    
-    NSError *error;
-    
-    self.fileMetronomeURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep-07" ofType:@"wav"]];
-    
-    self.fileMetronome = [[AVAudioFile alloc] initForReading:self.fileMetronomeURL error:&error];
-    
-    [self.playerMetronome play];
-    NSLog(@"fire");
-
 }
 
 @end

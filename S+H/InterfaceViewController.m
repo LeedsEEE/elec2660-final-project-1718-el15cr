@@ -104,7 +104,11 @@
         
         [self.audioEngine startRecordingMainOut];
         
+        [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+        
     } else {
+        
+        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
         
         [self.audioEngine stopRecordingMainOut];
         
