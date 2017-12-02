@@ -288,7 +288,7 @@
                                     <constraint firstAttribute="width" constant="46" id="EbR-Nx-nYq"/>
                                 </constraints>
                                 <state key="normal" title="Note1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote1:" destination="ixC-8H-8dI" eventType="touchDown" id="0Ni-DD-OWU"/>
@@ -302,7 +302,7 @@
                                     <constraint firstAttribute="width" constant="45" id="cOm-sE-6cW"/>
                                 </constraints>
                                 <state key="normal" title="Note3">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote3:" destination="ixC-8H-8dI" eventType="touchDown" id="1eI-BM-EM0"/>
@@ -313,7 +313,7 @@
                                 <rect key="frame" x="117" y="190" width="45" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note5">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote5:" destination="ixC-8H-8dI" eventType="touchDown" id="Jfd-U9-tgK"/>
@@ -324,7 +324,7 @@
                                 <rect key="frame" x="163" y="190" width="48" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note6">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote6:" destination="ixC-8H-8dI" eventType="touchDown" id="kks-VH-Csc"/>
@@ -338,7 +338,7 @@
                                     <constraint firstAttribute="width" constant="46" id="DbQ-vQ-j7K"/>
                                 </constraints>
                                 <state key="normal" title="Note10">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote10:" destination="ixC-8H-8dI" eventType="touchDown" id="Nvf-0i-ziC"/>
@@ -352,7 +352,7 @@
                                     <constraint firstAttribute="width" constant="46" id="D4r-cM-Efx"/>
                                 </constraints>
                                 <state key="normal" title="Note8">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote8:" destination="ixC-8H-8dI" eventType="touchDown" id="bQG-Lw-kQH"/>
@@ -363,7 +363,7 @@
                                 <rect key="frame" x="306" y="190" width="45" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note12">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote12:" destination="ixC-8H-8dI" eventType="touchDown" id="sUa-TQ-JjH"/>
@@ -377,7 +377,7 @@
                                     <constraint firstAttribute="height" constant="90" id="8BP-dS-B04"/>
                                 </constraints>
                                 <state key="normal" title="Note2">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote2:" destination="ixC-8H-8dI" eventType="touchDown" id="iA2-Uc-UCH"/>
@@ -388,7 +388,7 @@
                                 <rect key="frame" x="101" y="189" width="43" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Note4">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote4:" destination="ixC-8H-8dI" eventType="touchDown" id="5ox-Op-WKV"/>
@@ -402,7 +402,7 @@
                                     <constraint firstAttribute="width" constant="46" id="Pd3-eL-to0"/>
                                 </constraints>
                                 <state key="normal" title="Note7">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote7:" destination="ixC-8H-8dI" eventType="touchDown" id="ylb-FY-1PE"/>
@@ -416,7 +416,7 @@
                                     <constraint firstAttribute="width" constant="43" id="GXx-TK-MfE"/>
                                 </constraints>
                                 <state key="normal" title="Note9">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote9:" destination="ixC-8H-8dI" eventType="touchDown" id="oMF-YW-dgp"/>
@@ -427,7 +427,7 @@
                                 <rect key="frame" x="286" y="189" width="45" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Note11">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote11:" destination="ixC-8H-8dI" eventType="touchDown" id="l8y-bT-4m7"/>
@@ -711,7 +711,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chl-le-4dx">
-                                <rect key="frame" x="297" y="323" width="62" height="45"/>
+                                <rect key="frame" x="297" y="323" width="62" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Pad 12">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1210,7 +1210,7 @@
                                 </items>
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-Sv-RFi">
-                                <rect key="frame" x="14" y="109" width="347" height="31"/>
+                                <rect key="frame" x="14" y="109" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1218,7 +1218,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-iE-8IH">
-                                <rect key="frame" x="14" y="176" width="347" height="31"/>
+                                <rect key="frame" x="14" y="176" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1226,7 +1226,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="h16-VD-Yf5">
-                                <rect key="frame" x="14" y="243" width="347" height="31"/>
+                                <rect key="frame" x="14" y="243" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1234,7 +1234,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AXJ-gC-SdI">
-                                <rect key="frame" x="14" y="405" width="347" height="31"/>
+                                <rect key="frame" x="14" y="405" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1242,7 +1242,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-WZ-keV">
-                                <rect key="frame" x="14" y="472" width="347" height="31"/>
+                                <rect key="frame" x="14" y="472" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1250,7 +1250,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-CX-lj8">
-                                <rect key="frame" x="14" y="539" width="347" height="31"/>
+                                <rect key="frame" x="14" y="539" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1258,7 +1258,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHH-qp-WeW">
-                                <rect key="frame" x="14" y="606" width="347" height="31"/>
+                                <rect key="frame" x="14" y="606" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1266,7 +1266,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-FX-sio">
-                                <rect key="frame" x="119" y="80" width="138" height="21"/>
+                                <rect key="frame" x="118.5" y="80" width="138" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="uYR-Kg-Spe"/>
                                 </constraints>
@@ -1275,49 +1275,49 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-SF-exb">
-                                <rect key="frame" x="119" y="147" width="138" height="21"/>
+                                <rect key="frame" x="118.5" y="147" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkh-QE-pPF">
-                                <rect key="frame" x="119" y="214" width="138" height="21"/>
+                                <rect key="frame" x="118.5" y="214" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Pass Cutoff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-JM-pVg">
-                                <rect key="frame" x="119" y="281" width="138" height="21"/>
+                                <rect key="frame" x="118.5" y="281" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOf-vQ-5rM">
-                                <rect key="frame" x="98" y="443" width="180" height="21"/>
+                                <rect key="frame" x="98" y="443" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-p0-dmZ">
-                                <rect key="frame" x="110" y="510" width="155" height="21"/>
+                                <rect key="frame" x="110" y="510" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-Xi-9T1">
-                                <rect key="frame" x="110" y="577" width="155" height="21"/>
+                                <rect key="frame" x="110" y="577" width="154" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-JV-aI1">
-                                <rect key="frame" x="101" y="376" width="173" height="21"/>
+                                <rect key="frame" x="101" y="376" width="172" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-O0-h1Y">
-                                <rect key="frame" x="14" y="310" width="347" height="31"/>
+                                <rect key="frame" x="14" y="310" width="346" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" red="0.22358676790000001" green="0.2237863541" blue="0.2236177027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1427,7 +1427,7 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="118"/>
                             </pickerView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-SW-ywH">
-                                <rect key="frame" x="14" y="221" width="347" height="31"/>
+                                <rect key="frame" x="14" y="221" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OqA-N9-MM9"/>
                                 </constraints>
@@ -1438,7 +1438,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-ss-Gxq">
-                                <rect key="frame" x="14" y="288" width="347" height="31"/>
+                                <rect key="frame" x="14" y="288" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5PV-ft-07J"/>
                                 </constraints>
@@ -1449,7 +1449,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fB7-NW-8dz">
-                                <rect key="frame" x="14" y="383" width="347" height="31"/>
+                                <rect key="frame" x="14" y="383" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hyn-Li-s7b"/>
                                 </constraints>
@@ -1460,7 +1460,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-0E-QGq">
-                                <rect key="frame" x="14" y="466" width="347" height="31"/>
+                                <rect key="frame" x="14" y="466" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cyx-9i-uEd"/>
                                 </constraints>
@@ -1471,7 +1471,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-0a-9aZ">
-                                <rect key="frame" x="14" y="533" width="347" height="31"/>
+                                <rect key="frame" x="14" y="533" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="diq-WY-HY9"/>
                                 </constraints>
@@ -1482,7 +1482,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-RH-91c">
-                                <rect key="frame" x="14" y="607" width="347" height="31"/>
+                                <rect key="frame" x="14" y="607" width="348" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="u7W-pZ-wr1"/>
                                 </constraints>
@@ -1493,7 +1493,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry/Wet MIx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sy-gC-o09">
-                                <rect key="frame" x="118" y="192" width="138" height="21"/>
+                                <rect key="frame" x="118.5" y="192" width="138" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="Gum-5Y-SLa"/>
                                     <constraint firstAttribute="height" constant="21" id="lpw-qJ-vmR"/>
@@ -1503,7 +1503,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-Gain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbG-l7-Y5E">
-                                <rect key="frame" x="119" y="259" width="138" height="21"/>
+                                <rect key="frame" x="119.5" y="259" width="138" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8Kq-ek-gnT"/>
                                     <constraint firstAttribute="width" constant="138" id="DA4-nA-p0R"/>
@@ -1513,7 +1513,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 2 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-T3-aUO">
-                                <rect key="frame" x="98" y="437" width="180" height="21"/>
+                                <rect key="frame" x="98" y="437" width="181" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="yPA-NX-C9p"/>
                                 </constraints>
@@ -1522,7 +1522,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drums Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-d9-ycF">
-                                <rect key="frame" x="110" y="504" width="155" height="21"/>
+                                <rect key="frame" x="110" y="504" width="156" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uYm-UY-obh"/>
                                 </constraints>
@@ -1531,7 +1531,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ux-ur-ASs">
-                                <rect key="frame" x="110" y="578" width="155" height="21"/>
+                                <rect key="frame" x="110" y="578" width="156" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3T1-ub-g8s"/>
                                 </constraints>
@@ -1540,7 +1540,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument 1 Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-qw-qld">
-                                <rect key="frame" x="101" y="354" width="173" height="21"/>
+                                <rect key="frame" x="101" y="354" width="174" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ivN-ql-dAc"/>
                                 </constraints>
@@ -1923,7 +1923,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSi-q3-GmR">
                                 <rect key="frame" x="24" y="190" width="46" height="167"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES" keyboardKey="YES"/>
                                 </accessibility>

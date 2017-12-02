@@ -39,7 +39,18 @@
     self.buttonNote11.layer.cornerRadius = 5;
     self.buttonNote12.layer.cornerRadius = 5;
     
+    if (self.audioEngine.playerInstument1.isPlaying == true) {
+        
+        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        
+    } else if (self.audioEngine.playerInstument1.isPlaying == false){
+        
+        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        
+    }
+    
     self.audioEngine.octave = self.audioEngine.octave;
+    self.sliderPan.value = self.audioEngine.samplerInstrument1.pan;
     
     [self.pickerInstrument1 selectRow:self.settings.selectedInstrument1 inComponent:0 animated:YES];
     
@@ -100,76 +111,100 @@
 
 - (IBAction)didTapDownNote1:(UIButton *)sender {
     [self.audioEngine playInstrument1:60];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote2:(UIButton *)sender {
     [self.audioEngine playInstrument1:61];
+    [sender setBackgroundColor:self.settings.colourPiano2];
 }
 - (IBAction)didTapDownNote3:(UIButton *)sender {
     [self.audioEngine playInstrument1:62];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote4:(UIButton *)sender {
     [self.audioEngine playInstrument1:63];
+    [sender setBackgroundColor:self.settings.colourPiano2];
 }
 - (IBAction)didTapDownNote5:(UIButton *)sender {
     [self.audioEngine playInstrument1:64];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote6:(UIButton *)sender {
     [self.audioEngine playInstrument1:65];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote7:(UIButton *)sender {
     [self.audioEngine playInstrument1:66];
+    [sender setBackgroundColor:self.settings.colourPiano2];
 }
 - (IBAction)didTapDownNote8:(UIButton *)sender {
     [self.audioEngine playInstrument1:67];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote9:(UIButton *)sender {
     [self.audioEngine playInstrument1:68];
+    [sender setBackgroundColor:self.settings.colourPiano2];
 }
 - (IBAction)didTapDownNote10:(UIButton *)sender {
     [self.audioEngine playInstrument1:69];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 - (IBAction)didTapDownNote11:(UIButton *)sender {
     [self.audioEngine playInstrument1:70];
+    [sender setBackgroundColor:self.settings.colourPiano2];
 }
 - (IBAction)didTapDownNote12:(UIButton *)sender {
     [self.audioEngine playInstrument1:71];
+    [sender setBackgroundColor:self.settings.colourPiano];
 }
 
 - (IBAction)didTapInsideNote1:(UIButton *)sender {
     [self.audioEngine stopInstrument1:60];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote2:(UIButton *)sender {
     [self.audioEngine stopInstrument1:61];
+    [sender setBackgroundColor:[UIColor blackColor]];
 }
 - (IBAction)didTapInsideNote3:(UIButton *)sender {
     [self.audioEngine stopInstrument1:62];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote4:(UIButton *)sender {
     [self.audioEngine stopInstrument1:63];
+    [sender setBackgroundColor:[UIColor blackColor]];
 }
 - (IBAction)didTapInsideNote5:(UIButton *)sender {
     [self.audioEngine stopInstrument1:64];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote6:(UIButton *)sender {
     [self.audioEngine stopInstrument1:65];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote7:(UIButton *)sender {
     [self.audioEngine stopInstrument1:66];
+    [sender setBackgroundColor:[UIColor blackColor]];
 }
 - (IBAction)didTapInsideNote8:(UIButton *)sender {
     [self.audioEngine stopInstrument1:67];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote9:(UIButton *)sender {
     [self.audioEngine stopInstrument1:68];
+    [sender setBackgroundColor:[UIColor blackColor]];
 }
 - (IBAction)didTapInsideNote10:(UIButton *)sender {
     [self.audioEngine stopInstrument1:69];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 - (IBAction)didTapInsideNote11:(UIButton *)sender {
     [self.audioEngine stopInstrument1:70];
+    [sender setBackgroundColor:[UIColor blackColor]];
 }
 - (IBAction)didTapInsideNote12:(UIButton *)sender {
     [self.audioEngine stopInstrument1:71];
+    [sender setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (IBAction)didTapOctaveUp:(UIButton *)sender {
@@ -192,8 +227,19 @@
 
 - (IBAction)didTapPlay:(UIButton *)sender {
     
-    [self.audioEngine startPlayingInstument1];
     self.audioEngine.isLoopInstument1 = self.switchLoop.isOn;
+    
+    [self.audioEngine startPlayingInstument1];
+    
+    if (self.audioEngine.playerInstument1.isPlaying == true) {
+        
+        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        
+    } else if (self.audioEngine.playerInstument1.isPlaying == false){
+        
+        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        
+    }
     
 }
 
@@ -201,11 +247,20 @@
     
     if (self.audioEngine.isRecordingInstument1 == false) {
         
-        self.audioEngine.isRecordingInstument1 = true; 
-        
+        self.audioEngine.isRecordingInstument1 = true;
+    
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordInstument1:) userInfo:nil repeats:NO];
         
+        [self performSelector: @selector(recordTextLabe1:) withObject:self afterDelay: 2.0];
+        [self performSelector: @selector(recordTextLabe2:) withObject:self afterDelay: 1.0];
+        [self performSelector: @selector(recordTextLabe3:) withObject:self afterDelay: 0.0];
+
+        self.buttonRecord.enabled = true;
+
+        
     } else {
+        
+        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
         
         [self.timerRecord invalidate];
         
@@ -225,6 +280,21 @@
     
     [self.audioEngine startRecordingInstument1];
     
+}
+
+-(void) recordTextLabe1: (id) trigger {
+    
+    [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+}
+
+-(void) recordTextLabe2: (id) trigger {
+    
+     [self.buttonRecord setTitle:@"2" forState:UIControlStateNormal];
+}
+
+-(void) recordTextLabe3: (id) trigger {
+    
+    [self.buttonRecord setTitle:@"1" forState:UIControlStateNormal];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface settings : NSObject
 
@@ -18,6 +19,9 @@
 @property NSInteger selectedInstrument2;
 @property NSInteger selectedDrums;
 @property NSInteger selectedUserPreset;
+
+@property UIColor *colourPiano;
+@property UIColor *colourPiano2;
 
 @property (nonatomic, strong) NSArray *pickerReverbData;
 @property (nonatomic, strong) NSArray *pickerDistortionData;

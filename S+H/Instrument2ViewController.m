@@ -40,6 +40,7 @@
     self.buttonNote12.layer.cornerRadius = 5;
     
     self.audioEngine.octave = self.audioEngine.octave;
+    self.sliderPan.value = self.audioEngine.samplerInstrument2.pan; 
     
     [self.pickerInstrument2 selectRow:self.settings.selectedInstrument2 inComponent:0 animated:YES];
     
@@ -184,7 +185,7 @@
 
 - (IBAction)didTapPlay:(UIButton *)sender {
     
-    self.audioEngine.isLoopInstument2 = self.switchLoop.isEnabled;
+    self.audioEngine.isLoopInstument2 = self.switchLoop.isOn;
     
     [self.audioEngine startPlayingInstument2];
     

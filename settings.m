@@ -39,6 +39,9 @@
         
         self.pickerUserPresetData = @[@"User Preset 1", @"User Preset 2"];
         
+        self.colourPiano = [[UIColor alloc] initWithDisplayP3Red:0.79 green:0.79 blue:0.79 alpha:1];
+        self.colourPiano2 = [[UIColor alloc] initWithDisplayP3Red:0.257 green:0.257 blue:0.257 alpha:1];
+        
     }
     return self;
 }

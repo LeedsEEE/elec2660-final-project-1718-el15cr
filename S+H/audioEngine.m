@@ -333,6 +333,10 @@
     self.sendDirectOutMicrophone.volume = 1;
     
     self.mainMixer.outputVolume = 1;
+    
+    self.audioUnitTimePitch.rate = 1;
+    self.audioUnitTimePitch.overlap = 32;
+    self.audioUnitTimePitch.pitch = 0;
 
     self.playerInstument1.pan = 0;
     self.playerInstument2.pan = 0;
