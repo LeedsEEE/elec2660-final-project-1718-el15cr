@@ -1931,7 +1931,7 @@
                                     <constraint firstAttribute="width" constant="46" id="L2s-Rr-ogs"/>
                                 </constraints>
                                 <state key="normal" title="Note1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote1:" destination="0OF-oM-iPa" eventType="touchDown" id="CRe-9Y-zd6"/>
@@ -1945,7 +1945,7 @@
                                     <constraint firstAttribute="width" constant="45" id="Fc1-Se-94a"/>
                                 </constraints>
                                 <state key="normal" title="Note3">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote3:" destination="0OF-oM-iPa" eventType="touchDown" id="1zZ-Ta-Ui6"/>
@@ -1956,7 +1956,7 @@
                                 <rect key="frame" x="117" y="190" width="45" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note5">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote5:" destination="0OF-oM-iPa" eventType="touchDown" id="7Rv-cb-d8f"/>
@@ -1967,7 +1967,7 @@
                                 <rect key="frame" x="163" y="190" width="48" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note6">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote6:" destination="0OF-oM-iPa" eventType="touchDown" id="7my-C1-q8W"/>
@@ -1981,7 +1981,7 @@
                                     <constraint firstAttribute="width" constant="46" id="ceM-7H-zaJ"/>
                                 </constraints>
                                 <state key="normal" title="Note10">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote10:" destination="0OF-oM-iPa" eventType="touchDown" id="tVL-86-k2c"/>
@@ -1995,7 +1995,7 @@
                                     <constraint firstAttribute="width" constant="46" id="XjP-b3-UBr"/>
                                 </constraints>
                                 <state key="normal" title="Note8">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote8:" destination="0OF-oM-iPa" eventType="touchDown" id="QcW-qc-XkO"/>
@@ -2006,7 +2006,7 @@
                                 <rect key="frame" x="306" y="190" width="45" height="167"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Note12">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote12:" destination="0OF-oM-iPa" eventType="touchDown" id="cs9-o9-exg"/>
@@ -2020,7 +2020,7 @@
                                     <constraint firstAttribute="height" constant="90" id="Vzc-t0-dQm"/>
                                 </constraints>
                                 <state key="normal" title="Note2">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote2:" destination="0OF-oM-iPa" eventType="touchDown" id="lSg-ZS-TLf"/>
@@ -2031,7 +2031,7 @@
                                 <rect key="frame" x="101" y="189" width="43" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Note4">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote4:" destination="0OF-oM-iPa" eventType="touchDown" id="KcZ-5f-pvK"/>
@@ -2045,7 +2045,7 @@
                                     <constraint firstAttribute="width" constant="46" id="VLc-L1-E6E"/>
                                 </constraints>
                                 <state key="normal" title="Note7">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote7:" destination="0OF-oM-iPa" eventType="touchDown" id="bnC-ju-LuT"/>
@@ -2059,7 +2059,7 @@
                                     <constraint firstAttribute="width" constant="43" id="9Od-4n-1dn"/>
                                 </constraints>
                                 <state key="normal" title="Note9">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote9:" destination="0OF-oM-iPa" eventType="touchDown" id="YrK-sh-llD"/>
@@ -2070,7 +2070,7 @@
                                 <rect key="frame" x="286" y="189" width="45" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Note11">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapDownNote11:" destination="0OF-oM-iPa" eventType="touchDown" id="pPK-e1-klj"/>
