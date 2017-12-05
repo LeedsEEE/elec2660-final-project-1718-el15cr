@@ -684,11 +684,22 @@
     
     self.sendReverbInstrument1.volume = reverbInstrument1;
     self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
+    
+    NSLog(@"Reverb Send for instument 1: %.2f",reverbInstrument1);
+    
     self.sendReverbInstrument2.volume = reverbInstrument2;
     self.sendReverbPlayerInstrument2.volume = reverbInstrument2;
+    
+    NSLog(@"Reverb Send for instument 2: %.2f",reverbInstrument2);
+    
     self.sendReverbDrums.volume = reverbDrums;
     self.sendReverbPlayerDrums.volume = reverbDrums;
+    
+    NSLog(@"Reverb Send for drums: %.2f",reverbDrums);
+    
     self.sendReverbMicrophone.volume = reverbMicrohpone;
+    
+    NSLog(@"Reverb Send for microphone: %.2f",reverbMicrohpone);
     
 }
 
@@ -766,11 +777,22 @@
     
     self.sendDelayInstrument1.volume = delayInstrument1;
     self.sendDelayPlayerInstrument1.volume = delayInstrument1;
+    
+    NSLog(@"Delay Send for instument 1: %.2f",delayInstrument1);
+    
     self.sendDelayInstrument2.volume = delayInstrument2;
     self.sendDelayPlayerInstrument2.volume = delayInstrument2;
+    
+    NSLog(@"Delay Send for instument 2: %.2f",delayInstrument2);
+    
     self.sendDelayDrums.volume = delayDrums;
     self.sendDelayPlayerDrums.volume = delayDrums;
+    
+    NSLog(@"Delay Send for drums: %.2f",delayDrums);
+    
     self.sendDelayMicrophone.volume = delayMicrohpone;
+    
+    NSLog(@"Delay Send for microphone: %.2f",delayMicrohpone);
     
 }
 
@@ -820,11 +842,22 @@
     
     self.sendDistortionInstrument1.volume = distortionInstrument1;
     self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
+    
+    NSLog(@"distortion Send for instument 1: %.2f",distortionInstrument1);
+    
     self.sendDistortionInstrument2.volume = distortionInstrument2;
     self.sendDistortionPlayerInstrument2.volume = distortionInstrument2;
+    
+    NSLog(@"distortion Send for instument 2: %.2f",distortionInstrument2);
+    
     self.sendDistortionDrums.volume = distortionDrums;
     self.sendDistortionPlayerDrums.volume = distortionDrums;
+    
+    NSLog(@"distortion Send for drums: %.2f",distortionDrums);
+    
     self.sendDistortionMicrophone.volume = distortionMicrohpone;
+    
+    NSLog(@"distortion Send for microphone: %.2f",distortionMicrohpone);
     
 }
 
@@ -950,11 +983,22 @@
     
     self.sendDirectOutInstrument1.volume = directInstrument1;
     self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
+    
+    NSLog(@"Direct out Send for instument 1: %.2f",directInstrument1);
+    
     self.sendDirectOutInstrument2.volume = directInstrument2;
     self.sendDirectOutPlayerInstrument2.volume = directInstrument2;
+    
+    NSLog(@"Direct out Send for instument 2: %.2f",directInstrument2);
+    
     self.sendDirectOutDrums.volume = directDrums;
     self.sendDirectOutPlayerDrums.volume = directDrums;
+    
+    NSLog(@"Direct out Send for drums: %.2f",directDrums);
+    
     self.sendDirectOutMicrophone.volume = directMicrohpone;
+    
+    NSLog(@"Direct out Send for microphone: %.2f",directDrums);
     
 }
 
@@ -1008,41 +1052,81 @@
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
+        
     } else if (selectedInstument1 == 1) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:4 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
         
     } else if (selectedInstument1 == 2) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:11 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
+        
     } else if (selectedInstument1 == 3) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:19 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
         
     } else if (selectedInstument1 == 4) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:40 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
+        
     } else if (selectedInstument1 == 5) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:41 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
         
     } else if (selectedInstument1 == 6) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:52 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
+        
     } else if (selectedInstument1 == 7) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:79 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
         
     } else if (selectedInstument1 == 8) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:83 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
+        
     } else if (selectedInstument1 == 9) {
         
         [self.samplerInstrument1 loadSoundBankInstrumentAtURL:self.samplerInstrument1URL program:86 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 1 failed to load samples when selected from %li %@",(long)selectedInstument1,error);
+        }
         
     }
 }
@@ -1058,45 +1142,89 @@
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:33 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 1) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:34 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
         
     } else if (selectedInstument2 == 2) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:38 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 3) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:42 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
         
     } else if (selectedInstument2 == 4) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:45 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 5) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:54 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
         
     } else if (selectedInstument2 == 6) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:56 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 7) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:62 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
         
     } else if (selectedInstument2 == 8) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:77 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 9) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:87 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
+        
     } else if (selectedInstument2 == 10) {
         
         [self.samplerInstrument2 loadSoundBankInstrumentAtURL:self.samplerInstrument2URL program:88 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Instument 2 failed to load samples when selected from %li %@",(long)selectedInstument2,error);
+        }
         
     }
 }
@@ -1113,11 +1241,19 @@
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
+        
     } else if (selectedDrums == 1) {
         
         self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular TR-909" ofType:@"sf2"]];
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
         
     } else if (selectedDrums == 2) {
         
@@ -1125,11 +1261,19 @@
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
+        
     } else if (selectedDrums == 3) {
         
         self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular House Set" ofType:@"sf2"]];
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
         
     } else if (selectedDrums == 4) {
         
@@ -1137,11 +1281,19 @@
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
         
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
+        
     } else if (selectedDrums == 5) {
         
         self.samplerIDrumsURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Angular Jazz1 Set" ofType:@"sf2"]];
         
         [self.samplerDrums loadSoundBankInstrumentAtURL:self.samplerIDrumsURL program:0 bankMSB:0x79 bankLSB:0 error:&error];
+        
+        if (error) {
+            NSLog(@"Drums failed to load samples when selected from %li %@",(long)selectedDrums,error);
+        }
         
     }
 }

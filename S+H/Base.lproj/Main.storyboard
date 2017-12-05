@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-zb-ekp">
@@ -235,7 +235,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vgW-tN-EHl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Jh-aw-XTa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZZ-Ob-DMn">
@@ -585,7 +585,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gCP-ef-vyw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y0j-nT-1dZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWc-n1-VSL">
@@ -887,7 +887,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3MA-pt-jNv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jsg-dL-Vwn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8v-rU-YtI">
@@ -964,7 +964,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sbF-VL-D7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tHg-f8-zF0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-lF-uPa">
@@ -1110,7 +1110,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qbh-ev-7nF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eSL-LO-SlO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-tv-sak">
@@ -1304,7 +1304,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0P4-Pw-iLi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DNi-dM-OBJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5A-yS-bG9">
@@ -1503,7 +1503,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TMg-zI-imi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ASl-Sz-Dmw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sG-X9-56I">
@@ -1619,7 +1619,7 @@
                         <viewControllerLayoutGuide type="bottom" id="h1O-kd-w1c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BgH-7G-LMM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-0S-ilF">
@@ -1767,7 +1767,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NcJ-5C-xSC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cc0-Uc-QYp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zu1-4R-AWg">
