@@ -69,10 +69,26 @@
     if (error) {
         NSLog(@"Session failed to initialise %@",error);
     }
+
+    // Requests the users permission to use the Microphone
+
+    [self.audioSession requestRecordPermission:^(BOOL granted){
+        
+        if (granted){
+            
+            NSLog(@"Permission acepted");
+            
+        } else {
+            
+            NSLog(@"Permission declined");
+            
+        }
+        
+        
+    }];
+ 
     
     NSLog(@"Session created");
-    
-    //
     
 }
 

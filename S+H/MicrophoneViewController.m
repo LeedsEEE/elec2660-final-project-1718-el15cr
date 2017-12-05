@@ -82,6 +82,8 @@
         
     } else {
         
+        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
+        
         [self.timerRecord invalidate];
         
         [self.audioEngine stopRecordingMicrophone];
