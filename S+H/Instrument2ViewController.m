@@ -39,6 +39,8 @@
     self.buttonNote11.layer.cornerRadius = 5;
     self.buttonNote12.layer.cornerRadius = 5;
     
+    [self.audioEngine changeInstrument2:self.settings.selectedInstrument2];
+    
     if (self.audioEngine.playerInstument2.isPlaying == true) {
         
         [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];

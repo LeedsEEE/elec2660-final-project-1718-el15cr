@@ -1167,7 +1167,7 @@
     if (error){
         NSLog(@"outputFileInstument1 file player error %@",error);
         
-        NSLog(@"No recorded flie?");
+        NSLog(@"No recorded file?");
         
         return;
     }
@@ -1293,7 +1293,7 @@
     if (error){
         NSLog(@"outputFileInstument2 file player error %@",error);
         
-        NSLog(@"No recorded flie?");
+        NSLog(@"No recorded file?");
         
         return;
     }
@@ -1420,7 +1420,7 @@
     if (error){
         NSLog(@"outputFileDrums file player error %@",error);
         
-        NSLog(@"No recorded flie?");
+        NSLog(@"No recorded file?");
         
         return;
     }

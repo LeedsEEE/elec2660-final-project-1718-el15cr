@@ -37,6 +37,8 @@
     self.buttonNote11.layer.cornerRadius = 5;
     self.buttonNote12.layer.cornerRadius = 5;
     
+    [self.audioEngine changeDrums:self.settings.selectedDrums];
+    
     if (self.audioEngine.playerDrums.isPlaying == true) {
         
         [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
