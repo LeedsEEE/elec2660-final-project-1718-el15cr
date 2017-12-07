@@ -4,8 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-    <key>CFBundleDisplayName</key>
-    <string>Main</string>
+	<key>CFBundleDisplayName</key>
+	<string>Main</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,8 +26,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Microphone required</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone required for this app</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

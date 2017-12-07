@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+
 #import "Instrument1ViewController.h"
 
 @interface Instrument1ViewController ()
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Loads the values from audio engine, so when the segue is done it shows the correct value
 
     self.pickerInstrument1.delegate = self;
     self.pickerInstrument1.dataSource = self;
@@ -68,12 +74,12 @@
     
     // Goes back from segue to the original view controller
     
-    // https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
-    
-    
 }
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    // When the picker has been moved it changes the preset in audio engine
+    // this is done by sending the vaule of the picker to the settings class first
     
     self.settings.selectedInstrument1 = [self.pickerInstrument1 selectedRowInComponent:0];
     
@@ -249,6 +255,10 @@
 }
 
 - (IBAction)didTapRecord:(UIButton *)sender {
+    
+    // A delay is achived by using a timer
+    // this has been added to allow the user time to move their hand
+    // to the right notes they want to play
     
     if (self.audioEngine.isRecordingInstument1 == false) {
         

@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://stackoverflow.com/questions/19634426/how-to-save-nsmutablearray-in-nsuserdefaults
+
 #import "settings.h"
 
 @implementation settings

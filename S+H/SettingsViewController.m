@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Loads the values from audio engine, so when the segue is done it shows the correct value
     
     self.pickerUserPreset.delegate = self;
     self.pickerUserPreset.dataSource = self;
@@ -33,7 +39,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) unwindForSegue:(nonnull UIStoryboardSegue *)unwindSegue towardsViewController:(nonnull UIViewController *)subsequentVC{
+    
+    // Goes back from segue to the original view controller
+    
+}
+
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    // When the picker has been moved it changes the value
+    // this is done by sending the vaule of the picker to the settings class
     
     self.settings.selectedUserPreset = [self.pickerUserPreset selectedRowInComponent:0];
     
@@ -305,7 +320,6 @@
     // Loads the stored data from the array that was stored in user deafults
     // NSNumber is an object and has to be converted back into the data type that the other object needs
 
-    
     if (self.settings.selectedUserPreset == 0){
         
         NSNumber *reverbSelected = [self.settings.userPresetData1 objectAtIndex:0];

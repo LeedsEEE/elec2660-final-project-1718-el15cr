@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+
 #import "DrumsViewController.h"
 
 @interface DrumsViewController ()
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Loads the values from audio engine, so when the segue is done it shows the correct value
     
     self.pickerDrums.delegate = self;
     self.pickerDrums.dataSource = self;
@@ -60,7 +66,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) unwindForSegue:(nonnull UIStoryboardSegue *)unwindSegue towardsViewController:(nonnull UIViewController *)subsequentVC{
+    
+    // Goes back from segue to the original view controller
+    
+}
+
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    // When the picker has been moved it changes the preset in audio engine
+    // this is done by sending the vaule of the picker to the settings class first
     
     self.settings.selectedDrums = [self.pickerDrums selectedRowInComponent:0];
     
@@ -216,6 +231,10 @@
 }
 
 - (IBAction)didTapRecord:(UIButton *)sender {
+    
+    // A delay is achived by using a timer
+    // this has been added to allow the user time to move their hand
+    // to the right notes they want to play
     
     if (self.audioEngine.isRecordingDrums == false) {
         

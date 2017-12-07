@@ -88,7 +88,6 @@
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend6;
 @property (nonatomic, strong) NSArray <AVAudioConnectionPoint *>* connectionBusSend7;
 @property NSInteger octave;
-@property float BPM; 
 @property BOOL isRecordingInstument1;
 @property BOOL isRecordingInstument2;
 @property BOOL isRecordingDrums;

@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+
 #import "DistortionViewController.h"
 
 @interface DistortionViewController ()
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Loads the values from audio engine, so when the segue is done it shows the correct value
     
     self.pickerDistortion.delegate = self;
     self.pickerDistortion.dataSource = self;
@@ -36,7 +42,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) unwindForSegue:(nonnull UIStoryboardSegue *)unwindSegue towardsViewController:(nonnull UIViewController *)subsequentVC{
+    
+    // Goes back from segue to the original view controller
+    
+}
+
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    // When the picker has been moved it changes the preset in audio engine
+    // this is done by sending the vaule of the picker to the settings class first
     
     self.settings.selectedDistortion = [self.pickerDistortion selectedRowInComponent:0];
     
@@ -75,6 +90,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+// IBActions to send the value from the view controler to the audio engine
+// allowing the user to make changes.
 
 - (IBAction)didMoveSliderDryWetMix:(UISlider *)sender {
     

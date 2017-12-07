@@ -6,6 +6,10 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+
 #import "MainMixViewController.h"
 
 @interface MainMixViewController ()
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Loads the values from audio engine, so when the segue is done it shows the correct value
     
     self.sliderInstrument1.value = self.audioEngine.sendDirectOutInstrument1.volume;
     self.sliderInstrument2.value = self.audioEngine.sendDirectOutInstrument2.volume;
@@ -30,6 +36,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) unwindForSegue:(nonnull UIStoryboardSegue *)unwindSegue towardsViewController:(nonnull UIViewController *)subsequentVC{
+    
+    // Goes back from segue to the original view controller
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -39,6 +51,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+// IBActions to send the value from the view controler to the audio engine
+// allowing the user to make changes.
 
 - (IBAction)didMoveSliderInstrument1:(UISlider *)sender {
     

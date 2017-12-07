@@ -6,6 +6,29 @@
 //  Copyright © 2017 Callum Rosedale [el15cr]. All rights reserved.
 //
 
+// References
+//
+// https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudioengine?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudionode/1387122-installtaponbus
+// https://developer.apple.com/documentation/avfoundation/avaudioplayernode?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounitsampler?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounit?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiomixing?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiomixernode?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiobuffer?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiofile?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudioformat?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudioinputnode?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounitdelay?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounitreverb?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounittimepitch?language=objc
+// https://developer.apple.com/documentation/avfoundation/avaudiounitdistortion?language=objc
+// https://developer.apple.com/documentation/foundation/1409211-nstemporarydirectory?language=objc
+// https://www.slideshare.net/bobmccune/building-modern-audio-apps-with-avaudioengine
+// https://blog.metova.com/audio-manipulation-using-avaudioengine
+// http://nshipster.com/nstemporarydirectory/
+
 #import "audioEngine.h"
 
 @implementation audioEngine
@@ -53,7 +76,7 @@
     return self;
 }
 
-#pragma setup and initialise methods for init
+#pragma mark setup and initialise methods for init
 
 -(void) createSession {
     
@@ -71,12 +94,13 @@
     }
 
     // Requests the users permission to use the Microphone
+    // Permission is always granted in the simulator
 
     [self.audioSession requestRecordPermission:^(BOOL granted){
         
         if (granted){
             
-            NSLog(@"Permission acepted");
+            NSLog(@"Permission granted");
             
         } else {
             
@@ -377,7 +401,7 @@
 }
 
 
-#pragma methods for instument playback
+#pragma mark methods for instument playback
 
 -(void) playInstrument1:(int)note {
     
@@ -676,32 +700,7 @@
     
 }
 
-#pragma methods for audio units
-
--(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
-    
-     // The amount of input volume for each bus that it is being sent to
-    
-    self.sendReverbInstrument1.volume = reverbInstrument1;
-    self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
-    
-    NSLog(@"Reverb Send for instument 1: %.2f",reverbInstrument1);
-    
-    self.sendReverbInstrument2.volume = reverbInstrument2;
-    self.sendReverbPlayerInstrument2.volume = reverbInstrument2;
-    
-    NSLog(@"Reverb Send for instument 2: %.2f",reverbInstrument2);
-    
-    self.sendReverbDrums.volume = reverbDrums;
-    self.sendReverbPlayerDrums.volume = reverbDrums;
-    
-    NSLog(@"Reverb Send for drums: %.2f",reverbDrums);
-    
-    self.sendReverbMicrophone.volume = reverbMicrohpone;
-    
-    NSLog(@"Reverb Send for microphone: %.2f",reverbMicrohpone);
-    
-}
+#pragma mark methods for audio units
 
 -(void) audioUnitReverbWetDry: (float) wetDry{
     
@@ -710,90 +709,6 @@
     self.audioUnitReverb.wetDryMix = wetDry;
     
     NSLog(@"Reverb Wet/Dry: %.2f",wetDry);
-}
-
--(void) changeReverb: (NSInteger) selectedReverb {
-    
-    // Loads a diffrent reverb preset depending on the selected input value
-    
-    if (selectedReverb == 0){
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
-        
-    } else if (selectedReverb == 1) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumRoom];
-        
-    } else if (selectedReverb == 2) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom];
-        
-    }  else if (selectedReverb == 3) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom2];
-        
-    } else if (selectedReverb == 4) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall];
-        
-    } else if (selectedReverb == 5) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall2];
-        
-    } else if (selectedReverb == 6) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall3];
-        
-    } else if (selectedReverb == 7) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall];
-        
-    } else if (selectedReverb == 8) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
-        
-    } else if (selectedReverb == 9) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumChamber];
-        
-    } else if (selectedReverb == 10) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeChamber];
-        
-    } else if (selectedReverb == 11) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetPlate];
-        
-    } else if (selectedReverb == 12) {
-        
-        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetCathedral];
-    }
-    
-}
-
--(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
-    
-    // The amount of input volume for each bus that it is being sent to
-    
-    self.sendDelayInstrument1.volume = delayInstrument1;
-    self.sendDelayPlayerInstrument1.volume = delayInstrument1;
-    
-    NSLog(@"Delay Send for instument 1: %.2f",delayInstrument1);
-    
-    self.sendDelayInstrument2.volume = delayInstrument2;
-    self.sendDelayPlayerInstrument2.volume = delayInstrument2;
-    
-    NSLog(@"Delay Send for instument 2: %.2f",delayInstrument2);
-    
-    self.sendDelayDrums.volume = delayDrums;
-    self.sendDelayPlayerDrums.volume = delayDrums;
-    
-    NSLog(@"Delay Send for drums: %.2f",delayDrums);
-    
-    self.sendDelayMicrophone.volume = delayMicrohpone;
-    
-    NSLog(@"Delay Send for microphone: %.2f",delayMicrohpone);
-    
 }
 
 -(void) audioUnitDelayWetDry:(float)wetDry {
@@ -836,31 +751,6 @@
     
 }
 
--(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
-    
-    // The amount of input volume for each bus that it is being sent to
-    
-    self.sendDistortionInstrument1.volume = distortionInstrument1;
-    self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
-    
-    NSLog(@"distortion Send for instument 1: %.2f",distortionInstrument1);
-    
-    self.sendDistortionInstrument2.volume = distortionInstrument2;
-    self.sendDistortionPlayerInstrument2.volume = distortionInstrument2;
-    
-    NSLog(@"distortion Send for instument 2: %.2f",distortionInstrument2);
-    
-    self.sendDistortionDrums.volume = distortionDrums;
-    self.sendDistortionPlayerDrums.volume = distortionDrums;
-    
-    NSLog(@"distortion Send for drums: %.2f",distortionDrums);
-    
-    self.sendDistortionMicrophone.volume = distortionMicrohpone;
-    
-    NSLog(@"distortion Send for microphone: %.2f",distortionMicrohpone);
-    
-}
-
 -(void) audioUnitDistortionWetDry:(float)wetDry {
     
     // Changes how wet or dry the signal of the audio unit is
@@ -878,137 +768,6 @@
     self.audioUnitDistortion.preGain = preGain;
     
     NSLog(@"Distortion PreGain: %.2f",preGain);
-    
-}
-
--(void) changeDistortion:(NSInteger)selectedDistortion {
-    
-    // Loads a diffrent distortion preset depending on the selected input value
-    
-    if (selectedDistortion == 0){
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBitBrush];
-        
-    } else if (selectedDistortion == 1) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBufferBeats];
-        
-    } else if (selectedDistortion == 2) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsLoFi];
-        
-    } else if (selectedDistortion == 3) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiBrokenSpeaker];
-        
-    } else if (selectedDistortion == 4) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiCellphoneConcert];
-        
-    } else if (selectedDistortion == 5) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated1];
-        
-    } else if (selectedDistortion == 6) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated2];
-        
-    } else if (selectedDistortion == 7) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated3];
-        
-    } else if (selectedDistortion == 8) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated4];
-        
-    } else if (selectedDistortion == 9) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedFunk];
-        
-    } else if (selectedDistortion == 10) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedCubed];
-        
-    } else if (selectedDistortion == 11) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedSquared];
-        
-    } else if (selectedDistortion == 12) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho1];
-        
-    } else if (selectedDistortion == 13) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho2];
-        
-    } else if (selectedDistortion == 14) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight1];
-        
-    } else if (selectedDistortion == 15) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight2];
-        
-    } else if (selectedDistortion == 16) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEverythingIsBroken];
-        
-    } else if (selectedDistortion == 17) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechAlienChatter];
-        
-    } else if (selectedDistortion == 18) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechCosmicInterference];
-        
-    } else if (selectedDistortion == 19) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechGoldenPi];
-        
-    } else if (selectedDistortion == 20) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechRadioTower];
-        
-    } else if (selectedDistortion == 21) {
-        
-        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechWaves];
-        
-    }
-    
-}
-
--(void) sendsForDirectOut:(float)directInstrument1 :(float)directInstrument2 :(float)directDrums :(float)directMicrohpone{
-    
-    // The amount of input volume for each bus that it is being sent to
-    
-    self.sendDirectOutInstrument1.volume = directInstrument1;
-    self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
-    
-    NSLog(@"Direct out Send for instument 1: %.2f",directInstrument1);
-    
-    self.sendDirectOutInstrument2.volume = directInstrument2;
-    self.sendDirectOutPlayerInstrument2.volume = directInstrument2;
-    
-    NSLog(@"Direct out Send for instument 2: %.2f",directInstrument2);
-    
-    self.sendDirectOutDrums.volume = directDrums;
-    self.sendDirectOutPlayerDrums.volume = directDrums;
-    
-    NSLog(@"Direct out Send for drums: %.2f",directDrums);
-    
-    self.sendDirectOutMicrophone.volume = directMicrohpone;
-    
-    NSLog(@"Direct out Send for microphone: %.2f",directDrums);
-    
-}
-
--(void) volumeMainMixer: (float) volume {
-    
-    // Changes the volume for the main mixer (which is the mainMixer Node)
-    
-    self.mainMixer.outputVolume = volume;
-    
-    NSLog(@"Volume %.2f",volume); 
     
 }
 
@@ -1041,6 +800,120 @@
     NSLog(@"Time Pitch: %.2f",pitch);
     
 }
+
+#pragma mark methods for sends and volume
+
+-(void) sendsForDirectOut:(float)directInstrument1 :(float)directInstrument2 :(float)directDrums :(float)directMicrohpone{
+    
+    // The amount of input volume for each bus that it is being sent to
+    
+    self.sendDirectOutInstrument1.volume = directInstrument1;
+    self.sendDirectOutPlayerInstrument1.volume = directInstrument1;
+    
+    NSLog(@"Direct out Send for instument 1: %.2f",directInstrument1);
+    
+    self.sendDirectOutInstrument2.volume = directInstrument2;
+    self.sendDirectOutPlayerInstrument2.volume = directInstrument2;
+    
+    NSLog(@"Direct out Send for instument 2: %.2f",directInstrument2);
+    
+    self.sendDirectOutDrums.volume = directDrums;
+    self.sendDirectOutPlayerDrums.volume = directDrums;
+    
+    NSLog(@"Direct out Send for drums: %.2f",directDrums);
+    
+    self.sendDirectOutMicrophone.volume = directMicrohpone;
+    
+    NSLog(@"Direct out Send for microphone: %.2f",directDrums);
+    
+}
+
+-(void) sendsForDistortion:(float)distortionInstrument1 :(float)distortionInstrument2 :(float)distortionDrums :(float)distortionMicrohpone {
+    
+    // The amount of input volume for each bus that it is being sent to
+    
+    self.sendDistortionInstrument1.volume = distortionInstrument1;
+    self.sendDistortionPlayerInstrument1.volume = distortionInstrument1;
+    
+    NSLog(@"distortion Send for instument 1: %.2f",distortionInstrument1);
+    
+    self.sendDistortionInstrument2.volume = distortionInstrument2;
+    self.sendDistortionPlayerInstrument2.volume = distortionInstrument2;
+    
+    NSLog(@"distortion Send for instument 2: %.2f",distortionInstrument2);
+    
+    self.sendDistortionDrums.volume = distortionDrums;
+    self.sendDistortionPlayerDrums.volume = distortionDrums;
+    
+    NSLog(@"distortion Send for drums: %.2f",distortionDrums);
+    
+    self.sendDistortionMicrophone.volume = distortionMicrohpone;
+    
+    NSLog(@"distortion Send for microphone: %.2f",distortionMicrohpone);
+    
+}
+
+-(void) sendsForDelay:(float)delayInstrument1 :(float)delayInstrument2 :(float)delayDrums :(float)delayMicrohpone {
+    
+    // The amount of input volume for each bus that it is being sent to
+    
+    self.sendDelayInstrument1.volume = delayInstrument1;
+    self.sendDelayPlayerInstrument1.volume = delayInstrument1;
+    
+    NSLog(@"Delay Send for instument 1: %.2f",delayInstrument1);
+    
+    self.sendDelayInstrument2.volume = delayInstrument2;
+    self.sendDelayPlayerInstrument2.volume = delayInstrument2;
+    
+    NSLog(@"Delay Send for instument 2: %.2f",delayInstrument2);
+    
+    self.sendDelayDrums.volume = delayDrums;
+    self.sendDelayPlayerDrums.volume = delayDrums;
+    
+    NSLog(@"Delay Send for drums: %.2f",delayDrums);
+    
+    self.sendDelayMicrophone.volume = delayMicrohpone;
+    
+    NSLog(@"Delay Send for microphone: %.2f",delayMicrohpone);
+    
+}
+
+-(void) sendsForReverb: (float)reverbInstrument1 : (float)reverbInstrument2 : (float)reverbDrums : (float)reverbMicrohpone  {
+    
+    // The amount of input volume for each bus that it is being sent to
+    
+    self.sendReverbInstrument1.volume = reverbInstrument1;
+    self.sendReverbPlayerInstrument1.volume = reverbInstrument1;
+    
+    NSLog(@"Reverb Send for instument 1: %.2f",reverbInstrument1);
+    
+    self.sendReverbInstrument2.volume = reverbInstrument2;
+    self.sendReverbPlayerInstrument2.volume = reverbInstrument2;
+    
+    NSLog(@"Reverb Send for instument 2: %.2f",reverbInstrument2);
+    
+    self.sendReverbDrums.volume = reverbDrums;
+    self.sendReverbPlayerDrums.volume = reverbDrums;
+    
+    NSLog(@"Reverb Send for drums: %.2f",reverbDrums);
+    
+    self.sendReverbMicrophone.volume = reverbMicrohpone;
+    
+    NSLog(@"Reverb Send for microphone: %.2f",reverbMicrohpone);
+    
+}
+
+-(void) volumeMainMixer: (float) volume {
+    
+    // Changes the volume for the main mixer (which is the mainMixer Node)
+    
+    self.mainMixer.outputVolume = volume;
+    
+    NSLog(@"Volume %.2f",volume);
+    
+}
+
+#pragma mark methods for changing instument/preset
 
 -(void) changeInstrument1:(NSInteger)selectedInstument1 {
     
@@ -1298,6 +1171,162 @@
     }
 }
 
+-(void) changeDistortion:(NSInteger)selectedDistortion {
+    
+    // Loads a diffrent distortion preset depending on the selected input value
+    
+    if (selectedDistortion == 0){
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBitBrush];
+        
+    } else if (selectedDistortion == 1) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsBufferBeats];
+        
+    } else if (selectedDistortion == 2) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetDrumsLoFi];
+        
+    } else if (selectedDistortion == 3) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiBrokenSpeaker];
+        
+    } else if (selectedDistortion == 4) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiCellphoneConcert];
+        
+    } else if (selectedDistortion == 5) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated1];
+        
+    } else if (selectedDistortion == 6) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated2];
+        
+    } else if (selectedDistortion == 7) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated3];
+        
+    } else if (selectedDistortion == 8) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDecimated4];
+        
+    } else if (selectedDistortion == 9) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedFunk];
+        
+    } else if (selectedDistortion == 10) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedCubed];
+        
+    } else if (selectedDistortion == 11) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiDistortedSquared];
+        
+    } else if (selectedDistortion == 12) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho1];
+        
+    } else if (selectedDistortion == 13) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEcho2];
+        
+    } else if (selectedDistortion == 14) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight1];
+        
+    } else if (selectedDistortion == 15) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEchoTight2];
+        
+    } else if (selectedDistortion == 16) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetMultiEverythingIsBroken];
+        
+    } else if (selectedDistortion == 17) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechAlienChatter];
+        
+    } else if (selectedDistortion == 18) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechCosmicInterference];
+        
+    } else if (selectedDistortion == 19) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechGoldenPi];
+        
+    } else if (selectedDistortion == 20) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechRadioTower];
+        
+    } else if (selectedDistortion == 21) {
+        
+        [self.audioUnitDistortion loadFactoryPreset:AVAudioUnitDistortionPresetSpeechWaves];
+        
+    }
+    
+}
+
+-(void) changeReverb: (NSInteger) selectedReverb {
+    
+    // Loads a diffrent reverb preset depending on the selected input value
+    
+    if (selectedReverb == 0){
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetSmallRoom];
+        
+    } else if (selectedReverb == 1) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumRoom];
+        
+    } else if (selectedReverb == 2) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom];
+        
+    }  else if (selectedReverb == 3) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeRoom2];
+        
+    } else if (selectedReverb == 4) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall];
+        
+    } else if (selectedReverb == 5) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall2];
+        
+    } else if (selectedReverb == 6) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumHall3];
+        
+    } else if (selectedReverb == 7) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall];
+        
+    } else if (selectedReverb == 8) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeHall2];
+        
+    } else if (selectedReverb == 9) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetMediumChamber];
+        
+    } else if (selectedReverb == 10) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetLargeChamber];
+        
+    } else if (selectedReverb == 11) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetPlate];
+        
+    } else if (selectedReverb == 12) {
+        
+        [self.audioUnitReverb loadFactoryPreset:AVAudioUnitReverbPresetCathedral];
+    }
+    
+}
+
+#pragma mark recording audio from instuments/main out
 
 -(void) startPlayingInstument1 {
     

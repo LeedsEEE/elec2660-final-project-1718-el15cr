@@ -12,7 +12,6 @@
 @interface settings : NSObject
 
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
-//@property (nonatomic, strong) audioEngine *audioEngine;
 
 @property NSInteger selectedReverb;
 @property NSInteger selectedDistortion;
