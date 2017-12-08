@@ -112,6 +112,15 @@
     }];
  
     
+    [self.audioSession setPreferredSampleRate:44100 error:&error];
+    
+    if (error) {
+        NSLog(@"Preferred Sample Rate not set %@ sample rate set at %f",error, self.audioSession.sampleRate);
+    }
+    
+    NSLog(@"Current sample rate %.0f",self.audioSession.sampleRate);
+    NSLog(@"Please make sure that your audio interface or device is set to 44.1 KHz, an error may occur otherwise");
+    
     NSLog(@"Session created");
     
 }

@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonOctaveUp;
 @property (weak, nonatomic) IBOutlet UIButton *buttonPlay;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRecord;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRecordText;
 
 // If the button is taped down then play the note
 

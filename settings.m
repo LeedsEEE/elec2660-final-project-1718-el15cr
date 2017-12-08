@@ -46,6 +46,9 @@
         self.colourPiano = [[UIColor alloc] initWithDisplayP3Red:0.79 green:0.79 blue:0.79 alpha:1];
         self.colourPiano2 = [[UIColor alloc] initWithDisplayP3Red:0.257 green:0.257 blue:0.257 alpha:1];
         
+        self.colourOctave = [[UIColor alloc] initWithDisplayP3Red:0.13 green:0.13 blue:0.13 alpha:1];
+        
+        
     }
     return self;
 }

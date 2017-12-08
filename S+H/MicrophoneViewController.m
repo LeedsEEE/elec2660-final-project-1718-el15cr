@@ -9,6 +9,7 @@
 // References
 //
 // https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+// https://developer.apple.com/documentation/objectivec/nsobject/1410849-cancelpreviousperformrequestswit?language=objc
 
 #import "MicrophoneViewController.h"
 
@@ -33,11 +34,11 @@
     
     if (self.audioEngine.playerMicrophone.isPlaying == true) {
         
-        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"stopButton.png"] forState:UIControlStateNormal];
         
     } else if (self.audioEngine.playerMicrophone.isPlaying == false){
         
-        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
         
     }
     
@@ -71,11 +72,11 @@
     
     if (self.audioEngine.playerMicrophone.isPlaying == true) {
         
-        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"stopButton.png"] forState:UIControlStateNormal];
         
     } else if (self.audioEngine.playerMicrophone.isPlaying == false){
         
-        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
         
     }
     
@@ -85,6 +86,8 @@
     // A delay is achived by using a timer
     // this has been added to allow the user time to move their hand
     // to the right notes they want to play
+    
+    [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton1.png"] forState:UIControlStateNormal];
     
     if (self.audioEngine.isRecordingMicrophone == false){
         
@@ -98,11 +101,17 @@
         
     } else {
         
-        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe1:) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe2:) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe3:) object:nil];
         
         [self.timerRecord invalidate];
         
         [self.audioEngine stopRecordingMicrophone];
+        
+        [self.buttonRecordText setTitle:@"" forState:UIControlStateNormal];
+        
+        [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton1.png"] forState:UIControlStateNormal];
         
     }
 }
@@ -138,17 +147,17 @@
 
 -(void) recordTextLabe1: (id) trigger {
     
-    [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+    [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton2.png"] forState:UIControlStateNormal];
 }
 
 -(void) recordTextLabe2: (id) trigger {
     
-    [self.buttonRecord setTitle:@"2" forState:UIControlStateNormal];
+    [self.buttonRecordText setTitle:@"2" forState:UIControlStateNormal];
 }
 
 -(void) recordTextLabe3: (id) trigger {
     
-    [self.buttonRecord setTitle:@"1" forState:UIControlStateNormal];
+    [self.buttonRecordText setTitle:@"1" forState:UIControlStateNormal];
 }
 
 @end

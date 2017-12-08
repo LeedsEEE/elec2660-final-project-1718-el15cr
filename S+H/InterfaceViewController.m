@@ -32,6 +32,12 @@
     self.buttonDelay.layer.cornerRadius = 10;
     self.buttonMainMix.layer.cornerRadius = 10;
     self.buttonSettings.layer.cornerRadius = 10;
+    self.topView.layer.cornerRadius = 30;
+    self.bottomView.layer.cornerRadius = 30;
+    self.midView.layer.cornerRadius = 30;
+    self.midView2.layer.cornerRadius = 30;
+    self.bridgeView.layer.cornerRadius = 30;
+    self.bridgeView2.layer.cornerRadius = 30;
     
 }
 
@@ -88,11 +94,12 @@
     
     if (self.audioEngine.playerMainOut.isPlaying == true) {
         
-        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"stopButton.png"] forState:UIControlStateNormal];
+        
         
     } else if (self.audioEngine.playerMainOut.isPlaying == false){
         
-        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
         
     }
     
@@ -104,11 +111,14 @@
         
         [self.audioEngine startRecordingMainOut];
         
-        [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+        [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton2.png"] forState:UIControlStateNormal];
+        
         
     } else {
+    
         
-        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
+        [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton1.png"] forState:UIControlStateNormal];
+
         
         [self.audioEngine stopRecordingMainOut];
         

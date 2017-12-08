@@ -22,6 +22,7 @@
 
 @property UIColor *colourPiano;
 @property UIColor *colourPiano2;
+@property UIColor *colourOctave;
 
 @property (nonatomic, strong) NSArray *pickerReverbData;
 @property (nonatomic, strong) NSArray *pickerDistortionData;

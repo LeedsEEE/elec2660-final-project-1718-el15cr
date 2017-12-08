@@ -29,6 +29,11 @@
     
     self.buttonLoadPreset.layer.cornerRadius = 10;
     self.buttonStorePreset.layer.cornerRadius = 10;
+    self.buttonLoadPreset.layer.borderColor = self.settings.colourOctave.CGColor;
+    self.buttonLoadPreset.layer.borderWidth = 2.0;
+    self.buttonStorePreset.layer.borderColor = self.settings.colourOctave.CGColor;
+    self.buttonStorePreset.layer.borderWidth = 2.0;
+
     
     [self.pickerUserPreset selectRow:self.settings.selectedUserPreset inComponent:0 animated:YES];
     

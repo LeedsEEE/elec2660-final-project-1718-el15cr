@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchLoop;
 @property (weak, nonatomic) IBOutlet UIButton *buttonPlay;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRecord;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRecordText;
 
 
 - (IBAction)didTapPlay:(UIButton *)sender;

@@ -9,6 +9,7 @@
 // References
 //
 // https://developer.apple.com/documentation/uikit/uiviewcontroller/1621473-unwindforsegue
+// https://developer.apple.com/documentation/objectivec/nsobject/1410849-cancelpreviousperformrequestswit?language=objc
 
 #import "Instrument1ViewController.h"
 
@@ -29,8 +30,13 @@
     
     self.buttonRecord.layer.cornerRadius = 10;
     self.buttonPlay.layer.cornerRadius = 10;
+    
     self.buttonOctaveUp.layer.cornerRadius = 10;
+    self.buttonOctaveUp.layer.borderColor = self.settings.colourOctave.CGColor;
+    self.buttonOctaveUp.layer.borderWidth = 2.0;
     self.buttonOctaveDown.layer.cornerRadius = 10;
+    self.buttonOctaveDown.layer.borderColor = self.settings.colourOctave.CGColor;
+    self.buttonOctaveDown.layer.borderWidth = 2.0;
     
     self.buttonNote1.layer.cornerRadius = 5;
     self.buttonNote2.layer.cornerRadius = 5;
@@ -49,11 +55,11 @@
     
     if (self.audioEngine.playerInstument1.isPlaying == true) {
         
-        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"stopButton.png"] forState:UIControlStateNormal];
         
     } else if (self.audioEngine.playerInstument1.isPlaying == false){
         
-        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
         
     }
     
@@ -244,11 +250,12 @@
     
     if (self.audioEngine.playerInstument1.isPlaying == true) {
         
-        [self.buttonPlay setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"stopButton.png"] forState:UIControlStateNormal];
         
     } else if (self.audioEngine.playerInstument1.isPlaying == false){
         
-        [self.buttonPlay setTitle:@"Play" forState:UIControlStateNormal];
+        [self.buttonPlay setImage:[UIImage imageNamed:@"playButton.png"] forState:UIControlStateNormal];
+        
         
     }
     
@@ -262,8 +269,10 @@
     
     if (self.audioEngine.isRecordingInstument1 == false) {
         
+        [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton1.png"] forState:UIControlStateNormal];
+        
         self.audioEngine.isRecordingInstument1 = true;
-    
+        
         self.timerRecord = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(recordInstument1:) userInfo:nil repeats:NO];
         
         [self performSelector: @selector(recordTextLabe1:) withObject:self afterDelay: 2.0];
@@ -275,12 +284,17 @@
         
     } else {
         
-        [self.buttonRecord setTitle:@"Record" forState:UIControlStateNormal];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe1:) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe2:) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recordTextLabe3:) object:nil];
         
         [self.timerRecord invalidate];
         
-        [self.audioEngine stopRecordingInstument1]; 
+        [self.audioEngine stopRecordingInstument1];
         
+        [self.buttonRecordText setTitle:@"" forState:UIControlStateNormal];
+        
+        [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton1.png"] forState:UIControlStateNormal];
     }
     
 }
@@ -299,17 +313,17 @@
 
 -(void) recordTextLabe1: (id) trigger {
     
-    [self.buttonRecord setTitle:@"Recording" forState:UIControlStateNormal];
+    [self.buttonRecord setImage:[UIImage imageNamed:@"recordButton2.png"] forState:UIControlStateNormal];
 }
 
 -(void) recordTextLabe2: (id) trigger {
     
-     [self.buttonRecord setTitle:@"2" forState:UIControlStateNormal];
+     [self.buttonRecordText setTitle:@"2" forState:UIControlStateNormal];
 }
 
 -(void) recordTextLabe3: (id) trigger {
     
-    [self.buttonRecord setTitle:@"1" forState:UIControlStateNormal];
+    [self.buttonRecordText setTitle:@"1" forState:UIControlStateNormal];
 }
 
 @end
