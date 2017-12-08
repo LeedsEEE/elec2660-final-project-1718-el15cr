@@ -24,7 +24,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50b-x0-H6W">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eag-Jq-AUd">
+                                <rect key="frame" x="182" y="55" width="12" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50b-x0-H6W">
                                 <rect key="frame" x="188" y="182" width="0.0" height="129"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -162,7 +167,7 @@
                                 <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S+H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swW-Qp-Eve">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S+H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swW-Qp-Eve">
                                 <rect key="frame" x="166" y="61" width="48" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -275,8 +280,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="1eq-AA-XYI" id="IMB-YX-JjP"/>
-                        <outlet property="bridgeView" destination="50b-x0-H6W" id="JRK-b7-gG0"/>
-                        <outlet property="bridgeView2" destination="Cjf-FN-xMf" id="AsV-SA-TxR"/>
+                        <outlet property="bridgeView" destination="eag-Jq-AUd" id="rad-NE-udw"/>
                         <outlet property="buttonDelay" destination="9uI-bU-wa0" id="7Vb-iD-fxj"/>
                         <outlet property="buttonDistortion" destination="Xa1-eY-uH5" id="v36-Co-ugL"/>
                         <outlet property="buttonDrums" destination="jZD-zJ-Osp" id="tX9-fr-2Iv"/>

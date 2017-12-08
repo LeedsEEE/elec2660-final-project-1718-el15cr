@@ -50,6 +50,7 @@
 		F251CF9E1FDAC16B00F3CF90 /* Icon40.png in Resources */ = {isa = PBXBuildFile; fileRef = F251CF9D1FDAC16B00F3CF90 /* Icon40.png */; };
 		F251CFA01FDAC19600F3CF90 /* Icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = F251CF9F1FDAC19600F3CF90 /* Icon29.png */; };
 		F251CFA21FDAC1B200F3CF90 /* Icon20.png in Resources */ = {isa = PBXBuildFile; fileRef = F251CFA11FDAC1B200F3CF90 /* Icon20.png */; };
+		F251CFA41FDAC5B200F3CF90 /* 58904-square-rounded-empty-outlined-button-shape.png in Resources */ = {isa = PBXBuildFile; fileRef = F251CFA31FDAC5B200F3CF90 /* 58904-square-rounded-empty-outlined-button-shape.png */; };
 		F2587C071FC2000C0096461C /* Instrument1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2587C061FC2000C0096461C /* Instrument1ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		F251CF9D1FDAC16B00F3CF90 /* Icon40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon40.png; sourceTree = "<group>"; };
 		F251CF9F1FDAC19600F3CF90 /* Icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon29.png; sourceTree = "<group>"; };
 		F251CFA11FDAC1B200F3CF90 /* Icon20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon20.png; sourceTree = "<group>"; };
+		F251CFA31FDAC5B200F3CF90 /* 58904-square-rounded-empty-outlined-button-shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58904-square-rounded-empty-outlined-button-shape.png"; sourceTree = "<group>"; };
 		F2587C051FC2000C0096461C /* Instrument1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument1ViewController.h; sourceTree = "<group>"; };
 		F2587C061FC2000C0096461C /* Instrument1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 		063FE0D51FBF2FE700620A64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F251CFA31FDAC5B200F3CF90 /* 58904-square-rounded-empty-outlined-button-shape.png */,
 				F251CFA11FDAC1B200F3CF90 /* Icon20.png */,
 				F251CF9F1FDAC19600F3CF90 /* Icon29.png */,
 				F251CF9D1FDAC16B00F3CF90 /* Icon40.png */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F244B6B21FCCC65A00D9C0FD /* Angular House Set.sf2 in Resources */,
+				F251CFA41FDAC5B200F3CF90 /* 58904-square-rounded-empty-outlined-button-shape.png in Resources */,
 				F251CF881FDA927A00F3CF90 /* recordButton1.png in Resources */,
 				F244B6B31FCCC65A00D9C0FD /* Angular Jazz1 Set.sf2 in Resources */,
 				F251CF9E1FDAC16B00F3CF90 /* Icon40.png in Resources */,

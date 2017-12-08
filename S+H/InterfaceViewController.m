@@ -37,7 +37,6 @@
     self.midView.layer.cornerRadius = 30;
     self.midView2.layer.cornerRadius = 30;
     self.bridgeView.layer.cornerRadius = 30;
-    self.bridgeView2.layer.cornerRadius = 30;
     
 }
 

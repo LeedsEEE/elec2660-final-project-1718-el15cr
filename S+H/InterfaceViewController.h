@@ -32,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIView *midView2;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *bridgeView;
-@property (weak, nonatomic) IBOutlet UIView *bridgeView2;
+
 
 
 - (IBAction)didTapPlay:(UIButton *)sender;
