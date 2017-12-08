@@ -1364,10 +1364,10 @@
     
     if (self.outputFileInstument1.length <= 44100){
         
+        NSLog(@"File cannot be played the recording is too short");
+        
         // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
         // then return from the method. Error occurs with buffer on assembly code on div.
-        
-        NSLog(@"File cannot be played the recording is too short");
         
         return;
         
@@ -1492,10 +1492,10 @@
     
     if (self.outputFileInstument2.length <= 44100){
         
+        NSLog(@"File cannot be played the recording is too short");
+        
         // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
         // then return from the method. Error occurs with buffer on assembly code on div.
-        
-        NSLog(@"File cannot be played the recording is too short");
         
         return;
         
@@ -1621,10 +1621,10 @@
     
     if (self.outputFileDrums.length <= 44100){
         
+        NSLog(@"File cannot be played the recording is too short");
+        
         // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
         // then return from the method. Error occurs with buffer on assembly code on div.
-        
-        NSLog(@"File cannot be played the recording is too short");
         
         return;
         
@@ -1749,10 +1749,10 @@
     
     if (self.outputFileMainOut.length <= 44100){
         
+        NSLog(@"File cannot be played the recording is too short");
+        
         // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
         // then return from the method. Error occurs with buffer on assembly code on div.
-        
-        NSLog(@"File cannot be played the recording is too short");
         
         return;
         
@@ -1873,10 +1873,10 @@
     
     if (self.outputFileMicrophone.length <= 44100){
         
+        NSLog(@"File cannot be played the recording is too short");
+        
         // If the file is less than or equal to 44100 samples (less than or equal to 1 second)
         // then return from the method. Error occurs with buffer on assembly code on div.
-        
-        NSLog(@"File cannot be played the recording is too short");
         
         return;
         
